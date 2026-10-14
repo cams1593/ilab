@@ -1,10 +1,25 @@
 body {
-  font-family: sans-serif;
+  margin: 0;
   font-size: $size-text;
+  font-family: $font;
   line-height: 1.5;
   color: $c-text;
-}
+  height: 100vh;
 
-.title {
-  color: $c-alt;
+  display: flex;
+  flex-direction: column; 
+}
+h1{
+    line-height: 1.2;
+}
+ul{
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    font-family: $font;
+    color: $c-text;
 }
