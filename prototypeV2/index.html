@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passeport numérique</title>
+  <link rel="stylesheet" href="custom.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<div class="ecran">
+
+  <!-- Barre du haut (maquette Figma) : accueil | langue -->
+  <header class="barre-haut">
+    <button id="btn-home" class="cellule" type="button" aria-label="Accueil">
+      <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M12 1.5 0.8 10.6l1.3 1.6L12 4.2l9.9 8 1.3-1.6zM5 12.5V22h5.2v-6h3.6v6H19v-9.5l-7-5.6z" fill="currentColor"/></svg>
+    </button>
+    <button class="cellule" type="button" aria-label="Langue : français">FR</button>
+  </header>
+
+  <main class="corps">
+    <!-- Colonne gauche : choix des sites -->
+    <section class="page page-gauche" aria-labelledby="titre-choix">
+      <h1>Passeport numérique</h1>
+      <p class="intro">
+        Sur internet, tu n'as pas qu'une seule nationalité. Choisis les sites
+        que tu utilises : on te montre où vivent tes données et quelles lois
+        s'appliquent à toi.
+      </p>
+
+      <h2 id="titre-choix" class="sr-only">Tes sites</h2>
+      <div id="marques" class="marques" role="group" aria-label="Sites à ajouter à ton passeport">
+        <p class="chargement">Chargement des sites…</p>
+      </div>
+
+      <div class="actions">
+        <button id="btn-tout" class="btn" type="button">Tout choisir</button>
+        <button id="btn-reset" class="btn btn-discret" type="button" disabled>Recommencer</button>
+      </div>
+    </section>
+
+    <!-- Colonne droite : résultats -->
+    <section class="page page-droite" aria-labelledby="titre-resultats">
+      <h2 id="titre-resultats" class="sr-only">Résultats</h2>
+
+      <div class="camemberts">
+        <figure class="graphique">
+          <div class="donut-boite" id="donut-physique">
+            <div class="donut-centre"><strong class="nb">0</strong><span class="unite">site</span></div>
+          </div>
+          <figcaption>
+            <h3>Où sont les serveurs</h3>
+            <p>Les pays où tes données sont stockées.</p>
+          </figcaption>
+          <ul class="legende" id="legende-physique"></ul>
+        </figure>
+
+        <figure class="graphique">
+          <div class="donut-boite" id="donut-juridique">
+            <div class="donut-centre"><strong class="nb">0</strong><span class="unite">site</span></div>
+          </div>
+          <figcaption>
+            <h3>Quelles lois s'appliquent</h3>
+            <p>Les pays dont la loi peut atteindre tes données.</p>
+          </figcaption>
+          <ul class="legende" id="legende-juridique"></ul>
+        </figure>
+      </div>
+
+      <div class="bas">
+        <section class="carte score" aria-labelledby="titre-score">
+          <h3 id="titre-score">Droits restants</h3>
+          <p class="score-valeur"><span id="score-nombre">100</span><span class="score-max">/100</span></p>
+          <div class="barre"><div id="score-barre" class="barre-remplie"></div></div>
+          <p id="score-phrase" class="score-phrase" aria-live="polite"></p>
+          <ul id="pertes" class="pertes"></ul>
+        </section>
+
+        <section class="carte dossier" aria-labelledby="titre-dossier">
+          <h3 id="titre-dossier">Dossier du site</h3>
+          <div id="dossier" aria-live="polite"></div>
+        </section>
+      </div>
+
+      <pre id="mrz" class="mrz" aria-hidden="true"></pre>
+      <p id="avertissement" class="avertissement"></p>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+{
+  "meta": {
+    "projet": "Passeport numérique – version simplifiée de Citizen Ex (James Bridle)",
+    "version": "0.1",
+    "date_mesure": "2026-10-11",
+    "lieu_mesure": "Bruxelles, Belgique",
+    "statut_donnees": "NON VERIFIE : toutes les marques sont à fact-checker avant exposition (voir champs statut_verification et sources)",
+    "avertissement_borne": "Simulation pédagogique : les malus sont des estimations simplifiées et ne constituent pas une analyse juridique.",
+    "score_depart": 100,
+    "score_minimum": 0,
+    "niveaux_risque": {
+      "Faible": "malus = 0",
+      "Élevé": "malus entre -10 et -15",
+      "Très élevé": "malus de -25 ou moins"
+    },
+    "regles_calcul": {
+      "camembert_physique": "Pour chaque marque sélectionnée, on additionne la part (%) de chaque pays dans 'serveurs', puis on divise par le nombre de marques sélectionnées.",
+      "camembert_juridique": "Chaque marque sélectionnée distribue 1 voix, partagée à parts égales entre les pays distincts de son tableau 'juridictions' (propriétaire + hébergeur). On additionne par pays puis on convertit en %.",
+      "score_final": "score_depart + somme des 'score_malus' des marques sélectionnées, plafonné à score_minimum. Le malus d'une marque = somme des malus des pays distincts de son tableau 'juridictions' (table 'pays')."
+    }
+  },
+
+  "pays": {
+    "BE": {
+      "nom": "Belgique",
+      "drapeau": "🇧🇪",
+      "loi_cle": "RGPD (droit européen)",
+      "alliance_surveillance": null,
+      "malus": 0,
+      "explication_visiteur": "Tes données sont protégées par le RGPD et le droit belge."
+    },
+    "FR": {
+      "nom": "France",
+      "drapeau": "🇫🇷",
+      "loi_cle": "RGPD (droit européen)",
+      "alliance_surveillance": null,
+      "malus": 0,
+      "explication_visiteur": "Tes données sont protégées par le RGPD et le droit français."
+    },
+    "DE": {
+      "nom": "Allemagne",
+      "drapeau": "🇩🇪",
+      "loi_cle": "RGPD (droit européen)",
+      "alliance_surveillance": null,
+      "malus": 0,
+      "explication_visiteur": "Tes données sont protégées par le RGPD et le droit allemand."
+    },
+    "IE": {
+      "nom": "Irlande",
+      "drapeau": "🇮🇪",
+      "loi_cle": "RGPD (droit européen)",
+      "alliance_surveillance": null,
+      "malus": 0,
+      "explication_visiteur": "Tes données sont protégées par le RGPD, appliqué en Irlande."
+    },
+    "SG": {
+      "nom": "Singapour",
+      "drapeau": "🇸🇬",
+      "loi_cle": "PDPA (loi singapourienne sur les données personnelles)",
+      "alliance_surveillance": null,
+      "malus": 0,
+      "explication_visiteur": "Pays d'hébergement physique uniquement : aucune marque de la liste n'y est juridiquement rattachée."
+    },
+    "US": {
+      "nom": "États-Unis",
+      "drapeau": "🇺🇸",
+      "loi_cle": "US CLOUD Act (et FISA 702)",
+      "alliance_surveillance": "Five Eyes",
+      "malus": -10,
+      "explication_visiteur": "Une entreprise américaine peut être obligée de remettre des données aux autorités américaines, même si elles sont stockées en Europe."
+    },
+    "CN": {
+      "nom": "Chine",
+      "drapeau": "🇨🇳",
+      "loi_cle": "Loi sur le renseignement national (2017)",
+      "alliance_surveillance": null,
+      "malus": -15,
+      "explication_visiteur": "Les entreprises chinoises peuvent être tenues de coopérer avec les services de renseignement de leur pays."
+    }
+  },
+
+  "marques": [
+    {
+      "id": "google",
+      "nom": "Google",
+      "url": "google.com",
+      "type": "Moteur de recherche",
+      "icone": "google-logo.svg",
+      "serveurs": [
+        { "pays": "BE", "part": 100, "ville": "Saint-Ghislain", "latitude": 50.4481, "longitude": 3.8182 }
+      ],
+      "proprietaire": { "entreprise": "Alphabet (Google)", "pays": "US" },
+      "hebergeur": { "nom": "Infrastructure propre de Google", "pays": "US", "statut": "a_verifier" },
+      "juridictions": ["US"],
+      "score_malus": -10,
+      "niveau_risque": "Élevé",
+      "message_visiteur": "Ta requête est traitée près de chez toi, en Belgique, mais l'entreprise reste soumise à la loi américaine.",
+      "notes_verification": "Data center de Saint-Ghislain + serveurs de bord proches.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "youtube",
+      "nom": "YouTube",
+      "url": "youtube.com",
+      "type": "Plateforme vidéo",
+      "icone": "youtube-logo.svg",
+      "serveurs": [
+        { "pays": "BE", "part": 100 }
+      ],
+      "proprietaire": { "entreprise": "Alphabet (Google)", "pays": "US" },
+      "hebergeur": { "nom": "Infrastructure propre de Google", "pays": "US", "statut": "a_verifier" },
+      "juridictions": ["US"],
+      "score_malus": -10,
+      "niveau_risque": "Élevé",
+      "message_visiteur": "Les vidéos arrivent depuis des serveurs proches de ton fournisseur d'accès, mais la plateforme dépend du droit américain.",
+      "notes_verification": "Caches proches du FAI (domaine googlevideo) : la localisation dépend du réseau du visiteur.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "instagram",
+      "nom": "Instagram",
+      "url": "instagram.com",
+      "type": "Réseau social",
+      "icone": "instagram-logo.svg",
+      "serveurs": [
+        { "pays": "IE", "part": 100 }
+      ],
+      "proprietaire": { "entreprise": "Meta Platforms", "pays": "US" },
+      "hebergeur": { "nom": "Infrastructure propre de Meta", "pays": "US", "statut": "a_verifier" },
+      "juridictions": ["US"],
+      "score_malus": -10,
+      "niveau_risque": "Élevé",
+      "message_visiteur": "Tes données sont gérées depuis l'Irlande, mais l'entreprise mère est américaine et soumise à la loi américaine.",
+      "notes_verification": "Simplification : possibles caches aux Pays-Bas, en France ou au Danemark.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "rtbf",
+      "nom": "RTBF",
+      "url": "rtbf.be",
+      "type": "Média public",
+      "icone": "rtbf-logo.svg",
+      "serveurs": [
+        { "pays": "BE", "part": 100, "ville": "Bruxelles", "latitude": 50.8503, "longitude": 4.3517 }
+      ],
+      "proprietaire": { "entreprise": "RTBF (service public belge)", "pays": "BE" },
+      "hebergeur": { "nom": "À vérifier (hébergement local supposé)", "pays": "BE", "statut": "hypothese" },
+      "juridictions": ["BE"],
+      "score_malus": 0,
+      "niveau_risque": "Faible",
+      "message_visiteur": "Service public belge : protection stricte de la vie privée sous le droit européen.",
+      "notes_verification": "Vérifier si un CDN américain (Cloudflare, Akamai, AWS) est utilisé : cela ajouterait US aux juridictions.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "aliexpress",
+      "nom": "AliExpress",
+      "url": "aliexpress.com",
+      "type": "Marketplace",
+      "icone": "aliexpress-logo.svg",
+      "serveurs": [
+        { "pays": "SG", "part": 50 },
+        { "pays": "DE", "part": 50 }
+      ],
+      "proprietaire": { "entreprise": "Alibaba Group", "pays": "CN" },
+      "hebergeur": { "nom": "Alibaba Cloud", "pays": "CN", "statut": "a_verifier" },
+      "juridictions": ["CN"],
+      "score_malus": -15,
+      "niveau_risque": "Élevé",
+      "message_visiteur": "Tes données transitent par Singapour et Francfort, mais l'entreprise relève du droit chinois.",
+      "notes_verification": "Répartition 50/50 Singapour/Francfort = estimation du groupe, à confirmer.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "temu",
+      "nom": "Temu",
+      "url": "temu.com",
+      "type": "Marketplace",
+      "icone": "temu-logo.svg",
+      "serveurs": [
+        { "pays": "US", "part": 100 }
+      ],
+      "proprietaire": { "entreprise": "PDD Holdings (siège déclaré à Dublin)", "pays": "CN" },
+      "hebergeur": { "nom": "Clouds américains (AWS, Google Cloud, Cloudflare)", "pays": "US", "statut": "a_verifier" },
+      "juridictions": ["CN", "US"],
+      "score_malus": -25,
+      "niveau_risque": "Très élevé",
+      "message_visiteur": "Double exposition : l'entreprise relève du droit chinois et ses serveurs sont chez des hébergeurs américains.",
+      "notes_verification": "Cas le plus flou : décider et expliquer quelle loi on retient pour le propriétaire (Chine vs Irlande).",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "zalando",
+      "nom": "Zalando",
+      "url": "zalando.be",
+      "type": "E-commerce mode",
+      "icone": "zalando-logo.svg",
+      "serveurs": [
+        { "pays": "DE", "part": 100 }
+      ],
+      "proprietaire": { "entreprise": "Zalando SE (Berlin)", "pays": "DE" },
+      "hebergeur": { "nom": "AWS (Francfort)", "pays": "US", "statut": "a_verifier" },
+      "juridictions": ["DE", "US"],
+      "score_malus": -10,
+      "niveau_risque": "Élevé",
+      "message_visiteur": "Entreprise allemande et serveurs en Allemagne, mais l'hébergeur est américain : le droit américain peut s'appliquer.",
+      "notes_verification": "Illustre bien la couche hébergeur : serveur physique en Allemagne, hébergeur soumis au CLOUD Act.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "netflix",
+      "nom": "Netflix",
+      "url": "netflix.com",
+      "type": "Streaming vidéo",
+      "icone": "netflix-logo.svg",
+      "serveurs": [
+        { "pays": "BE", "part": 100 }
+      ],
+      "proprietaire": { "entreprise": "Netflix, Inc.", "pays": "US" },
+      "hebergeur": { "nom": "Open Connect (Netflix) + AWS", "pays": "US", "statut": "a_verifier" },
+      "juridictions": ["US"],
+      "score_malus": -10,
+      "niveau_risque": "Élevé",
+      "message_visiteur": "Les films sont servis depuis des serveurs installés chez les fournisseurs d'accès belges, mais la plateforme dépend du droit américain.",
+      "notes_verification": "Serveurs Open Connect chez les FAI belges ; les API restent côté Irlande/AWS. Localisation dépendante du réseau du visiteur.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "lesoir",
+      "nom": "Le Soir",
+      "url": "lesoir.be",
+      "type": "Média d'information",
+      "icone": "lesoir-logo.svg",
+      "serveurs": [
+        { "pays": "BE", "part": 100 }
+      ],
+      "proprietaire": { "entreprise": "Groupe Rossel", "pays": "BE" },
+      "hebergeur": { "nom": "À vérifier (hébergement local supposé)", "pays": "BE", "statut": "hypothese" },
+      "juridictions": ["BE"],
+      "score_malus": 0,
+      "niveau_risque": "Faible",
+      "message_visiteur": "Média belge hébergé localement : protection de la vie privée sous le droit européen.",
+      "notes_verification": "Vérifier l'usage éventuel d'un CDN ou d'un cloud américain.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "lemonde",
+      "nom": "Le Monde",
+      "url": "lemonde.fr",
+      "type": "Média d'information",
+      "icone": "lemonde-logo.svg",
+      "serveurs": [
+        { "pays": "FR", "part": 100 }
+      ],
+      "proprietaire": { "entreprise": "Groupe Le Monde", "pays": "FR" },
+      "hebergeur": { "nom": "À vérifier (hébergement en France supposé)", "pays": "FR", "statut": "hypothese" },
+      "juridictions": ["FR"],
+      "score_malus": 0,
+      "niveau_risque": "Faible",
+      "message_visiteur": "Média français hébergé en France : protection de la vie privée sous le droit européen.",
+      "notes_verification": "Vérifier l'usage éventuel d'un CDN ou d'un cloud américain.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    },
+    {
+      "id": "decathlon",
+      "nom": "Decathlon",
+      "url": "decathlon.be",
+      "type": "E-commerce sport",
+      "icone": "decathlon-logo.svg",
+      "serveurs": [
+        { "pays": "FR", "part": 100 }
+      ],
+      "proprietaire": { "entreprise": "Decathlon", "pays": "FR" },
+      "hebergeur": { "nom": "À vérifier (plateforme centralisée en France supposée)", "pays": "FR", "statut": "hypothese" },
+      "juridictions": ["FR"],
+      "score_malus": 0,
+      "niveau_risque": "Faible",
+      "message_visiteur": "Entreprise française avec une plateforme e-commerce centralisée en France : protection sous le droit européen.",
+      "notes_verification": "Vérifier l'hébergeur réel de decathlon.be.",
+      "sources": [],
+      "date_verification": null,
+      "statut_verification": "a_verifier"
+    }
+  ]
+}
