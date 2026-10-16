@@ -1,0 +1,53 @@
+.containeur{
+    display: flex;
+    height: 100%;
+}
+.contenu{
+    position: relative;
+    flex: 1;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    justify-content: center;
+    height: 100%;
+}
+.texte{
+    margin: 32px 64px;
+}
+.page{
+    position: absolute;
+    bottom: 0;
+    height: 121px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 3px solid $c-text;
+}
+.page_h2{
+    margin: 0;
+}
+.image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.changementPage{
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin:0;
+}
+.page_li{
+    width: 121px;
+    height: 121px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page_li--white{
+    background-color: $c-text;
+}
+.page_svg--black{
+    transform: rotate(180deg);
+}

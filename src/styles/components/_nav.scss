@@ -1,0 +1,26 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.nav_ul{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+.nav_li{
+    border-left: 1px solid $c-text;
+    border-right: 1px solid $c-text;
+}
+.nav_a{
+    font-size: $size-nav;
+    color: $c-alt;
+    cursor: pointer;
+    padding: 32px 14px;
+    background: none;
+    border: none;
+    display: block;
+}
+.nav_a--actif{
+    color: $c-bg;
+    background-color: $c-text;
+}
