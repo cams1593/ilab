@@ -8,8 +8,8 @@
    ========================================================== */
 
 // ---------- Réglages faciles à modifier ----------
-const CHEMIN_JSON = 'passeport-numerique.json';
-const CHEMIN_ICONES = 'icones/';           // dossier des logos (ex. icones/google-logo.svg)
+const CHEMIN_JSON = 'assets/data/passeport-numerique.json';
+const CHEMIN_ICONES = 'assets/icones/';    // logos (ex. src/assets/icones/google-logo.svg)
 const DELAI_INACTIVITE_MS = 90000;         // retour à zéro après 90 s sans toucher l'écran
 const MONTRER_STATUT_VERIFICATION = true;  // mettre false quand toutes les données sont vérifiées
 const MOINS = '\u2212';
@@ -53,16 +53,19 @@ const marqueParId = (id) => donnees.marques.find((m) => m.id === id);
 const nomPays = (code) => (donnees.pays[code] ? donnees.pays[code].nom : code);
 
 // ---------- Démarrage ----------
-async function init() {
-  try {
-    const reponse = await fetch(CHEMIN_JSON);
-    if (!reponse.ok) throw new Error('Erreur ' + reponse.status);
-    donnees = await reponse.json();
-  } catch (erreur) {
-    afficherErreur();
-    return;
-  }
+function init() {
+  fetch(CHEMIN_JSON)
+    .then((reponse) => {
+      if (!reponse.ok) throw new Error('Erreur ' + reponse.status);
+      return reponse.json();
+    })
+    .then((json) => {
+      donnees = json;
+      demarrer();
+    }, afficherErreur);
+}
 
+function demarrer() {
   scoreAffiche = donnees.meta.score_depart;
   construireMarques();
   construireDonut($('donut-physique'));
@@ -71,7 +74,6 @@ async function init() {
 
   $('btn-tout').addEventListener('click', toutChoisir);
   $('btn-reset').addEventListener('click', reinitialiser);
-  $('btn-home').addEventListener('click', reinitialiser);
   ['pointerdown', 'keydown'].forEach((evenement) =>
     document.addEventListener(evenement, relancerMinuteur)
   );
@@ -85,8 +87,8 @@ function afficherErreur() {
       classe: 'erreur',
       attrs: { role: 'alert' },
       texte:
-        "Impossible de charger " + CHEMIN_JSON + ". Ouvre la page avec un serveur local " +
-        "(par exemple l'extension Live Server de VS Code) au lieu de double-cliquer sur index.html."
+        "Impossible de charger " + CHEMIN_JSON + ". Lance le projet avec « npm start » " +
+        "et vérifie que le fichier est dans src/assets/data/."
     })
   );
 }
@@ -388,7 +390,7 @@ function rendreDossier() {
       el('dd', { texte: m.proprietaire.entreprise + ', ' + nomPays(m.proprietaire.pays) }),
       el('dt', { texte: 'Hébergeur' }),
       el('dd', { texte: hebergeur }),
-      el('dt', { texte: 'Lois qui s’appliquent' }),
+      el('dt', { texte: 'Législation' }),
       lois
     ]),
     el('p', { classe: 'dossier-message', texte: m.message_visiteur }),
