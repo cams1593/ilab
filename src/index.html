@@ -1,56 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>DWMA project</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <meta name="description" content="">
-  <!-- Meta Partage -->
-  <!-- Favicon -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
 
-  <link rel="stylesheet" href="styles/app.css">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/app.css">
   <script src="scripts/app.js" defer></script>
 </head>
-
-
-<body>
-  <div class="lang--accueil">
+<body class="home-page">
+  <header class="lang--accueil">
     <ul class="lang_ul">
-      <li class="lang_li lang_li--actif"><button class="lang_button lang_button--actif" data-lang="en">English</button></li>
-
-      <li class="lang_li"><button class="lang_button" data-lang="fr">Français</button></li>
-
-      <li class="lang_li"><button class="lang_button"data-lang="de">Deutsch</button></li>
-
-      <li class="lang_li"><button class="lang_button" data-lang="nl">Nederlands</button></li>
+      <li class="lang_li lang_li--actif">
+        <button class="lang_button lang_button--actif" type="button" data-lang="fr" data-i18n="fr"></button>
+      </li>
+      <li class="lang_li">
+        <button class="lang_button" type="button" data-lang="en" data-i18n="en"></button>
+      </li>
+      <li class="lang_li">
+        <button class="lang_button" type="button" data-lang="nl" data-i18n="nl"></button>
+      </li>
+      <li class="lang_li">
+        <button class="lang_button" type="button" data-lang="de" data-i18n="de"></button>
+      </li>
     </ul>
-   <!--  svg  QR code-->
-  </div>
-  <nav class="nav--accueil">
+    <div class="home-qr-placeholder" aria-hidden="true">
+      <span class="home-qr-placeholder__pattern"></span>
+    </div>
+  </header>
+
+  <main class="nav--accueil">
     <ul class="nav_ul--accueil">
-      <li class="nav_li--accueil B">
-        <a class="nav_a--accueil" href="./citizen.html">
-          <img class="nav_img" src="" alt="">
-          <p data-i18n="accueil.citizen"></p>
+      <li class="nav_li--accueil">
+        <a class="nav_a--accueil home-feature-link" href="./citizen.html">
+          <span class="nav_img home-image-placeholder" aria-hidden="true"></span>
+          <span class="home-feature-title" data-i18n="accueil.citizen"></span>
+          <span class="home-feature-arrow" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <path d="M8 24h30m0 0L25 11m13 13L25 37" fill="none" stroke="currentColor" stroke-width="3.5"/>
+            </svg>
+          </span>
         </a>
-        </li>
-      <li class="nav_li--accueil J">
-        <a class="nav_a--accueil a--J" href="./passeport.html">
-          <img class="nav_img" src="" alt="">
-          <p data-i18n="accueil.passport"></p>
+      </li>
+      <li class="nav_li--accueil">
+        <a class="nav_a--accueil a--J home-feature-link" href="./passeport.html">
+          <span class="nav_img home-image-placeholder" aria-hidden="true"></span>
+          <span class="home-feature-title" data-i18n="accueil.passport"></span>
+          <span class="home-feature-arrow" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <path d="M8 24h30m0 0L25 11m13 13L25 37" fill="none" stroke="currentColor" stroke-width="3.5"/>
+            </svg>
+          </span>
         </a>
       </li>
     </ul>
-  </nav>
-
-
+  </main>
 </body>
 </html>

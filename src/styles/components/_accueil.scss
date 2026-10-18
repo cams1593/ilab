@@ -61,3 +61,151 @@
     color: $c-text;
 }
 
+.home-page {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+.lang--accueil {
+    display: flex;
+    min-height: clamp(5.5rem, 12vh, 6rem);
+    flex: 0 0 clamp(5.5rem, 12vh, 6rem);
+    background: $c-text;
+}
+
+.lang--accueil .lang_ul {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    min-width: 0;
+    margin: 0;
+}
+
+.lang--accueil .lang_li {
+    display: flex;
+    min-width: 0;
+    border-right: 1px solid $c-alt;
+    background: $c-bg;
+}
+
+.lang--accueil .lang_li--actif {
+    background: $c-text;
+}
+
+.lang--accueil .lang_button {
+    width: 100%;
+    margin: 0;
+    padding: 0.75rem;
+    color: $c-alt;
+    font-size: clamp(0.875rem, 1.4vw, $size-nav);
+}
+
+.lang--accueil .lang_button--actif {
+    color: $c-bg;
+    font-weight: 700;
+}
+
+.home-qr-placeholder {
+    display: flex;
+    flex: 0 0 28%;
+    align-items: center;
+    justify-content: center;
+    background: $c-text;
+}
+
+.home-qr-placeholder__pattern {
+    width: clamp(2.5rem, 4vw, 3rem);
+    aspect-ratio: 1;
+    border: 3px solid $c-bg;
+    background:
+        repeating-conic-gradient($c-bg 0 25%, transparent 0 50%) 0 0 / 10px 10px,
+        $c-text;
+}
+
+.nav--accueil {
+    min-height: 0;
+}
+
+.nav_ul--accueil {
+    min-height: 0;
+}
+
+.nav_li--accueil {
+    min-height: 0;
+}
+
+.nav_a--accueil.home-feature-link {
+    position: relative;
+    justify-content: flex-start;
+    gap: 0;
+    overflow: hidden;
+    background: $c-bg;
+    font-size: inherit;
+}
+
+.home-image-placeholder {
+    display: block;
+    flex: 0 0 50%;
+    width: 50%;
+    background:
+        repeating-linear-gradient(135deg, transparent 0 12px, rgba($c-alt, 0.12) 12px 24px),
+        $c-bg;
+}
+
+.home-feature-title {
+    display: block;
+    max-width: 600px;
+    padding: clamp(1.5rem, 5.4vw, 4rem);
+    font-size: clamp(1.75rem, 3.4vw, $size-title);
+    line-height: 1.2;
+}
+
+.home-feature-arrow {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    width: clamp(5rem, 10vw, 6.875rem);
+    aspect-ratio: 1.12;
+    place-items: center;
+    background: $c-text;
+    color: $c-bg;
+
+    svg {
+        width: 42%;
+        height: 42%;
+    }
+}
+
+@media (max-width: 700px) {
+    .lang--accueil {
+        min-height: 4.5rem;
+        flex-basis: 4.5rem;
+    }
+
+    .lang--accueil .lang_li {
+        flex-basis: 25%;
+    }
+
+    .lang--accueil .lang_button {
+        padding: 0.5rem 0.25rem;
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+    }
+
+    .home-qr-placeholder {
+        display: none;
+    }
+
+    .home-image-placeholder {
+        flex-basis: 40%;
+        width: 40%;
+    }
+
+    .home-feature-title {
+        padding: clamp(1rem, 4vw, 1.5rem);
+        font-size: clamp(1.25rem, 5vw, 2rem);
+    }
+
+    .home-feature-arrow {
+        width: 3.75rem;
+    }
+}

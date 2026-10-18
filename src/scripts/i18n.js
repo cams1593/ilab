@@ -16,6 +16,19 @@ async function setLang(lang) {
 
   document.documentElement.lang = lang;
   localStorage.setItem('site-locale', lang);
+
+  document.querySelectorAll('[data-lang]').forEach((button) => {
+    const active = button.dataset.lang === lang;
+    const item = button.closest('.lang_li');
+
+    if (active) {
+      button.classList.add('lang_button--actif');
+      item?.classList.add('lang_li--actif');
+    } else {
+      button.classList.remove('lang_button--actif');
+      item?.classList.remove('lang_li--actif');
+    }
+  });
 }
 
 document.querySelectorAll('[data-lang]').forEach((button) => {
