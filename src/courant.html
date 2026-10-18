@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Une exposition sur la citoyenneté à l'ère du web.">
+  <title>Citoyen Ex — Exposition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/app.css">
+  <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="home-link" href="./index.html" aria-label="Accueil">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 18.5 20 5l16 13.5v17H24v-11h-8v11H4z" fill="currentColor"/>
+        <path d="M1.5 17 20 1.5 38.5 17" fill="none" stroke="currentColor" stroke-width="4"/>
+      </svg>
+      <span class="brand-name">Citizen EX</span>
+    </a>
+    
+
+    <div class="header-spacer" aria-hidden="true"></div>
+
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="main-navigation" aria-label="Navigation principale">
+      <a class="main-nav__link" href="./citizen.html" aria-current="page">Citizen Ex</a>
+      <a class="main-nav__link" href="./artiste.html">Artiste</a>
+      <a class="main-nav__link is-active" href="./courant.html">Courant artistique</a>
+      <a class="main-nav__link" href="./oeuvres.html">Autres œuvres</a>
+      <div class="language-label">Langues</div>
+    </nav>
+  </header>
+
+  <main class="exhibition">
+    <section class="exhibition-panel" aria-label="Présentation de l’exposition">
+      <input class="slide-selector" id="slide-1" type="radio" name="exhibition-slide" aria-label="Diapositive 1 sur 3" checked>
+      <input class="slide-selector" id="slide-2" type="radio" name="exhibition-slide" aria-label="Diapositive 2 sur 3">
+      <input class="slide-selector" id="slide-3" type="radio" name="exhibition-slide" aria-label="Diapositive 3 sur 3">
+
+      <article class="intro intro--one" aria-labelledby="slide-title-1">
+        <h1 id="slide-title-1">L’art social</h1>
+        <p>
+          L’art social est un mouvement de l’art moderne qui s’oppose à l’art conceptuel. L’art moderne se détache des conventions esthétiques traditionnelles.
+        </p>
+        <p>
+            L’art conceptuel remet en cause la notion d’art en tant qu’objet. Dans ce courant, l’idée de l’art suffit à elle-même. L’idée de l’art prime sur sa réalisation et l’art n’a d’autres buts que l’art en lui-même. Dans cette vision, tout peut-être de l’art à condition que l’objectif intenté soit de faire de l’art.
+        </p>
+      </article>
+
+      <article class="intro intro--two" aria-labelledby="slide-title-2">
+        <h1 id="slide-title-2">Un art utile</h1>
+        <p>
+          L’art social quant à lui valorise l’art utile à la société. Il naît dans la sphère anarchiste au XIXe en France. Il s'intéresse à la vie en communauté et aux problèmes sociétaux. Il est à cheval entre l’art et le politique. Certains considèrent d’ailleurs que tout œuvre est politisé, que l’auteur en soit conscient ou non. Dans ce courant, l’accessibilité est un principe fondamental. C’est un courant artistique profondément ancré dans une politique révolutionnaire qui considère que l’art doit être accessible à tout le monde, y compris dans la classe ouvrière.
+        </p>
+      </article>
+
+      <article class="intro intro--three" aria-labelledby="slide-title-3">
+        <h1 id="slide-title-3">Un art utile</h1>
+        <p>
+          Citizen Ex nous invite à repenser notre utilisation du web. Il ne s’agit pas d’un simple jeu qui nous permet d’imaginer une nouvelle nationalité mais d’une réflexion sur nos droits sur internet. De plus, il suffisait de télécharger une extension gratuite sur son navigateur, c’est aussi facile que de télécharger une application sur son téléphone. C’est donc une œuvre à la fois accessible et politisé.
+        </p>
+      </article>
+
+      <nav class="slide-navigation" aria-label="Navigation des œuvres">
+        <p class="slide-count" aria-live="polite" aria-atomic="true">
+          <strong class="slide-count__number slide-count__number--one">01</strong>
+          <strong class="slide-count__number slide-count__number--two">02</strong>
+          <strong class="slide-count__number slide-count__number--three">03</strong>
+          <span> / 03</span>
+        </p>
+        <span class="mobile-next-label">L’artiste</span>
+        <label class="slide-control slide-control--previous slide-control--previous-one" for="slide-3" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--previous slide-control--previous-two" for="slide-1" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--previous slide-control--previous-three" for="slide-2" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--next slide-control--next-one" for="slide-2" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--next slide-control--next-two" for="slide-3" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--next slide-control--next-three" for="slide-1" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+      </nav>
+    </section>
+
+    <div class="artwork-placeholder" role="img" aria-label="Zone de présentation de l’œuvre"></div>
+  </main>
+</body>
+</html>

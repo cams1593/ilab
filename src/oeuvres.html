@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Une exposition sur la citoyenneté à l'ère du web.">
+  <title>Citoyen Ex — Exposition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/app.css">
+  <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="home-link" href="./index.html" aria-label="Accueil">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 18.5 20 5l16 13.5v17H24v-11h-8v11H4z" fill="currentColor"/>
+        <path d="M1.5 17 20 1.5 38.5 17" fill="none" stroke="currentColor" stroke-width="4"/>
+      </svg>
+      <span class="brand-name">Citizen EX</span>
+    </a>
+    
+
+    <div class="header-spacer" aria-hidden="true"></div>
+
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="main-navigation" aria-label="Navigation principale">
+      <a class="main-nav__link" href="./citizen.html" aria-current="page">Citizen Ex</a>
+      <a class="main-nav__link" href="./james.html">James Bridle</a>
+      <a class="main-nav__link" href="./courant.html">Courant artistique</a>
+      <a class="main-nav__link  is-active" href="./oeuvres.html">Autres œuvres</a>
+      <div class="language-label">Langues</div>
+    </nav>
+  </header>
+
+  <main class="exhibition">
+    <section class="exhibition-panel" aria-label="Présentation de l’exposition">
+      <input class="slide-selector" id="slide-1" type="radio" name="exhibition-slide" aria-label="Diapositive 1 sur 3" checked>
+      <input class="slide-selector" id="slide-2" type="radio" name="exhibition-slide" aria-label="Diapositive 2 sur 3">
+      <input class="slide-selector" id="slide-3" type="radio" name="exhibition-slide" aria-label="Diapositive 3 sur 3">
+
+      <article class="intro intro--one" aria-labelledby="slide-title-1">
+        <h1 id="slide-title-1">L’univers de James Bridle.</h1>
+        <p>
+          James Bridle centre ses recherches sur les liens qui unissent le progrès technique, la politique ainsi que les crises environnementales.
+        </p>
+        <p>
+            Il a réalisé de nombreuses œuvres sous la forme de livres, d’interfaces numériques interactif ou d’objets plus ou moins étrange dans le but d’interpeller et de transmettre un message sur sa vision du monde.
+        </p>
+      </article>
+
+      <article class="intro intro--two" aria-labelledby="slide-title-2">
+        <h1 id="slide-title-2">Rorschmap - 2011-2019 → 2021 : Une vision kaléidoscopique des cartes en ligne</h1>
+        <cite>
+            « Rorschmap, c'est de l'introspection cartographique, une nouvelle perspective sur la carte. Ça ne vous aidera pas à trouver quoi que ce soit. On en a marre de vos carrés et de vos marges. On veut de nouvelles formes et de nouvelles dimensions… » James Bridle
+        </cite>
+        <p>
+          Interface de Google Maps détournée de sa fonction traditionnelle. Ici, Bridle transforme une technologie intelligente en une expérience d'une beauté absurde. En effet, la carte ne donne aucune indication de direction ni de position ce qui oblige l'utilisateur à se détacher de toute structure et à se concentrer sur les mouvements hypnotisant de la carte. Cette carte nous permet de voir le monde différemment. 
+        </p>
+      </article>
+
+      <article class="intro intro--three" aria-labelledby="slide-title-3">
+        <h1 id="slide-title-3">Drone Shadow 007 - 2014</h1>
+        <p>
+          A modifier !!!!!!!
+        </p>
+      </article>
+      <article class="intro intro--three" aria-labelledby="slide-title-4">
+        <h1 id="slide-title-4">New Dark Age - 2018</h1>
+        <cite>
+            « New Dark Age se voulait une lecture difficile et dérangeante. Sans proposer de solutions, j'ai cherché à maintenir un espace ouvert à l'imagination » James Bridle
+        </cite>
+        <p>
+          Dans ce livre, Bridle critique les technologies contemporaines : pourquoi la technologie qui façonne notre quotidien n'a-t-elle pas fait progresser notre intelligence ni notre compréhension du monde ?
+        </p>
+      </article>
+      <article class="intro intro--three" aria-labelledby="slide-title-5">
+        <h1 id="slide-title-5">Ways of Being - 2022</h1>
+        <p>
+          Dans ce livre, Bridle propose une nouvelle façon d'appréhender le monde et l'existence en parlant de l'IA, l'intelligence non humaine, l'écologie, l'informatique biologique, les relations humaines…
+        </p>
+      </article>
+
+      <nav class="slide-navigation" aria-label="Navigation des œuvres">
+        <p class="slide-count" aria-live="polite" aria-atomic="true">
+          <strong class="slide-count__number slide-count__number--one">01</strong>
+          <strong class="slide-count__number slide-count__number--two">02</strong>
+          <strong class="slide-count__number slide-count__number--three">03</strong>
+          <strong class="slide-count__number slide-count__number--four">04</strong>
+          <strong class="slide-count__number slide-count__number--five">05</strong>
+          <span> / 05</span>
+        </p>
+        <span class="mobile-next-label">L’artiste</span>
+        <label class="slide-control slide-control--previous slide-control--previous-one" for="slide-3" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+
+        <label class="slide-control slide-control--previous slide-control--previous-two" for="slide-1" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+
+        <label class="slide-control slide-control--previous slide-control--previous-three" for="slide-2" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+
+        <label class="slide-control slide-control--next slide-control--next-one" for="slide-2" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        
+        <label class="slide-control slide-control--next slide-control--next-two" for="slide-3" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+
+        <label class="slide-control slide-control--next slide-control--next-three" for="slide-1" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        
+      </nav>
+    </section>
+
+    <div class="artwork-placeholder" role="img" aria-label="Zone de présentation de l’œuvre"></div>
+  </main>
+</body>
+</html>

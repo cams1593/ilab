@@ -1,63 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>DWMA project</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <meta name="description" content="">
-  <!-- Meta Partage -->
-  <!-- Favicon -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Une exposition sur la citoyenneté à l'ère du web.">
+  <title>Citoyen Ex — Exposition</title>
 
-  <link rel="stylesheet" href="styles/app.css">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/app.css">
   <script src="scripts/app.js" defer></script>
 </head>
-
 <body>
-    <nav class="nav">
-        <p> bip bop test</p>
-        <ul class="nav_ul">
-            <li class="nav_li"><a href="./citizen.html" class="nav_a nav_a--actif">Citizen Ex</a></li>
-            <li class="nav_li"><a href="./james.html" class="nav_a">Artiste</a></li>
-            <li class="nav_li"><a href="./courant.html" class="nav_a">Courant artistique</a></li>
-            <li class="nav_li"><a href="./oeuvres.html" class="nav_a">Autres œuvres</a></li>
-        </ul>
+  <header class="site-header">
+    <a class="home-link" href="./index.html" aria-label="Accueil">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 18.5 20 5l16 13.5v17H24v-11h-8v11H4z" fill="currentColor"/>
+        <path d="M1.5 17 20 1.5 38.5 17" fill="none" stroke="currentColor" stroke-width="4"/>
+      </svg>
+      <span class="brand-name">Citizen EX</span>
+    </a>
+    
+
+    <div class="header-spacer" aria-hidden="true"></div>
+
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="main-navigation" aria-label="Navigation principale">
+      <a class="main-nav__link is-active" href="./citizen.html" aria-current="page">Citizen Ex</a>
+      <a class="main-nav__link" href="./james.html">James Bridle</a>
+      <a class="main-nav__link" href="./courant.html">Courant artistique</a>
+      <a class="main-nav__link" href="./oeuvres.html">Autres œuvres</a>
+      <div class="language-label">Langues</div>
     </nav>
-    <div class="containeur">
-        <div class="contenu">
-            <div class="texte">
-                <h1>Sur le web, votre citoyenneté n’existe plus.</h1>
-                <ul>
-                    <li><p>L’appartenance à une nation est ce qui nous confèrenos droits et assure notre protection. Lorsque nousnaviguons sur le web, nous n’avons pas de nationalitédéfinie. Il est courant que les sites que nous utilisonsdans un pays soit en réalité hébergés à l’autre bout dumonde. </p></li>
-                    <li></li>
-                </ul>
-            </div>
-            <div class="page">
-                <h2 class="page_h2"><span>01</span>/02</h2>
-                <ul class="changementPage">
-                    <li class="page_li">
-                        <svg class="page_svg--black" width="32" height="32" viewBox="0 0 32 32" fill="black" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M24.35 18H0V14H24.35L13.15 2.8L16 0L32 16L16 32L13.15 29.2L24.35 18Z" fill="black"/>
-                        </svg>
-                    </li>
-                    <li class="page_li page_li--white">
-                        <svg class="page_svg--white" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M24.35 18H0V14H24.35L13.15 2.8L16 0L32 16L16 32L13.15 29.2L24.35 18Z" fill="white"/>
-                        </svg>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="image">
-            <img src="" alt="">
-        </div>
-    </div>
+  </header>
+
+  <main class="exhibition">
+    <section class="exhibition-panel" aria-label="Présentation de l’exposition">
+      <input class="slide-selector" id="slide-1" type="radio" name="exhibition-slide" aria-label="Diapositive 1 sur 3" checked>
+      <input class="slide-selector" id="slide-2" type="radio" name="exhibition-slide" aria-label="Diapositive 2 sur 3">
+      <input class="slide-selector" id="slide-3" type="radio" name="exhibition-slide" aria-label="Diapositive 3 sur 3">
+
+      <article class="intro intro--one" aria-labelledby="slide-title-1">
+        <p class="intro__eyebrow">CITIZEN EX</p>
+        <h1 id="slide-title-1">Sur le web, votre citoyenneté n’existe plus.</h1>
+        <p>
+          L’appartenance à une nation est ce qui nous confère nos droits et assure notre
+          protection. Lorsque nous naviguons sur le web, nous n’avons pas de nationalité
+          définie. Il est courant que les sites que nous utilisons dans un pays soit en réalité
+          hébergés à l’autre bout du monde.
+        </p>
+      </article>
+
+      <article class="intro intro--two" aria-labelledby="slide-title-2">
+        <p class="intro__eyebrow">CITIZEN EX</p>
+        <h1 id="slide-title-2">Sur le web, votre citoyenneté n’existe plus.</h1>
+        <p>
+          Nous voyageons donc à travers le globe, de manière figurative, et sommes contraints
+          par des lois qui nous sont inconnues. Citizen Ex a pour but de dresser un droit du
+          sol fictif, numérique, avec une citoyenneté basée sur notre utilisation du web afin
+          de nous familiariser avec cette appartenance numérique.
+        </p>
+      </article>
+
+      <article class="intro intro--three" aria-labelledby="slide-title-3">
+        <p class="intro__eyebrow">CITIZEN EX</p>
+        <h1 id="slide-title-3">Comment ça fonctionne&nbsp;?</h1>
+        <p>
+          L’extension analyse la localisation des sites que vous visitez sur base de leur
+          adresse IP(*1). Au fur et à mesure, il vous crée une citoyenneté numérique sous
+          forme d’un graphique en camembert, par exemple comme celui-ci&nbsp;:
+        </p>
+        <p class="footnote">
+          <sup>*1</sup> Une adresse IP est une suite de chiffre unique associé à chaque
+          appareil connecté à l’Internet Protocol.
+        </p>
+      </article>
+
+      <nav class="slide-navigation" aria-label="Navigation des œuvres">
+        <p class="slide-count" aria-live="polite" aria-atomic="true">
+          <strong class="slide-count__number slide-count__number--one">01</strong>
+          <strong class="slide-count__number slide-count__number--two">02</strong>
+          <strong class="slide-count__number slide-count__number--three">03</strong>
+          <span> / 03</span>
+        </p>
+        <span class="mobile-next-label">L’artiste</span>
+        <label class="slide-control slide-control--previous slide-control--previous-one" for="slide-3" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--previous slide-control--previous-two" for="slide-1" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--previous slide-control--previous-three" for="slide-2" aria-label="Œuvre précédente">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--next slide-control--next-one" for="slide-2" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--next slide-control--next-two" for="slide-3" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+        <label class="slide-control slide-control--next slide-control--next-three" for="slide-1" aria-label="Œuvre suivante">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          </svg>
+        </label>
+      </nav>
+    </section>
+
+    <div class="artwork-placeholder" role="img" aria-label="Zone de présentation de l’œuvre"></div>
+  </main>
 </body>
 </html>
