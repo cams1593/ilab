@@ -1,0 +1,48 @@
+{
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "accueil.citizen": "Learn more about Citizen Ex",
+    "accueil.passport": "Create your digital passport",
+    "intro.title": "On the web, your citizenship no longer exists.",
+    "intro.text": "Belonging to a nation is what grants us our rights and ensures our protection. When we browse the web, we have no defined nationality. It’s common for the websites we use in one country to actually be hosted on the other side of the world.",
+    "intro.textpartie2": "We therefore travel across the globe—figuratively speaking—and are bound by laws that are unfamiliar to us. Citizen Ex aims to establish a fictional, digital right of soil, with citizenship based on our use of the web, in order to help us become familiar with this digital sense of belonging.",
+
+    "how.title": "How does it work?",
+    "how.text": "The extension analyzes the location of the websites you visit based on their IP addresses (*1). As you browse, it creates a digital citizenship profile for you in the form of a pie chart, like this one, for example:",
+    "how.footnote": "*1 An IP address is a unique sequence of numbers assigned to each device connected to the Internet Protocol",
+
+    "artist.who.title": "Who is James Bridle?",
+    "nationality": "Nationality",
+    "nationality.text": "British",
+    "birth": "Born",
+    "birth.text": "1980",
+    "Engagement": "Involvement",
+    "Engagement.text": "Activist, human rights advocate, technologist.",
+    "artist.goals.title": "What are his goals through Citizen Ex?",
+    "artist.goals.physical": "To highlight that the web is physical: the physical web begins with your computer or the phone you’re holding in your hands… it continues with the cables connecting you to the internet, fiber-optic cables running through your neighborhood that lead to data centers housing servers.",
+    "artist.goals.political": "To reveal the political reality behind our use of the web: When you visit a web page, there’s a good chance that the server hosting that site is in another country or even another continent; these countries or continents have laws that differ from those of your home country, and as a result, you’re subject to laws you’re unaware of.",
+
+    "movement.title": "Social Art",
+    "movement.modern": "Social art is a movement within modern art that stands in opposition to conceptual art. Modern art breaks away from traditional aesthetic conventions.",
+    "movement.conceptual": "Conceptual art challenges the notion of art as an object. In this movement, the idea of art is sufficient in and of itself. The idea of art takes precedence over its execution, and art has no other purpose than art itself. In this view, anything can be art as long as the intended goal is to create art.",
+    "movement.title.art.util": "Useful Art",
+    "movement.social": "Social art, on the other hand, emphasizes art that serves society. It emerged from anarchist circles in 19th-century France. It focuses on community life and societal issues. It straddles the line between art and politics. Some even consider that every work of art is politicized, whether the artist is aware of it or not. Within this movement, accessibility is a fundamental principle. It is an artistic movement deeply rooted in revolutionary politics that holds that art must be accessible to everyone, including the working class.",
+    "movement.citizenex": "Citizen Ex invites us to rethink how we use the web. It is not merely a game that allows us to imagine a new nationality, but a reflection on our rights online. Moreover, all it took was downloading a free browser extension—it’s as easy as downloading an app on your phone. It is, therefore, a work that is both accessible and politicized.",
+    "movement.caption.banksy": "Bansky — Flower Thrower",
+
+    "works.title": "The World of James Bridle.",
+    "works.intro": "James Bridle focuses his research on the connections between technological progress, politics, and environmental crises. ",
+    "works.intro.partie2": "He has created numerous works in the form of books, interactive digital interfaces, and objects of varying degrees of strangeness, with the aim of provoking thought and conveying a message about his worldview.",
+    "works.rorschmap.title": "Rorschmap - 2011–2019 → 2021: A kaleidoscopic view of online maps",
+    "works.rorschmap.quote": "“Rorschmap is cartographic introspection, a new perspective on the map. It won’t help you find anything. We’re sick of your squares and margins. We want new shapes and new dimensions… ” James Bridle",
+    "works.rorschmap.text": "A Google Maps interface repurposed from its traditional function. Here, Bridle transforms smart technology into an experience of absurd beauty. Indeed, the map provides no indication of direction or location, forcing the user to detach from any structure and focus on the map’s mesmerizing movements. This map allows us to see the world differently.",
+
+    "works.newdarkage.title": "New Dark Age - 2018",
+    "works.newdarkage.quote": "“New Dark Age was intended to be a challenging and unsettling read. Without offering solutions, I sought to leave room for the imagination,” James Bridle",
+    "works.newdarkage.text": "In this book, Bridle critiques contemporary technologies: why hasn’t the technology that shapes our daily lives advanced our intelligence or our understanding of the world?",
+
+    "works.waysofbeing.title": "Ways of Being - 2022",
+    "works.waysofbeing.text": "In this book, Bridle proposes a new way of understanding the world and existence by discussing AI, non-human intelligence, ecology, computational biology, human relationships, and more…"
+}

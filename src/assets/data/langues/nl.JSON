@@ -1,0 +1,49 @@
+{
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "accueil.citizen": "Meer informatie over Citizen Ex",
+    "accueil.passport": "Maak je digitale paspoort aan",
+    "intro.title": "Op het internet bestaat je burgerschap niet meer.",
+    "intro.text": "Het behoren tot een natie is wat ons onze rechten verleent en onze bescherming waarborgt. Wanneer we op het internet surfen, hebben we geen vastomlijnde nationaliteit. Het komt vaak voor dat de websites die we in het ene land gebruiken, in werkelijkheid aan de andere kant van de wereld worden gehost.",
+    "intro.textpartie2": "We reizen dus figuurlijk de wereld rond en zijn onderworpen aan wetten die ons onbekend zijn. Citizen Ex heeft als doel een fictief, digitaal grondrecht in te voeren, met een burgerschap dat gebaseerd is op ons internetgebruik, om ons vertrouwd te maken met dit digitale burgerschap.",
+
+    "how.title": "Hoe werkt het?",
+    "how.text": "De extensie analyseert de locatie van de websites die u bezoekt op basis van hun IP-adres (*1). Gaandeweg stelt het een ‘digitaal burgerschap’ voor u samen in de vorm van een cirkeldiagram, bijvoorbeeld zoals dit:",
+    "how.footnote": "*1 Een IP-adres is een unieke reeks cijfers die aan elk apparaat is gekoppeld dat is aangesloten op het Internet Protocol",
+
+
+    "artist.who.title": "Wie is James Bridle?",
+    "nationality": "Nationaliteit",
+    "nationality.text": "Brits",
+    "birth": "Geboren",
+    "birth.text": "in 1980",
+    "Engagement": "Activiteiten",
+    "Engagement.text": "activist, mensenrechtenverdediger, technoloog",
+    "artist.goals.title": "Wat zijn zijn doelstellingen met Citizen Ex?",
+    "artist.goals.physical": "Aantonen dat het internet fysiek is: het materiële internet begint bij je computer of telefoon die je in je handen houdt… en loopt verder via de kabels die je verbinden met het internet, via glasvezelkabels in je buurt die naar datacenters leiden waar servers staan.",
+    "artist.goals.political": "De politieke realiteit achter ons internetgebruik blootleggen: wanneer je een webpagina bezoekt, is de kans groot dat de server waarop deze site staat in een ander land of zelfs op een ander continent staat; deze landen/continenten hebben andere wetten dan het land waar je vandaan komt, en daardoor ben je onderworpen aan wetten waarvan je het bestaan niet eens kent.",
+
+    "movement.title": "Sociale kunst",
+    "movement.modern": "Sociale kunst is een stroming binnen de moderne kunst die zich afzet tegen de conceptuele kunst. De moderne kunst breekt met de traditionele esthetische conventies.",
+    "movement.conceptual": "Conceptuele kunst stelt het begrip ‘kunst als object’ ter discussie. Binnen deze stroming volstaat het idee van kunst op zichzelf. Het idee van kunst primeert boven de uitvoering ervan en kunst heeft geen ander doel dan de kunst zelf. In deze visie kan alles kunst zijn, op voorwaarde dat het beoogde doel is om kunst te maken.",
+    "movement.title.art.util":"Nuttige kunst",
+    "movement.social": "Sociale kunst daarentegen legt de nadruk op kunst die nuttig is voor de samenleving. Deze stroming ontstond in de 19e eeuw in Frankrijk binnen de anarchistische beweging. Ze richt zich op het leven in de gemeenschap en op maatschappelijke problemen. Ze bevindt zich op het snijvlak van kunst en politiek. Sommigen zijn overigens van mening dat elk kunstwerk gepolitiseerd is, of de maker zich daar nu bewust van is of niet. Binnen deze stroming is toegankelijkheid een fundamenteel principe. Het is een artistieke stroming die diep geworteld is in een revolutionaire politiek, die stelt dat kunst voor iedereen toegankelijk moet zijn, ook voor de arbeidersklasse.",
+    "movement.citizenex": "Citizen Ex nodigt ons uit om ons gebruik van het internet te heroverwegen. Het gaat niet om een simpel spel waarmee we ons een nieuwe nationaliteit kunnen voorstellen, maar om een reflectie op onze rechten op het internet. Bovendien hoefde men alleen maar een gratis extensie voor de browser te downloaden; dat is net zo eenvoudig als het downloaden van een app op je telefoon. Het is dus een werk dat zowel toegankelijk als gepolitiseerd is.",
+    "movement.caption.banksy": "Bansky — Flower Thrower",
+
+    "works.title": "De wereld van James Bridle.",
+    "works.intro": "James Bridle richt zijn onderzoek op de verbanden tussen technische vooruitgang, politiek en milieucrises. ",
+    "works.intro.partie2": "Hij heeft talrijke werken gerealiseerd in de vorm van boeken, interactieve digitale interfaces of min of meer vreemde objecten, met als doel de aandacht te trekken en een boodschap over te brengen over zijn visie op de wereld.",
+    "works.rorschmap.title": "Rorschmap - 2011-2019 → 2021: Een caleidoscopisch beeld van online kaarten",
+    "works.rorschmap.quote": "„Rorschmap is cartografische introspectie, een nieuw perspectief op de kaart. Het zal je niet helpen om ook maar iets te vinden. We zijn je vierkanten en marges beu. We willen nieuwe vormen en nieuwe dimensies… ” James Bridle",
+    "works.rorschmap.text": "Een Google Maps-interface die van zijn traditionele functie is losgekoppeld. Hier transformeert Bridle slimme technologie in een ervaring van absurde schoonheid. De kaart geeft namelijk geen enkele aanwijzing over richting of positie, waardoor de gebruiker zich moet losmaken van elke structuur en zich moet concentreren op de hypnotiserende bewegingen van de kaart. Deze kaart stelt ons in staat de wereld op een andere manier te zien.",
+
+    "works.newdarkage.title": "New Dark Age - 2018",
+    "works.newdarkage.quote": "„New Dark Age was bedoeld als een moeilijk en verontrustend boek. Zonder oplossingen aan te reiken, heb ik geprobeerd ruimte te laten voor de verbeelding” – James Bridle",
+    "works.newdarkage.text": "In dit boek levert Bridle kritiek op hedendaagse technologieën: waarom heeft de technologie die ons dagelijks leven vormgeeft, onze intelligentie en ons begrip van de wereld niet vooruitgeholpen?",
+
+    "works.waysofbeing.title": "Ways of Being - 2022",
+    "works.waysofbeing.text": "In dit boek stelt Bridle een nieuwe manier voor om de wereld en het bestaan te begrijpen, waarbij hij ingaat op AI, niet-menselijke intelligentie, ecologie, biologische informatica, menselijke relaties…"
+}

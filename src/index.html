@@ -24,10 +24,13 @@
 <body>
   <div class="lang--accueil">
     <ul class="lang_ul">
-      <li class="lang_li lang_li--actif"><button class="lang_button lang_button--actif" href="index.html">English</button></li>
-      <li class="lang_li"><button class="lang_button" href="sites.html">Français</button></li>
-      <li class="lang_li"><button class="lang_button" href="contact.html">Deutsch</button></li>
-      <li class="lang_li"><button class="lang_button" href="contact.html">Nederlands</button></li>
+      <li class="lang_li lang_li--actif"><button class="lang_button lang_button--actif" data-lang="en">English</button></li>
+
+      <li class="lang_li"><button class="lang_button" data-lang="fr">Français</button></li>
+
+      <li class="lang_li"><button class="lang_button"data-lang="de">Deutsch</button></li>
+
+      <li class="lang_li"><button class="lang_button" data-lang="nl">Nederlands</button></li>
     </ul>
    <!--  svg  QR code-->
   </div>
@@ -36,13 +39,13 @@
       <li class="nav_li--accueil B">
         <a class="nav_a--accueil" href="./citizen.html">
           <img class="nav_img" src="" alt="">
-          En apprendre plus sur Citizen Ex
+          <p data-i18n="accueil.citizen"></p>
         </a>
         </li>
       <li class="nav_li--accueil J">
         <a class="nav_a--accueil a--J" href="./passeport.html">
           <img class="nav_img" src="" alt="">
-          Créez votre passeport numérique 
+          <p data-i18n="accueil.passport"></p>
         </a>
       </li>
     </ul>

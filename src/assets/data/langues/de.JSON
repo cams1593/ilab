@@ -1,0 +1,31 @@
+{
+    "fr": "Français",
+    "en": "English",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "accueil.citizen": "Erfahren Sie mehr über Citizen Ex",
+    "accueil.passport": "Erstellen Sie Ihren digitalen Pass",
+    "intro.title": "Im Internet existiert Ihre Staatsangehörigkeit nicht mehr.",
+    "intro.text": "Die Zugehörigkeit zu einer Nation ist es, die uns unsere Rechte verleiht und unseren Schutz gewährleistet. Wenn wir im Internet surfen, haben wir keine definierte Staatsangehörigkeit. Es kommt häufig vor, dass die Websites, die wir in einem Land nutzen, in Wirklichkeit am anderen Ende der Welt gehostet werden.",
+    "intro.textpartie2": "Wir reisen also im übertragenen Sinne um den Globus und unterliegen Gesetzen, die uns unbekannt sind. Citizen Ex hat sich zum Ziel gesetzt, ein fiktives, digitales Territorialrecht zu schaffen, dessen Staatsbürgerschaft auf unserer Nutzung des Internets basiert, um uns mit dieser digitalen Zugehörigkeit vertraut zu machen.",
+
+    "how.title": "Wie funktioniert das?",
+    "how.text": "Die Erweiterung analysiert den Standort der von Ihnen besuchten Websites anhand ihrer IP-Adresse (*1). Dabei erstellt sie nach und nach eine digitale Staatsangehörigkeit in Form eines Kreisdiagramms, zum Beispiel wie dieses:",
+    "how.footnote": "*1 Eine IP-Adresse ist eine eindeutige Zahlenfolge, die jedem mit dem Internet Protocol verbundenen Gerät zugeordnet ist.",
+
+
+    "artist.who.title": "Wer ist James Bridle?",
+    "nationality": "Nationalität",
+    "nationality.text": "Britisch.",
+    "birth": "Geburtsjahr",
+    "birth.text": "1980.",
+    "Engagement": "Engagement",
+    "Engagement.text": "Aktivist*in, Menschenrechtsverteidiger*in, Technologe*in.",
+    "artist.goals.title": "Was sind seine Ziele mit „Citizen Ex“?",
+    "artist.goals.physical": "Aufzeigen, dass das Internet physisch ist: Das materielle Internet beginnt mit Ihrem Computer oder dem Smartphone, das Sie in den Händen halten … es setzt sich fort mit den Kabeln, die Ihre Internetverbindung herstellen, mit Glasfaserkabeln in Ihrer Nachbarschaft, die zu Rechenzentren führen, in denen sich die Server befinden.",
+    "artist.goals.political": "Uns die politische Realität hinter unserer Nutzung des Internets vor Augen führen: Wenn Sie eine Webseite besuchen, ist die Wahrscheinlichkeit groß, dass sich der Server, auf dem diese Seite gehostet wird, in einem anderen Land oder sogar auf einem anderen Kontinent befindet. Diese Länder bzw. Kontinente haben andere Gesetze als Ihr Heimatland, und folglich unterliegen Sie Gesetzen, von deren Existenz Sie nichts wissen.",
+
+    "movement.title": "Soziale Kunst",
+    "movement.modern": "Die soziale Kunst ist eine Strömung der modernen Kunst, die sich der Konzeptkunst entgegenstellt. Die moderne Kunst löst sich von traditionellen ästhetischen Konventionen.",
+    "movement.conceptual": "Die Konzeptkunst hinterfragt den Begriff der Kunst als Objekt. In dieser Strömung reicht die Idee der Kunst an sich aus. Die Idee der Kunst hat Vorrang vor ihrer Umsetzung, und die Kunst hat keine anderen Ziele als die Kunst an sich. Nach dieser Auffassung kann alles Kunst sein, vorausgesetzt, das beabsichtigte Ziel ist es, Kunst zu schaffen."
+}
