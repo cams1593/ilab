@@ -42,11 +42,8 @@
 
   <main class="exhibition">
     <section class="exhibition-panel" aria-label="Présentation de l’exposition">
-      <input class="slide-selector" id="slide-1" type="radio" name="exhibition-slide" aria-label="Diapositive 1 sur 3" checked>
-      <input class="slide-selector" id="slide-2" type="radio" name="exhibition-slide" aria-label="Diapositive 2 sur 3">
-      <input class="slide-selector" id="slide-3" type="radio" name="exhibition-slide" aria-label="Diapositive 3 sur 3">
-
-      <article class="intro intro--one" aria-labelledby="slide-title-1">
+      <div class="slider__elements">
+      <article class="intro intro--one slider__el slider__el--show" aria-labelledby="slide-title-1">
         <h1 id="slide-title-1">L’univers de James Bridle.</h1>
         <p>
           James Bridle centre ses recherches sur les liens qui unissent le progrès technique, la politique ainsi que les crises environnementales.
@@ -56,7 +53,7 @@
         </p>
       </article>
 
-      <article class="intro intro--two" aria-labelledby="slide-title-2">
+      <article class="intro intro--two slider__el" aria-labelledby="slide-title-2">
         <h1 id="slide-title-2">Rorschmap - 2011-2019 → 2021 : Une vision kaléidoscopique des cartes en ligne</h1>
         <cite>
             « Rorschmap, c'est de l'introspection cartographique, une nouvelle perspective sur la carte. Ça ne vous aidera pas à trouver quoi que ce soit. On en a marre de vos carrés et de vos marges. On veut de nouvelles formes et de nouvelles dimensions… » James Bridle
@@ -66,13 +63,13 @@
         </p>
       </article>
 
-      <article class="intro intro--three" aria-labelledby="slide-title-3">
+      <article class="intro intro--three slider__el" aria-labelledby="slide-title-3">
         <h1 id="slide-title-3">Drone Shadow 007 - 2014</h1>
         <p>
           A modifier !!!!!!!
         </p>
       </article>
-      <article class="intro intro--three" aria-labelledby="slide-title-4">
+      <article class="intro intro--three slider__el" aria-labelledby="slide-title-4">
         <h1 id="slide-title-4">New Dark Age - 2018</h1>
         <cite>
             « New Dark Age se voulait une lecture difficile et dérangeante. Sans proposer de solutions, j'ai cherché à maintenir un espace ouvert à l'imagination » James Bridle
@@ -81,16 +78,17 @@
           Dans ce livre, Bridle critique les technologies contemporaines : pourquoi la technologie qui façonne notre quotidien n'a-t-elle pas fait progresser notre intelligence ni notre compréhension du monde ?
         </p>
       </article>
-      <article class="intro intro--three" aria-labelledby="slide-title-5">
+      <article class="intro intro--three slider__el" aria-labelledby="slide-title-5">
         <h1 id="slide-title-5">Ways of Being - 2022</h1>
         <p>
           Dans ce livre, Bridle propose une nouvelle façon d'appréhender le monde et l'existence en parlant de l'IA, l'intelligence non humaine, l'écologie, l'informatique biologique, les relations humaines…
         </p>
       </article>
+      </div>
 
       <nav class="slide-navigation" aria-label="Navigation des œuvres">
         <p class="slide-count" aria-live="polite" aria-atomic="true">
-          <strong class="slide-count__number slide-count__number--one">01</strong>
+          <strong class="slide-count__number slide-count__number--one is-active">01</strong>
           <strong class="slide-count__number slide-count__number--two">02</strong>
           <strong class="slide-count__number slide-count__number--three">03</strong>
           <strong class="slide-count__number slide-count__number--four">04</strong>
@@ -98,42 +96,16 @@
           <span> / 05</span>
         </p>
         <span class="mobile-next-label">L’artiste</span>
-        <label class="slide-control slide-control--previous slide-control--previous-one" for="slide-3" aria-label="Œuvre précédente">
+        <button class="slide-control slide-control--previous slider__btn--prev" type="button" aria-label="Œuvre précédente">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
           </svg>
-        </label>
-
-        <label class="slide-control slide-control--previous slide-control--previous-two" for="slide-1" aria-label="Œuvre précédente">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          </svg>
-        </label>
-
-        <label class="slide-control slide-control--previous slide-control--previous-three" for="slide-2" aria-label="Œuvre précédente">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          </svg>
-        </label>
-
-        <label class="slide-control slide-control--next slide-control--next-one" for="slide-2" aria-label="Œuvre suivante">
+        </button>
+        <button class="slide-control slide-control--next slider__btn--next" type="button" aria-label="Œuvre suivante">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
           </svg>
-        </label>
-        
-        <label class="slide-control slide-control--next slide-control--next-two" for="slide-3" aria-label="Œuvre suivante">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          </svg>
-        </label>
-
-        <label class="slide-control slide-control--next slide-control--next-three" for="slide-1" aria-label="Œuvre suivante">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          </svg>
-        </label>
-        
+        </button>
       </nav>
     </section>
 

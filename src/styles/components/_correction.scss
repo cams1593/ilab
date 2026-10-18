@@ -85,13 +85,11 @@
   flex-direction: column;
 }
 
-.slide-selector {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  /* clip-path: inset(50%);
-  white-space: nowrap; */
+.slider__elements {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
 }
 
 .intro {
@@ -116,6 +114,12 @@
     font-size: clamp(1rem, 1.8vw, 1.5rem);
     line-height: 1.35;
   }
+}
+
+.slider__el--show {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
 }
 
 .intro__eyebrow {
@@ -162,12 +166,6 @@
 
 .artist-objective__number {
   white-space: nowrap;
-}
-
-#slide-1:checked ~ .intro--one,
-#slide-2:checked ~ .intro--two,
-#slide-3:checked ~ .intro--three {
-  display: block;
 }
 
 .artwork-placeholder {
@@ -220,16 +218,19 @@
   display: none;
 }
 
-#slide-1:checked ~ .slide-navigation .slide-count__number--one,
-#slide-2:checked ~ .slide-navigation .slide-count__number--two,
-#slide-3:checked ~ .slide-navigation .slide-count__number--three {
+.slide-count__number.is-active {
   display: inline;
 }
 
 .slide-control {
-  display: none;
+  display: grid;
   place-items: center;
+  padding: 0;
+  border: 0;
   border-right: 1px solid $c-alt;
+  background: transparent;
+  color: $c-text;
+  font: inherit;
   cursor: pointer;
 
   svg {
@@ -238,25 +239,13 @@
   }
 }
 
-#slide-1:checked ~ .slide-navigation .slide-control--previous-one,
-#slide-2:checked ~ .slide-navigation .slide-control--previous-two,
-#slide-3:checked ~ .slide-navigation .slide-control--previous-three {
-  display: grid;
-}
-
-#slide-1:checked ~ .slide-navigation .slide-control--next-one,
-#slide-2:checked ~ .slide-navigation .slide-control--next-two,
-#slide-3:checked ~ .slide-navigation .slide-control--next-three {
-  display: grid;
-}
-
 .slide-control--next {
   border-right: 0;
   background: $c-text;
   color: $c-bg;
 }
 
-.slide-selector:focus-visible ~ .slide-navigation {
+.slide-control:focus-visible {
   outline: 3px solid $c-alt;
   outline-offset: -4px;
 }
@@ -451,9 +440,11 @@
     gap: 0.4rem;
   }
 
-  #slide-1:checked ~ .intro--one,
-  #slide-2:checked ~ .intro--two,
-  #slide-3:checked ~ .intro--three {
+  .slider__elements {
+    display: contents;
+  }
+
+  .slider__el--show {
     display: contents;
   }
 

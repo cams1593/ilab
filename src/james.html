@@ -41,11 +41,8 @@
 
   <main class="exhibition">
     <section class="exhibition-panel" aria-label="James Bridle et ses objectifs">
-      <input class="slide-selector" id="slide-1" type="radio" name="exhibition-slide" aria-label="Diapositive 1 sur 3" checked>
-      <input class="slide-selector" id="slide-2" type="radio" name="exhibition-slide" aria-label="Diapositive 2 sur 3">
-      <input class="slide-selector" id="slide-3" type="radio" name="exhibition-slide" aria-label="Diapositive 3 sur 3">
-
-      <article class="intro intro--one artist-profile" aria-labelledby="slide-title-1">
+      <div class="slider__elements">
+      <article class="intro intro--one artist-profile slider__el slider__el--show" aria-labelledby="slide-title-1">
         <h1 id="slide-title-1">Qui est James Bridle&nbsp;?</h1>
         <dl class="artist-facts">
           <div class="artist-fact">
@@ -63,7 +60,7 @@
         </dl>
       </article>
 
-      <article class="intro intro--two artist-objective-slide" aria-labelledby="slide-title-2">
+      <article class="intro intro--two artist-objective-slide slider__el" aria-labelledby="slide-title-2">
         <h1 id="slide-title-2">Quels sont ses objectifs au travers de Citizen Ex&nbsp;?</h1>
         <p class="artist-objective">
           <span class="artist-objective__number">1.</span>
@@ -71,52 +68,33 @@
         </p>
       </article>
 
-      <article class="intro intro--three artist-objective-slide" aria-labelledby="slide-title-3">
+      <article class="intro intro--three artist-objective-slide slider__el" aria-labelledby="slide-title-3">
         <h1 id="slide-title-3">Quels sont ses objectifs au travers de Citizen Ex&nbsp;?</h1>
         <p class="artist-objective">
           <span class="artist-objective__number">2.</span>
           <span>Nous exposer la réalité politique derrière notre utilisation du web&nbsp;: lorsque vous visitez une page web, il y a de grandes chances que le serveur qui héberge ce site soit dans un autre pays, voire un autre continent, et que les lois qui s’y appliquent diffèrent de celles de votre pays d’origine. Vous êtes donc soumis à des lois dont vous ignorez l’existence.</span>
         </p>
       </article>
+      </div>
 
       <nav class="slide-navigation" aria-label="Navigation des diapositives">
         <p class="slide-count" aria-live="polite" aria-atomic="true">
-          <strong class="slide-count__number slide-count__number--one">01</strong>
+          <strong class="slide-count__number slide-count__number--one is-active">01</strong>
           <strong class="slide-count__number slide-count__number--two">02</strong>
           <strong class="slide-count__number slide-count__number--three">03</strong>
           <span> / 03</span>
         </p>
         <span class="mobile-next-label">Courant artistique</span>
-        <label class="slide-control slide-control--previous slide-control--previous-one" for="slide-3" aria-label="Diapositive précédente">
+        <button class="slide-control slide-control--previous slider__btn--prev" type="button" aria-label="Diapositive précédente">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
           </svg>
-        </label>
-        <label class="slide-control slide-control--previous slide-control--previous-two" for="slide-1" aria-label="Diapositive précédente">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          </svg>
-        </label>
-        <label class="slide-control slide-control--previous slide-control--previous-three" for="slide-2" aria-label="Diapositive précédente">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M34 20H7m0 0 12-12M7 20l12 12" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          </svg>
-        </label>
-        <label class="slide-control slide-control--next slide-control--next-one" for="slide-2" aria-label="Diapositive suivante">
+        </button>
+        <button class="slide-control slide-control--next slider__btn--next" type="button" aria-label="Diapositive suivante">
           <svg viewBox="0 0 40 40" aria-hidden="true">
             <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
           </svg>
-        </label>
-        <label class="slide-control slide-control--next slide-control--next-two" for="slide-3" aria-label="Diapositive suivante">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          </svg>
-        </label>
-        <label class="slide-control slide-control--next slide-control--next-three" for="slide-1" aria-label="Diapositive suivante">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M6 20h27m0 0L21 8m12 12L21 32" fill="none" stroke="currentColor" stroke-width="3.5"/>
-          </svg>
-        </label>
+        </button>
       </nav>
     </section>
 
