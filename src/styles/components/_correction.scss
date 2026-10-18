@@ -47,6 +47,8 @@
 .main-nav {
   display: flex;
   flex: 0 0 auto;
+  width: 50%;
+  border-left: 2px solid;
 }
 
 .main-nav__link {
@@ -57,7 +59,7 @@
   border-right: 1px solid $c-alt;
   color: $c-alt;
   font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-  /* white-space: nowrap; */
+  white-space: nowrap;
 
   &:last-of-type {
     border-right: 0;
