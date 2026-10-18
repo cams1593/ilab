@@ -1,5 +1,7 @@
 'use strict';
 
+import './refresh';
+
 /* ==========================================================
    Passeport numérique – logique de la borne
    - charge passeport-numerique.json
