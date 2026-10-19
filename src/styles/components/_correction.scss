@@ -258,11 +258,35 @@
     --header-height: clamp(4.25rem, 9svh, 4.625rem);
   }
 
+  body {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-y: auto;
+  }
+
   .site-header {
     min-height: var(--header-height);
     padding: 0 clamp(1.25rem, 7.8vw, 2rem);
     border-bottom: 0;
     align-items: center;
+  }
+
+  html.menu-open,
+  html.menu-open body {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .site-header.menu-open {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: var(--header-height);
+    min-height: var(--header-height);
+    background: $c-bg;
   }
 
   .home-link {
@@ -288,6 +312,8 @@
 
   .menu-toggle {
     display: flex;
+    position: relative;
+    z-index: 1;
     width: clamp(2.5rem, 10vw, 3rem);
     min-height: var(--header-height);
     margin-left: auto;
@@ -338,6 +364,15 @@
 
   .site-header.menu-open .main-nav {
     display: flex;
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .main-nav__link {

@@ -9,7 +9,9 @@ const PAGE_TIMEOUTS_SECONDS = {
 const pageName = window.location.pathname.split('/').pop() || 'index.html';
 const timeoutSeconds = PAGE_TIMEOUTS_SECONDS[pageName];
 
-if (pageName !== 'index.html' && timeoutSeconds) {
+if (pageName === 'index.html') {
+  localStorage.removeItem('site-locale');
+} else if (timeoutSeconds) {
   let inactivityTimer;
 
   const returnToHome = () => {

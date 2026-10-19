@@ -7,6 +7,7 @@ if (menuToggle) {
   if (header && navigation) {
     const setMenuOpen = (isOpen) => {
       header.classList.toggle('menu-open', isOpen);
+      document.documentElement.classList.toggle('menu-open', isOpen);
       menuToggle.setAttribute('aria-expanded', String(isOpen));
       menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
     };
@@ -31,6 +32,12 @@ if (menuToggle) {
       if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
         setMenuOpen(false);
         menuToggle.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 850 && menuToggle.getAttribute('aria-expanded') === 'true') {
+        setMenuOpen(false);
       }
     });
   }

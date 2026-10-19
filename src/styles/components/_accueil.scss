@@ -205,10 +205,22 @@
 
     .home-feature-title {
         padding: clamp(1rem, 4vw, 1.5rem);
-        font-size: clamp(1.25rem, 5vw, 2rem);
+        /* font-size: clamp(1.25rem, 5vw, 2rem); */
     }
 
+    .nav_li--accueil {
+        border-top: 2px solid $c-text;
+    }
+    .a--J{
+        flex-direction: row;
+    }
     .home-feature-arrow {
         width: 3.75rem;
+    }
+    .home-feature-arrow-left{
+        right: 0;
+    }
+    .nav_img{
+        display: none;
     }
 }
