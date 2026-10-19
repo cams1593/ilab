@@ -70,7 +70,8 @@
     display: flex;
     min-height: clamp(5.5rem, 12vh, 6rem);
     flex: 0 0 clamp(5.5rem, 12vh, 6rem);
-    background: $c-text;
+    /* background: $c-text; */
+    border-bottom: 2px solid;
 }
 
 .lang--accueil .lang_ul {
