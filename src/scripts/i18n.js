@@ -17,6 +17,10 @@ async function setLang(lang) {
   document.documentElement.lang = lang;
   localStorage.setItem('site-locale', lang);
 
+  document.querySelectorAll('[data-language-current]').forEach((label) => {
+    label.textContent = lang.slice(0, 1).toUpperCase() + lang.slice(1);
+  });
+
   document.querySelectorAll('[data-lang]').forEach((button) => {
     const active = button.dataset.lang === lang;
     const item = button.closest('.lang_li');
@@ -33,6 +37,51 @@ async function setLang(lang) {
 
 document.querySelectorAll('[data-lang]').forEach((button) => {
   button.addEventListener('click', () => setLang(button.dataset.lang));
+});
+
+document.querySelectorAll('[data-language-picker]').forEach((picker) => {
+  const toggle = picker.querySelector('.language-picker__toggle');
+  const options = picker.querySelector('.language-picker__options');
+
+  toggle.addEventListener('click', () => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isExpanded));
+    options.hidden = isExpanded;
+  });
+
+  picker.querySelectorAll('[data-language-option]').forEach((option) => {
+    option.addEventListener('click', async () => {
+      await setLang(option.dataset.languageOption);
+      toggle.setAttribute('aria-expanded', 'false');
+      options.hidden = true;
+      toggle.focus();
+    });
+  });
+});
+
+document.addEventListener('click', (event) => {
+  document.querySelectorAll('[data-language-picker]').forEach((picker) => {
+    if (!picker.contains(event.target)) {
+      const toggle = picker.querySelector('.language-picker__toggle');
+      const options = picker.querySelector('.language-picker__options');
+      toggle.setAttribute('aria-expanded', 'false');
+      options.hidden = true;
+    }
+  });
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    document.querySelectorAll('[data-language-picker]').forEach((picker) => {
+      const toggle = picker.querySelector('.language-picker__toggle');
+      const options = picker.querySelector('.language-picker__options');
+      if (toggle.getAttribute('aria-expanded') === 'true') {
+        toggle.setAttribute('aria-expanded', 'false');
+        options.hidden = true;
+        toggle.focus();
+      }
+    });
+  }
 });
 
 setLang(localStorage.getItem('site-locale') || DEFAULT_LANG);

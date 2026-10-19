@@ -21,6 +21,18 @@
       </svg>
       <span class="brand-name">Citizen EX</span>
     </a>
+    <div class="language-picker" data-language-picker>
+      <button class="language-picker__toggle" type="button" aria-label="Choisir la langue" aria-expanded="false" aria-controls="language-options">
+        <span data-language-current>Fr</span>
+        <span class="language-picker__chevron" aria-hidden="true"></span>
+      </button>
+      <div class="language-picker__options" id="language-options" role="group" aria-label="Langues" hidden>
+        <button type="button" data-language-option="fr">Français</button>
+        <button type="button" data-language-option="en">English</button>
+        <button type="button" data-language-option="nl">Nederlands</button>
+        <button type="button" data-language-option="de">Deutsch</button>
+      </div>
+    </div>
 
     <div class="header-spacer" aria-hidden="true"></div>
 

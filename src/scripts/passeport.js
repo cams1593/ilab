@@ -1,6 +1,7 @@
 'use strict';
 
 import './refresh';
+import './i18n';
 
 /* ==========================================================
    Passeport numérique – logique de la borne

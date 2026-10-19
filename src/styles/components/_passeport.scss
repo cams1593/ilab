@@ -65,6 +65,26 @@ h1, h2, h3, p { margin: 0; }
   cursor: pointer;
 }
 
+.language-picker .cellule.language-picker__toggle {
+  height: 100%;
+  min-width: 5.5rem;
+  padding: 0 1rem;
+  border-right: 1px solid var(--noir);
+  border-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.passeport .language-picker__options {
+  z-index: 5;
+  border-color: var(--noir);
+}
+
+.passeport .language-picker__options button {
+  min-height: 3.5rem;
+  font-size: 1rem;
+}
+
 .corps { display: grid; grid-template-columns: 1fr 1fr; }
 .volet { padding: 3.2rem 3.5rem; }
 .volet-droite {

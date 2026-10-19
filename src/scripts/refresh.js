@@ -1,9 +1,9 @@
 const PAGE_TIMEOUTS_SECONDS = {
-  'citizen.html': 10,
-  'james.html': 10,
-  'courant.html': 10,
-  'oeuvres.html': 10,
-  'passeport.html': 10
+  'citizen.html': 90,
+  'james.html': 90,
+  'courant.html': 120,
+  'oeuvres.html': 120,
+/*   'passeport.html':  */
 };
 
 const pageName = window.location.pathname.split('/').pop() || 'index.html';

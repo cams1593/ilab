@@ -20,7 +20,18 @@
     <a id="btn-home" class="cellule" href="./index.html" aria-label="Accueil">
       <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M12 1.5 0.8 10.6l1.3 1.6L12 4.2l9.9 8 1.3-1.6zM5 12.5V22h5.2v-6h3.6v6H19v-9.5l-7-5.6z" fill="currentColor"/></svg>
     </a>
-    <button class="cellule" type="button" aria-label="Langue : français">FR</button>
+    <div class="language-picker" data-language-picker>
+      <button class="cellule language-picker__toggle" type="button" aria-label="Choisir la langue" aria-expanded="false" aria-controls="language-options">
+        <span data-language-current>Fr</span>
+        <span class="language-picker__chevron" aria-hidden="true"></span>
+      </button>
+      <div class="language-picker__options" id="language-options" role="group" aria-label="Langues" hidden>
+        <button type="button" data-language-option="fr">Français</button>
+        <button type="button" data-language-option="en">English</button>
+        <button type="button" data-language-option="nl">Nederlands</button>
+        <button type="button" data-language-option="de">Deutsch</button>
+      </div>
+    </div>
   </header>
 
   <main class="corps">
