@@ -252,8 +252,11 @@
     img {
         display: block;
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
         object-fit: cover;
+    }
+    .img--citizen {
+        height: 100%;
     }
 }
 
@@ -305,9 +308,10 @@
     }
 
     .home-qr-placeholder {
-        flex: 1 1 auto;
+        /* flex: 1 1 auto;
         gap: 0.4rem;
-        padding: 0.5rem;
+        padding: 0.5rem; */
+        display: none;
     }
 
     .home-qr-placeholder__image {
