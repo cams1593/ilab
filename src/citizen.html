@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>Citizen Ex – Sur le web, votre citoyenneté n'existe plus</title>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -35,8 +34,7 @@
   <link rel="manifest" href="assets/favicon/site.webmanifest">
   <meta name="theme-color" content="#000000">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Une exposition sur la citoyenneté à l'ère du web.">
-  <title>Citoyen Ex — Exposition</title>
+  <title data-i18n="meta.citizen.titre">Citizen Ex – Sur le web, votre citoyenneté n'existe plus</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +43,7 @@
   <script src="scripts/app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Aller au contenu principal</a>
   <header class="site-header">
     <a class="home-link" href="./index.html" aria-label="Accueil">
       <svg viewBox="0 0 40 40" aria-hidden="true">
@@ -83,7 +82,7 @@
     </nav>
   </header>
 
-  <main class="exhibition">
+  <main class="exhibition" id="main-content" tabindex="-1">
     <section class="exhibition-panel" aria-label="Présentation de l’exposition">
       <div class="slider__elements">
       <article class="intro intro--one slider__el slider__el--show" aria-labelledby="slide-title-1">
@@ -129,8 +128,8 @@
       </nav>
     </section>
 
-    <div class="artwork-placeholder" role="img" aria-label="Zone de présentation de l’œuvre">
-      <img src="./assets/images/citizen_ex.webp" alt="">
+    <div class="artwork-placeholder">
+      <img src="./assets/images/citizen_ex.webp" alt="Illustration de l’œuvre Citizen Ex de James Bridle">
     </div>
   </main>
 </body>

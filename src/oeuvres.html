@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Une exposition sur la citoyenneté à l'ère du web.">
-  <title>Citoyen Ex — Exposition</title>
+  <title data-i18n="meta.oeuvres.titre">Œuvres de James Bridle — Citizen Ex</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
   <script src="scripts/app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Aller au contenu principal</a>
   <header class="site-header">
     <a class="home-link" href="./index.html" aria-label="Accueil">
       <svg viewBox="0 0 40 40" aria-hidden="true">
@@ -43,15 +44,15 @@
     </button>
 
     <nav class="main-nav" id="main-navigation" aria-label="Navigation principale">
-      <a class="main-nav__link" href="./citizen.html" aria-current="page">Citizen Ex</a>
+      <a class="main-nav__link" href="./citizen.html">Citizen Ex</a>
       <a class="main-nav__link" href="./james.html">James Bridle</a>
       <a class="main-nav__link" href="./courant.html" data-i18n="courant"></a>
-      <a class="main-nav__link  is-active" href="./oeuvres.html" data-i18n="ouvres"></a>
+      <a class="main-nav__link is-active" href="./oeuvres.html" data-i18n="ouvres" aria-current="page"></a>
       <div class="language-label">Langues</div>
     </nav>
   </header>
 
-  <main class="exhibition">
+  <main class="exhibition" id="main-content" tabindex="-1">
     <section class="exhibition-panel" aria-label="Présentation de l’exposition">
       <div class="slider__elements">
       <article class="intro intro--one slider__el slider__el--show" aria-labelledby="slide-title-1">
@@ -66,8 +67,8 @@
         <p data-i18n="works.rorschmap.text"></p>
       </article>
 
-      <article class="intro intro--two slider__el" aria-labelledby="slide-title-2">
-        <h1 id="slide-title-2" data-i18n="works.rorschmap.title"></h1>
+      <article class="intro intro--two slider__el" aria-labelledby="slide-title-3">
+        <h1 id="slide-title-3" data-i18n="works.rorschmap.title"></h1>
         <p data-i18n="works.rorschmap.explication"></p>
       </article>
 
@@ -107,26 +108,26 @@
       </nav>
     </section>
 
-    <div class="artwork-placeholder" role="img" aria-label="Zone de présentation de l’œuvre">
+    <div class="artwork-placeholder">
       <div>
         <h2 class="legend__oeuvres">New Dark Age — James Bridle (2018)</h2>
-        <img src="./assets/images/newdark.webp" alt="">
+        <img src="./assets/images/newdark.webp" alt="Couverture du livre New Dark Age de James Bridle">
       </div>
       <div>
         <h2 class="legend__oeuvres">Rorschmap — James Bridle (2011)</h2>
-        <img src="./assets/images/rorschmap.webp" alt="">
+        <img src="./assets/images/rorschmap.webp" alt="Visualisation de l’œuvre Rorschmap de James Bridle">
       </div>
       <div>
         <h2 class="legend__oeuvres">Rorschmap — James Bridle (2011)</h2>
-        <img src="./assets/images/rorschmap.webp" alt="">
+        <img src="./assets/images/rorschmap.webp" alt="Visualisation de l’œuvre Rorschmap de James Bridle">
       </div>
       <div>
         <h2 class="legend__oeuvres">New Dark Age — James Bridle (2018)</h2>
-        <img src="./assets/images/newdark.webp" alt="">
+        <img src="./assets/images/newdark.webp" alt="Couverture du livre New Dark Age de James Bridle">
       </div>
       <div>
         <h2 class="legend__oeuvres">Ways Of Being — James Bridle (2022) </h2>
-        <img src="./assets/images/affiche.webp" alt="">
+        <img src="./assets/images/affiche.webp" alt="Couverture du livre Ways of Being de James Bridle">
       </div>
     </div>
   </main>

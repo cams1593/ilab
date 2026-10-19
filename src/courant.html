@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Une exposition sur la citoyenneté à l'ère du web.">
-  <title>Citoyen Ex — Exposition</title>
+  <title data-i18n="meta.courant.titre">Courant artistique — Citizen Ex</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
   <script src="scripts/app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Aller au contenu principal</a>
   <header class="site-header">
     <a class="home-link" href="./index.html" aria-label="Accueil">
       <svg viewBox="0 0 40 40" aria-hidden="true">
@@ -43,15 +44,15 @@
     </button>
 
     <nav class="main-nav" id="main-navigation" aria-label="Navigation principale">
-      <a class="main-nav__link" href="./citizen.html" aria-current="page">Citizen Ex</a>
+      <a class="main-nav__link" href="./citizen.html">Citizen Ex</a>
       <a class="main-nav__link" href="./james.html">James Bridle</a>
-      <a class="main-nav__link is-active" href="./courant.html" data-i18n="courant"></a>
+      <a class="main-nav__link is-active" href="./courant.html" data-i18n="courant" aria-current="page"></a>
       <a class="main-nav__link" href="./oeuvres.html" data-i18n="ouvres"></a>
       <div class="language-label">Langues</div>
     </nav>
   </header>
 
-  <main class="exhibition">
+  <main class="exhibition" id="main-content" tabindex="-1">
     <section class="exhibition-panel" aria-label="Présentation de l’exposition">
       <div class="slider__elements">
       <article class="intro intro--one slider__el slider__el--show" aria-labelledby="slide-title-1">
@@ -65,13 +66,13 @@
         <p data-i18n="movement.social"></p>
       </article>
 
-      <article class="intro intro--two slider__el" aria-labelledby="slide-title-2">
-        <h1 id="slide-title-2" data-i18n="movement.title.art.util"></h1>
+      <article class="intro intro--two slider__el" aria-labelledby="slide-title-3">
+        <h1 id="slide-title-3" data-i18n="movement.title.art.util"></h1>
         <p data-i18n="movement.social.partie2"></p>
       </article>
 
-      <article class="intro intro--three slider__el" aria-labelledby="slide-title-3">
-        <h1 id="slide-title-3" data-i18n="movement.title.art.util"></h1>
+      <article class="intro intro--three slider__el" aria-labelledby="slide-title-4">
+        <h1 id="slide-title-4" data-i18n="movement.title.art.util"></h1>
         <p data-i18n="movement.citizenex"></p>
       </article>
       </div>
@@ -81,7 +82,7 @@
           <strong class="slide-count__number slide-count__number--one is-active">01</strong>
           <strong class="slide-count__number slide-count__number--two">02</strong>
           <strong class="slide-count__number slide-count__number--three">03</strong>
-          <strong class="slide-count__number slide-count__number--three">04</strong>
+          <strong class="slide-count__number slide-count__number--four">04</strong>
           <span> / 04</span>
         </p>
         <span class="mobile-next-label">L’artiste</span>
@@ -99,22 +100,22 @@
       </nav>
     </section>
 
-    <div class="artwork-placeholder" role="img" aria-label="Zone de présentation de l’œuvre">
+    <div class="artwork-placeholder">
       <div>
         <h2 class="legend__oeuvres">La Fontaine — Marcel Duchamp (1917)</h2>
-        <img src="./assets/images/fontaineMarcelDuchamp.webp" alt="">
+        <img src="./assets/images/fontaineMarcelDuchamp.webp" alt="Reproduction de La Fontaine de Marcel Duchamp">
       </div>
       <div>
         <h2 class="legend__oeuvres">Non — Maurizio Cattelan(2021)</h2>
-        <img src="./assets/images/adolf_cheval.webp" alt="">
+        <img src="./assets/images/adolf_cheval.webp" alt="Reproduction de l’œuvre Non de Maurizio Cattelan">
       </div>
       <div>
         <h2 class="legend__oeuvres">Non — Maurizio Cattelan(2021)</h2>
-        <img src="./assets/images/adolf_cheval.webp" alt="">
+        <img src="./assets/images/adolf_cheval.webp" alt="Reproduction de l’œuvre Non de Maurizio Cattelan">
       </div>
       <div>
         <h2 class="legend__oeuvres">Non — Maurizio Cattelan(2021)</h2>
-        <img src="./assets/images/adolf_cheval.webp" alt="">
+        <img src="./assets/images/adolf_cheval.webp" alt="Reproduction de l’œuvre Non de Maurizio Cattelan">
       </div>
     </div>
   </main>

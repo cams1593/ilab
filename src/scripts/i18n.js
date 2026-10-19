@@ -15,7 +15,11 @@ async function setLang(lang) {
   });
 
   document.documentElement.lang = lang;
-  localStorage.setItem('site-locale', lang);
+  try {
+    localStorage.setItem('site-locale', lang);
+  } catch (error) {
+    console.warn('Impossible de mémoriser la langue choisie.', error);
+  }
 
   document.querySelectorAll('[data-language-current]').forEach((label) => {
     label.textContent = lang.slice(0, 1).toUpperCase() + lang.slice(1);
@@ -24,6 +28,7 @@ async function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach((button) => {
     const active = button.dataset.lang === lang;
     const item = button.closest('.lang_li');
+    button.setAttribute('aria-pressed', String(active));
 
     if (active) {
       button.classList.add('lang_button--actif');

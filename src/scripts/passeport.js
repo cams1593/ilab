@@ -29,13 +29,13 @@ const LANGUES = [
 
 // Une couleur par pays (le nom est toujours écrit dans la légende : la couleur n'est jamais seule)
 const COULEURS_PAYS = {
-  BE: '#d9a21b',
-  FR: '#3a6ea5',
-  DE: '#5b5f6b',
-  IE: '#3e8e63',
-  SG: '#62b3c0',
-  US: '#c0392b',
-  CN: '#7b3f8c'
+  BE: '#8a5a00',
+  FR: '#1f5b99',
+  DE: '#555555',
+  IE: '#26734d',
+  SG: '#007989',
+  US: '#a32020',
+  CN: '#6e2e83'
 };
 
 // ---------- État ----------
@@ -371,7 +371,7 @@ function construireDonut(boite) {
   for (const code of Object.keys(donnees.pays)) {
     const tranche = rond('tranche');
     tranche.dataset.pays = code;
-    tranche.style.stroke = COULEURS_PAYS[code] || '#999';
+    tranche.style.stroke = COULEURS_PAYS[code] || '#555555';
     tranche.style.strokeDasharray = '0 100';
     tranche.style.strokeDashoffset = '25';
     svg.append(tranche);
@@ -502,7 +502,7 @@ function rendreCamembert(boite, liste, repartition, n) {
   }
   for (const [code, pct] of lignes) {
     const pastille = el('span', { classe: 'pastille', attrs: { 'aria-hidden': 'true' } });
-    pastille.style.background = COULEURS_PAYS[code] || '#999';
+    pastille.style.background = COULEURS_PAYS[code] || '#555555';
     liste.append(
       el('li', {}, [
         pastille,
@@ -530,6 +530,7 @@ function rendreScore(c) {
 
   const depart = donnees.meta.score_depart;
   const barre = $('score-barre');
+  barre.parentElement.setAttribute('aria-valuenow', String(c.score));
   barre.style.width = (c.score / depart) * 100 + '%';
   const ratio = c.score / depart;
   barre.dataset.niveau = ratio >= 0.6 ? 'haut' : ratio >= 0.3 ? 'moyen' : 'bas';

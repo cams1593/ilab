@@ -3,6 +3,9 @@
     "code": "DE",
     "aria": "Sprache: Deutsch"
   },
+  "a11y": {
+    "skip": "Zum Hauptinhalt springen"
+  },
   "meta": {
     "passeport": {
       "titre": "Digitaler Reisepass",

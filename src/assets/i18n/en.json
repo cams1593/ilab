@@ -3,6 +3,9 @@
     "code": "EN",
     "aria": "Language: English"
   },
+  "a11y": {
+    "skip": "Skip to main content"
+  },
   "meta": {
     "passeport": {
       "titre": "Digital passport",

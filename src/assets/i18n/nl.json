@@ -3,6 +3,9 @@
     "code": "NL",
     "aria": "Taal: Nederlands"
   },
+  "a11y": {
+    "skip": "Ga naar de hoofdinhoud"
+  },
   "meta": {
     "passeport": {
       "titre": "Digitaal paspoort",
