@@ -3,6 +3,8 @@
     "en": "English",
     "de": "Deutsch",
     "nl": "Nederlands",
+    "courant":"Künstlerische Strömung",
+    "ouvres":"Weitere Werke",
     "accueil.citizen": "Erfahren Sie mehr über Citizen Ex",
     "accueil.passport": "Erstellen Sie Ihren digitalen Pass",
     "intro.title": "Im Internet existiert Ihre Staatsangehörigkeit nicht mehr.",
@@ -29,7 +31,8 @@
     "movement.modern": "Die soziale Kunst ist eine Strömung der modernen Kunst, die sich der Konzeptkunst entgegenstellt. Die moderne Kunst löst sich von traditionellen ästhetischen Konventionen.",
     "movement.conceptual": "Die Konzeptkunst hinterfragt den Begriff der Kunst als Objekt. In dieser Strömung reicht die Idee der Kunst an sich aus. Die Idee der Kunst hat Vorrang vor ihrer Umsetzung, und die Kunst hat keine anderen Ziele als die Kunst an sich. Nach dieser Auffassung kann alles Kunst sein, vorausgesetzt, das beabsichtigte Ziel ist es, Kunst zu schaffen.",
     "movement.title.art.util":"Nützliche Kunst",
-    "movement.social": "Die soziale Kunst hingegen wertet Kunst auf, die für die Gesellschaft von Nutzen ist. Sie entstand im 19. Jahrhundert in Frankreich im anarchistischen Milieu. Sie befasst sich mit dem Leben in der Gemeinschaft und mit gesellschaftlichen Problemen. Sie bewegt sich an der Schnittstelle zwischen Kunst und Politik. Manche sind übrigens der Ansicht, dass jedes Kunstwerk politisiert ist, unabhängig davon, ob sich der Künstler dessen bewusst ist oder nicht. In dieser Strömung ist Zugänglichkeit ein grundlegendes Prinzip. Es handelt sich um eine künstlerische Strömung, die tief in einer revolutionären Politik verwurzelt ist, die davon ausgeht, dass Kunst für alle zugänglich sein muss, auch für die Arbeiterklasse.",
+    "movement.social": "Die soziale Kunst hingegen wertet Kunst auf, die für die Gesellschaft von Nutzen ist. Sie entstand im 19. Jahrhundert in Frankreich im anarchistischen Milieu. Sie befasst sich mit dem Leben in der Gemeinschaft und mit gesellschaftlichen Problemen.",
+    "movement.social.partie2":"Sie bewegt sich an der Schnittstelle zwischen Kunst und Politik. Manche sind übrigens der Ansicht, dass jedes Kunstwerk politisiert ist, unabhängig davon, ob sich der Künstler dessen bewusst ist oder nicht. In dieser Strömung ist Zugänglichkeit ein grundlegendes Prinzip. Es handelt sich um eine künstlerische Strömung, die tief in einer revolutionären Politik verwurzelt ist, die davon ausgeht, dass Kunst für alle zugänglich sein muss, auch für die Arbeiterklasse.",
     "movement.citizenex": "Citizen Ex lädt uns dazu ein, unsere Nutzung des Internets zu überdenken. Es handelt sich nicht um ein einfaches Spiel, das es uns ermöglicht, uns eine neue Staatsangehörigkeit vorzustellen, sondern um eine Reflexion über unsere Rechte im Internet. Zudem genügte es, eine kostenlose Erweiterung auf den Browser herunterzuladen – das ist genauso einfach wie das Herunterladen einer App auf das Handy. Es handelt sich also um ein Werk, das sowohl zugänglich als auch politisiert ist.",
     "movement.caption.banksy": "Bansky — Flower Thrower",
 

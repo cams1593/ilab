@@ -3,6 +3,8 @@
     "en": "English",
     "de": "Deutsch",
     "nl": "Nederlands",
+    "courant":"Artistic Movement",
+    "ouvres":"Other Works",
     "accueil.citizen": "Learn more about Citizen Ex",
     "accueil.passport": "Create your digital passport",
     "intro.title": "On the web, your citizenship no longer exists.",
@@ -28,7 +30,8 @@
     "movement.modern": "Social art is a movement within modern art that stands in opposition to conceptual art. Modern art breaks away from traditional aesthetic conventions.",
     "movement.conceptual": "Conceptual art challenges the notion of art as an object. In this movement, the idea of art is sufficient in and of itself. The idea of art takes precedence over its execution, and art has no other purpose than art itself. In this view, anything can be art as long as the intended goal is to create art.",
     "movement.title.art.util": "Useful Art",
-    "movement.social": "Social art, on the other hand, emphasizes art that serves society. It emerged from anarchist circles in 19th-century France. It focuses on community life and societal issues. It straddles the line between art and politics. Some even consider that every work of art is politicized, whether the artist is aware of it or not. Within this movement, accessibility is a fundamental principle. It is an artistic movement deeply rooted in revolutionary politics that holds that art must be accessible to everyone, including the working class.",
+    "movement.social": "Social art, on the other hand, emphasizes art that serves society. It emerged from anarchist circles in 19th-century France. It focuses on community life and societal issues. It straddles the line between art and politics.",
+    "movement.social.partie2":" Some even consider that every work of art is politicized, whether the artist is aware of it or not. Within this movement, accessibility is a fundamental principle. It is an artistic movement deeply rooted in revolutionary politics that holds that art must be accessible to everyone, including the working class",
     "movement.citizenex": "Citizen Ex invites us to rethink how we use the web. It is not merely a game that allows us to imagine a new nationality, but a reflection on our rights online. Moreover, all it took was downloading a free browser extension—it’s as easy as downloading an app on your phone. It is, therefore, a work that is both accessible and politicized.",
     "movement.caption.banksy": "Bansky — Flower Thrower",
 

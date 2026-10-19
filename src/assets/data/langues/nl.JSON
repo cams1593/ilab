@@ -3,6 +3,8 @@
     "en": "English",
     "de": "Deutsch",
     "nl": "Nederlands",
+    "courant":"Kunststroming",
+    "ouvres":"Andere werken",
     "accueil.citizen": "Meer informatie over Citizen Ex",
     "accueil.passport": "Maak je digitale paspoort aan",
     "intro.title": "Op het internet bestaat je burgerschap niet meer.",
@@ -29,14 +31,15 @@
     "movement.modern": "Sociale kunst is een stroming binnen de moderne kunst die zich afzet tegen de conceptuele kunst. De moderne kunst breekt met de traditionele esthetische conventies.",
     "movement.conceptual": "Conceptuele kunst stelt het begrip ‘kunst als object’ ter discussie. Binnen deze stroming volstaat het idee van kunst op zichzelf. Het idee van kunst primeert boven de uitvoering ervan en kunst heeft geen ander doel dan de kunst zelf. In deze visie kan alles kunst zijn, op voorwaarde dat het beoogde doel is om kunst te maken.",
     "movement.title.art.util":"Nuttige kunst",
-    "movement.social": "Sociale kunst daarentegen legt de nadruk op kunst die nuttig is voor de samenleving. Deze stroming ontstond in de 19e eeuw in Frankrijk binnen de anarchistische beweging. Ze richt zich op het leven in de gemeenschap en op maatschappelijke problemen. Ze bevindt zich op het snijvlak van kunst en politiek. Sommigen zijn overigens van mening dat elk kunstwerk gepolitiseerd is, of de maker zich daar nu bewust van is of niet. Binnen deze stroming is toegankelijkheid een fundamenteel principe. Het is een artistieke stroming die diep geworteld is in een revolutionaire politiek, die stelt dat kunst voor iedereen toegankelijk moet zijn, ook voor de arbeidersklasse.",
+    "movement.social": "Sociale kunst daarentegen legt de nadruk op kunst die nuttig is voor de samenleving. Deze stroming ontstond in de 19e eeuw in Frankrijk binnen de anarchistische beweging. Ze richt zich op het leven in de gemeenschap en op maatschappelijke problemen.Ze bevindt zich op het snijvlak van kunst en politiek.",
+    "movement.social.partie2":"Sommigen zijn overigens van mening dat elk kunstwerk gepolitiseerd is, of de maker zich daar nu bewust van is of niet. Binnen deze stroming is toegankelijkheid een fundamenteel principe. Het is een artistieke stroming die diep geworteld is in een revolutionaire politiek, die stelt dat kunst voor iedereen toegankelijk moet zijn, ook voor de arbeidersklasse.",
     "movement.citizenex": "Citizen Ex nodigt ons uit om ons gebruik van het internet te heroverwegen. Het gaat niet om een simpel spel waarmee we ons een nieuwe nationaliteit kunnen voorstellen, maar om een reflectie op onze rechten op het internet. Bovendien hoefde men alleen maar een gratis extensie voor de browser te downloaden; dat is net zo eenvoudig als het downloaden van een app op je telefoon. Het is dus een werk dat zowel toegankelijk als gepolitiseerd is.",
     "movement.caption.banksy": "Bansky — Flower Thrower",
 
     "works.title": "De wereld van James Bridle.",
     "works.intro": "James Bridle richt zijn onderzoek op de verbanden tussen technische vooruitgang, politiek en milieucrises. ",
     "works.intro.partie2": "Hij heeft talrijke werken gerealiseerd in de vorm van boeken, interactieve digitale interfaces of min of meer vreemde objecten, met als doel de aandacht te trekken en een boodschap over te brengen over zijn visie op de wereld.",
-    
+
     "works.rorschmap.title": "Rorschmap - 2011-2019 → 2021",
     "works.rorschmap.quote": "„Rorschmap is cartografische introspectie, een nieuw perspectief op de kaart. Het zal je niet helpen om ook maar iets te vinden. We zijn je vierkanten en marges beu. We willen nieuwe vormen en nieuwe dimensies… ” James Bridle",
     "works.rorschmap.text": "Een Google Maps-interface die van zijn traditionele functie is losgekoppeld. Hier transformeert Bridle slimme technologie in een ervaring van absurde schoonheid.",

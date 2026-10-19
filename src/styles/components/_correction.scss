@@ -490,7 +490,11 @@
     }
 
     cite {
-      order: 3;
+      display: block;
+      order: 4;
+      max-width: 560px;
+      margin-right: clamp(1.25rem, 7.8vw, 2rem);
+      margin-left: clamp(1.25rem, 7.8vw, 2rem);
     }
 
     p {
@@ -588,7 +592,7 @@
   }
 }
 cite{
-  font-size: $size-legend;
+  font-size: $size-nav;
   font-weight: light;
   font-style: italic;
 }
