@@ -32,6 +32,8 @@ let focusId = null;          // site dont on affiche le dossier
 let scoreAffiche = 100;
 let minuteurInactivite = null;
 let animationScore = null;
+let slideActif = 0;          // index de la catégorie affichée dans le slider
+let slider = null;           // références vers les éléments du slider
 
 // ---------- Petits outils ----------
 const $ = (id) => document.getElementById(id);
@@ -98,22 +100,141 @@ function construireMarques() {
   const conteneur = $('marques');
   conteneur.replaceChildren();
 
-  for (const m of donnees.marques) {
-    const bouton = el(
-      'button',
-      { classe: 'marque', attrs: { type: 'button', 'aria-pressed': 'false', 'data-id': m.id } },
-      [
-        creerIcone(m),
-        el('span', { classe: 'marque-texte' }, [
-          el('span', { classe: 'marque-nom', texte: m.nom }),
-          el('span', { classe: 'marque-type', texte: m.type })
-        ]),
-        el('span', { classe: 'tampon', texte: 'Ajouté', attrs: { 'aria-hidden': 'true' } })
-      ]
-    );
-    bouton.addEventListener('click', () => basculer(m.id));
-    conteneur.append(bouton);
-  }
+  const categories = donnees.categories;
+  const total = categories.length;
+
+  // Navigation : flèche précédente | titre de la catégorie | flèche suivante
+  const precedent = creerFleche('precedent', 'Catégorie précédente');
+  const suivant = creerFleche('suivant', 'Catégorie suivante');
+  const titre = el('p', { classe: 'slider-titre', attrs: { 'aria-live': 'polite' } });
+  const nav = el('div', { classe: 'slider-nav' }, [precedent, titre, suivant]);
+
+  // Piste : une diapositive par catégorie, on glisse (ou on touche les flèches) pour changer
+  const piste = el('div', { classe: 'slider-piste' });
+  const slides = categories.map((cat, i) => {
+    const grille = el('div', { classe: 'marques-grille' });
+    for (const m of donnees.marques.filter((x) => x.categorie === cat.id)) {
+      grille.append(creerBoutonMarque(m));
+    }
+    const slide = el('div', {
+      classe: 'slider-slide',
+      attrs: {
+        role: 'group',
+        'aria-roledescription': 'diapositive',
+        'aria-label': cat.nom + ', ' + (i + 1) + ' sur ' + total
+      }
+    }, [grille]);
+    piste.append(slide);
+    return slide;
+  });
+
+  // Points de repère (touchables)
+  const points = categories.map((cat, i) => {
+    const point = el('button', {
+      classe: 'slider-point',
+      attrs: { type: 'button', 'aria-label': 'Aller à ' + cat.nom }
+    }, [el('span', { attrs: { 'aria-hidden': 'true' } })]);
+    point.addEventListener('click', () => allerAuSlide(i));
+    return point;
+  });
+  const barrePoints = el('div', { classe: 'slider-points' }, points);
+
+  conteneur.append(nav, piste, barrePoints);
+  slider = { piste, slides, points, precedent, suivant, titre };
+
+  precedent.addEventListener('click', () => allerAuSlide(slideActif - 1));
+  suivant.addEventListener('click', () => allerAuSlide(slideActif + 1));
+
+  // Le slide actif suit le doigt : on le déduit de la position de défilement
+  let attente = null;
+  piste.addEventListener('scroll', () => {
+    cancelAnimationFrame(attente);
+    attente = requestAnimationFrame(() => {
+      const index = Math.round(piste.scrollLeft / piste.clientWidth);
+      if (index !== slideActif) {
+        slideActif = index;
+        majSlider();
+      }
+    });
+  }, { passive: true });
+
+  // Clavier : flèches gauche/droite quand le focus est dans le slider
+  conteneur.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') allerAuSlide(slideActif - 1);
+    if (e.key === 'ArrowRight') allerAuSlide(slideActif + 1);
+  });
+
+  majSlider();
+}
+
+function creerFleche(sens, libelle) {
+  const svg = document.createElementNS(NS_SVG, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('width', '24');
+  svg.setAttribute('height', '24');
+  svg.setAttribute('aria-hidden', 'true');
+  const chemin = document.createElementNS(NS_SVG, 'path');
+  chemin.setAttribute('d', sens === 'precedent' ? 'M15 4 7 12l8 8' : 'm9 4 8 8-8 8');
+  chemin.setAttribute('fill', 'none');
+  chemin.setAttribute('stroke', 'currentColor');
+  chemin.setAttribute('stroke-width', '3');
+  svg.append(chemin);
+  return el('button', {
+    classe: 'slider-fleche',
+    attrs: { type: 'button', 'aria-label': libelle }
+  }, [svg]);
+}
+
+function creerBoutonMarque(m) {
+  const bouton = el(
+    'button',
+    { classe: 'marque', attrs: { type: 'button', 'aria-pressed': 'false', 'data-id': m.id } },
+    [
+      creerIcone(m),
+      el('span', { classe: 'marque-texte' }, [
+        el('span', { classe: 'marque-nom', texte: m.nom }),
+        el('span', { classe: 'marque-type', texte: m.type })
+      ]),
+      el('span', { classe: 'tampon', texte: 'Ajouté', attrs: { 'aria-hidden': 'true' } })
+    ]
+  );
+  bouton.addEventListener('click', () => basculer(m.id));
+  return bouton;
+}
+
+// ---------- Slider de catégories ----------
+function allerAuSlide(index) {
+  const i = Math.max(0, Math.min(donnees.categories.length - 1, index));
+  const sansAnimation = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  slideActif = i;
+  slider.piste.scrollTo({ left: i * slider.piste.clientWidth, behavior: sansAnimation ? 'auto' : 'smooth' });
+  majSlider();
+}
+
+// Titre, compteur, points, flèches ; les slides cachés ne sont plus atteignables au clavier
+function majSlider() {
+  if (!slider) return;
+  const total = donnees.categories.length;
+  const cat = donnees.categories[slideActif];
+  const dansCat = donnees.marques.filter((m) => m.categorie === cat.id);
+  const choisis = dansCat.filter((m) => selection.includes(m.id)).length;
+
+  slider.titre.replaceChildren(
+    el('strong', { texte: cat.nom }),
+    el('span', {
+      classe: 'slider-compte',
+      texte: (slideActif + 1) + '/' + total + ' · ' + choisis + ' sur ' + dansCat.length + ' choisis'
+    })
+  );
+  slider.precedent.disabled = slideActif === 0;
+  slider.suivant.disabled = slideActif === total - 1;
+  slider.points.forEach((point, i) => {
+    if (i === slideActif) point.setAttribute('aria-current', 'true');
+    else point.removeAttribute('aria-current');
+  });
+  slider.slides.forEach((slide, i) => {
+    slide.inert = i !== slideActif;
+  });
 }
 
 // Pastille avec la première lettre ; remplacée par le logo si le fichier existe
@@ -177,6 +298,7 @@ function reinitialiser() {
   selection = [];
   focusId = null;
   mettreAJour();
+  allerAuSlide(0);
   window.scrollTo({ top: 0 });
 }
 
@@ -240,6 +362,7 @@ function mettreAJour() {
   rendreScore(c);
   rendreDossier();
   rendreMRZ(c);
+  majSlider();
 
   $('btn-reset').disabled = c.n === 0;
   relancerMinuteur();

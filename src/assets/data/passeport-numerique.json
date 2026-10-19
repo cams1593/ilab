@@ -20,6 +20,12 @@
     }
   },
 
+  "categories": [
+    { "id": "web", "nom": "Web & divertissement" },
+    { "id": "medias", "nom": "Médias" },
+    { "id": "shopping", "nom": "Shopping" }
+  ],
+
   "pays": {
     "BE": {
       "nom": "Belgique",
@@ -85,6 +91,7 @@
       "nom": "Google",
       "url": "google.com",
       "type": "Moteur de recherche",
+      "categorie": "web",
       "icone": "google-logo.svg",
       "serveurs": [
         { "pays": "BE", "part": 100, "ville": "Saint-Ghislain", "latitude": 50.4481, "longitude": 3.8182 }
@@ -105,6 +112,7 @@
       "nom": "YouTube",
       "url": "youtube.com",
       "type": "Plateforme vidéo",
+      "categorie": "web",
       "icone": "youtube-logo.svg",
       "serveurs": [
         { "pays": "BE", "part": 100 }
@@ -125,6 +133,7 @@
       "nom": "Instagram",
       "url": "instagram.com",
       "type": "Réseau social",
+      "categorie": "web",
       "icone": "instagram-logo.svg",
       "serveurs": [
         { "pays": "IE", "part": 100 }
@@ -145,6 +154,7 @@
       "nom": "RTBF",
       "url": "rtbf.be",
       "type": "Média public",
+      "categorie": "medias",
       "icone": "rtbf-logo.svg",
       "serveurs": [
         { "pays": "BE", "part": 100, "ville": "Bruxelles", "latitude": 50.8503, "longitude": 4.3517 }
@@ -165,6 +175,7 @@
       "nom": "AliExpress",
       "url": "aliexpress.com",
       "type": "Marketplace",
+      "categorie": "shopping",
       "icone": "aliexpress-logo.svg",
       "serveurs": [
         { "pays": "SG", "part": 50 },
@@ -186,6 +197,7 @@
       "nom": "Temu",
       "url": "temu.com",
       "type": "Marketplace",
+      "categorie": "shopping",
       "icone": "temu-logo.svg",
       "serveurs": [
         { "pays": "US", "part": 100 }
@@ -206,6 +218,7 @@
       "nom": "Zalando",
       "url": "zalando.be",
       "type": "E-commerce mode",
+      "categorie": "shopping",
       "icone": "zalando-logo.svg",
       "serveurs": [
         { "pays": "DE", "part": 100 }
@@ -226,6 +239,7 @@
       "nom": "Netflix",
       "url": "netflix.com",
       "type": "Streaming vidéo",
+      "categorie": "web",
       "icone": "netflix-logo.svg",
       "serveurs": [
         { "pays": "BE", "part": 100 }
@@ -246,6 +260,7 @@
       "nom": "Le Soir",
       "url": "lesoir.be",
       "type": "Média d'information",
+      "categorie": "medias",
       "icone": "lesoir-logo.svg",
       "serveurs": [
         { "pays": "BE", "part": 100 }
@@ -266,6 +281,7 @@
       "nom": "Le Monde",
       "url": "lemonde.fr",
       "type": "Média d'information",
+      "categorie": "medias",
       "icone": "lemonde-logo.svg",
       "serveurs": [
         { "pays": "FR", "part": 100 }
@@ -286,6 +302,7 @@
       "nom": "Decathlon",
       "url": "decathlon.be",
       "type": "E-commerce sport",
+      "categorie": "shopping",
       "icone": "decathlon-logo.svg",
       "serveurs": [
         { "pays": "FR", "part": 100 }
