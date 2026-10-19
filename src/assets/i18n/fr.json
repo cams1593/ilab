@@ -3,6 +3,9 @@
     "code": "FR",
     "aria": "Langue : français"
   },
+  "a11y": {
+    "skip": "Aller au contenu principal"
+  },
   "meta": {
     "passeport": {
       "titre": "Passeport numérique",

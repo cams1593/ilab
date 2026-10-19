@@ -94,6 +94,7 @@
 
 .lang--accueil .lang_button {
     width: 100%;
+    min-height: 44px;
     margin: 0;
     padding: 0.75rem;
     color: $c-alt;
@@ -197,7 +198,7 @@
     top: 0.75rem;
     right: 0.75rem;
     display: grid;
-    width: 2.5rem;
+    width: 2.75rem;
     aspect-ratio: 1;
     place-items: center;
     border: 0;
@@ -223,6 +224,12 @@
 
 .nav--accueil {
     min-height: 0;
+}
+
+.accueil-navigation {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 auto;
 }
 
 .nav_ul--accueil {

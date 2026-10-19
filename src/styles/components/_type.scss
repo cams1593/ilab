@@ -4,7 +4,10 @@ body {
   font-family: $font;
   line-height: 1.5;
   color: $c-text;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow-wrap: break-word;
 
   display: flex;
   flex-direction: column; 
@@ -22,4 +25,67 @@ a{
     text-decoration: none;
     font-family: $font;
     color: $c-text;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 2000;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.75rem 1rem;
+    transform: translateY(-150%);
+    background: $c-text;
+    color: $c-bg;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.12em;
+    text-underline-offset: 0.15em;
+}
+
+a:active {
+    text-decoration-thickness: 0.2em;
+}
+
+button:hover:not(:disabled) {
+    outline: 1px solid currentColor;
+    outline-offset: -3px;
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex="-1"]:focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex="-1"]:focus-visible {
+        outline-color: Highlight;
+    }
 }

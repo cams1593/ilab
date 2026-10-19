@@ -41,6 +41,7 @@
   <script src="scripts/passeport.js" defer></script>
 </head>
 <body class="passeport">
+  <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Aller au contenu principal</a>
 <div class="ecran">
 
   <!-- Barre du haut (maquette Figma) : accueil | langue -->
@@ -60,7 +61,7 @@
     </div>
   </header>
 
-  <main class="corps">
+  <main class="corps" id="main-content" tabindex="-1">
     <!-- Colonne gauche : choix des sites -->
     <section class="volet volet-gauche" aria-labelledby="titre-choix">
       <h1 data-i18n="passeport.titre">Passeport numérique</h1>
@@ -113,7 +114,7 @@
         <section class="carte score" aria-labelledby="titre-score">
           <h3 id="titre-score" data-i18n="passeport.score.titre">Droits restants</h3>
           <p class="score-valeur"><span id="score-nombre">100</span><span class="score-max">/100</span></p>
-          <div class="barre"><div id="score-barre" class="barre-remplie"></div></div>
+          <div class="barre" role="progressbar" aria-labelledby="titre-score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div id="score-barre" class="barre-remplie"></div></div>
           <p id="score-phrase" class="score-phrase" aria-live="polite"></p>
           <ul id="pertes" class="pertes"></ul>
         </section>

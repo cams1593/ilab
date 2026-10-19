@@ -24,7 +24,6 @@ document.querySelectorAll('.exhibition-panel').forEach((slider) => {
     btnPrev.disabled = isFirstSlide;
     btnNext.hidden = isLastSlide;
     nextPageLink.hidden = !isLastSlide;
-
     if (artworkSlides.length) {
       const artworkIndex = Math.min(currentIndex, artworkSlides.length - 1);
       artworkSlides.forEach((artwork, index) => {
@@ -61,16 +60,6 @@ document.querySelectorAll('.exhibition-panel').forEach((slider) => {
 
   btnPrev.addEventListener('click', prevSlide);
   btnNext.addEventListener('click', nextSlide);
-
-  document.addEventListener('keydown', (event) => {
-    if (event.code === 'ArrowLeft') {
-      event.preventDefault();
-      prevSlide();
-    } else if (event.code === 'ArrowRight') {
-      event.preventDefault();
-      nextSlide();
-    }
-  });
 
   updateCount();
 });
