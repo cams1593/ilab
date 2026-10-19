@@ -587,3 +587,8 @@
     height: clamp(2rem, 9vw, 2.5rem);
   }
 }
+cite{
+  font-size: $size-legend;
+  font-weight: light;
+  font-style: italic;
+}
