@@ -27,5 +27,23 @@
 
     "movement.title": "Soziale Kunst",
     "movement.modern": "Die soziale Kunst ist eine Strömung der modernen Kunst, die sich der Konzeptkunst entgegenstellt. Die moderne Kunst löst sich von traditionellen ästhetischen Konventionen.",
-    "movement.conceptual": "Die Konzeptkunst hinterfragt den Begriff der Kunst als Objekt. In dieser Strömung reicht die Idee der Kunst an sich aus. Die Idee der Kunst hat Vorrang vor ihrer Umsetzung, und die Kunst hat keine anderen Ziele als die Kunst an sich. Nach dieser Auffassung kann alles Kunst sein, vorausgesetzt, das beabsichtigte Ziel ist es, Kunst zu schaffen."
+    "movement.conceptual": "Die Konzeptkunst hinterfragt den Begriff der Kunst als Objekt. In dieser Strömung reicht die Idee der Kunst an sich aus. Die Idee der Kunst hat Vorrang vor ihrer Umsetzung, und die Kunst hat keine anderen Ziele als die Kunst an sich. Nach dieser Auffassung kann alles Kunst sein, vorausgesetzt, das beabsichtigte Ziel ist es, Kunst zu schaffen.",
+    "movement.title.art.util":"Nützliche Kunst",
+    "movement.social": "Die soziale Kunst hingegen wertet Kunst auf, die für die Gesellschaft von Nutzen ist. Sie entstand im 19. Jahrhundert in Frankreich im anarchistischen Milieu. Sie befasst sich mit dem Leben in der Gemeinschaft und mit gesellschaftlichen Problemen. Sie bewegt sich an der Schnittstelle zwischen Kunst und Politik. Manche sind übrigens der Ansicht, dass jedes Kunstwerk politisiert ist, unabhängig davon, ob sich der Künstler dessen bewusst ist oder nicht. In dieser Strömung ist Zugänglichkeit ein grundlegendes Prinzip. Es handelt sich um eine künstlerische Strömung, die tief in einer revolutionären Politik verwurzelt ist, die davon ausgeht, dass Kunst für alle zugänglich sein muss, auch für die Arbeiterklasse.",
+    "movement.citizenex": "Citizen Ex lädt uns dazu ein, unsere Nutzung des Internets zu überdenken. Es handelt sich nicht um ein einfaches Spiel, das es uns ermöglicht, uns eine neue Staatsangehörigkeit vorzustellen, sondern um eine Reflexion über unsere Rechte im Internet. Zudem genügte es, eine kostenlose Erweiterung auf den Browser herunterzuladen – das ist genauso einfach wie das Herunterladen einer App auf das Handy. Es handelt sich also um ein Werk, das sowohl zugänglich als auch politisiert ist.",
+    "movement.caption.banksy": "Bansky — Flower Thrower",
+
+    "works.title": "Das Universum von James Bridle.",
+    "works.intro": "James Bridle konzentriert sich in seiner Forschung auf die Zusammenhänge zwischen technischem Fortschritt, Politik und Umweltkrisen. ",
+    "works.intro.partie2": "Er hat zahlreiche Werke in Form von Büchern, interaktiven digitalen Schnittstellen oder mehr oder weniger skurrilen Objekten geschaffen, um zum Nachdenken anzuregen und seine Weltanschauung zu vermitteln.",
+    "works.rorschmap.title": "Rorschmap – 2011–2019 → 2021: Eine kaleidoskopische Sicht auf Online-Karten",
+    "works.rorschmap.quote": "„Rorschmap ist kartografische Selbstreflexion, eine neue Perspektive auf die Karte. Es wird Ihnen nicht dabei helfen, irgendetwas zu finden. Wir haben genug von Ihren Quadraten und Rändern. Wir wollen neue Formen und neue Dimensionen… “ James Bridle",
+    "works.rorschmap.text": "Eine Google-Maps-Oberfläche, die von ihrer traditionellen Funktion abgekoppelt wurde. Hier verwandelt Bridle eine intelligente Technologie in ein Erlebnis von absurder Schönheit. Tatsächlich gibt die Karte keinerlei Hinweise auf Richtung oder Position, was den Nutzer dazu zwingt, sich von jeglicher Struktur zu lösen und sich auf die hypnotisierenden Bewegungen der Karte zu konzentrieren. Diese Karte ermöglicht es uns, die Welt mit anderen Augen zu sehen.",
+
+    "works.newdarkage.title": "New Dark Age – 2018",
+    "works.newdarkage.quote": "„New Dark Age sollte eine anspruchsvolle und verstörende Lektüre sein. Ohne Lösungen anzubieten, habe ich versucht, einen Raum offen zu halten, der der Fantasie freien Lauf lässt“, so James Bridle.",
+    "works.newdarkage.text": "In diesem Buch kritisiert Bridle die heutigen Technologien: Warum hat die Technologie, die unseren Alltag prägt, weder unsere Intelligenz noch unser Verständnis der Welt vorangebracht?",
+
+    "works.waysofbeing.title": "Ways of Being – 2022",
+    "works.waysofbeing.text": "In diesem Buch schlägt Bridle eine neue Art vor, die Welt und das Dasein zu begreifen, indem er über KI, nicht-menschliche Intelligenz, Ökologie, Bioinformatik und zwischenmenschliche Beziehungen spricht …"
 }

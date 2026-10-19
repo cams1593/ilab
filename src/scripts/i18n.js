@@ -15,7 +15,6 @@ async function setLang(lang) {
   });
 
   document.documentElement.lang = lang;
-  localStorage.setItem('site-locale', lang);
 
   document.querySelectorAll('[data-lang]').forEach((button) => {
     const active = button.dataset.lang === lang;
