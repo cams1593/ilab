@@ -521,6 +521,11 @@ h1 {
   .carte { padding: 0.45rem; }
 }
 
+/* ---------- Boutons de langue (barre du haut) ---------- */
+.langues { display: flex; }
+.cellule-langue { min-width: 4rem; padding: 0 1rem; }
+.cellule[aria-pressed="true"] { background: var(--noir); color: var(--blanc); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }

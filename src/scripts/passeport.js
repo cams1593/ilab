@@ -14,6 +14,16 @@ const DELAI_INACTIVITE_MS = 90000;         // retour à zéro après 90 s sans t
 const MONTRER_STATUT_VERIFICATION = true;  // mettre false quand toutes les données sont vérifiées
 const MOINS = '\u2212';
 
+// ---------- Langues (textes dans assets/i18n/<code>.json) ----------
+const CHEMIN_I18N = 'assets/i18n/';
+const LANGUE_DEFAUT = 'fr';
+const LANGUES = [
+  { code: 'fr', locale: 'fr-BE' },
+  { code: 'en', locale: 'en-GB' },
+  { code: 'nl', locale: 'nl-BE' },
+  { code: 'de', locale: 'de-DE' }
+];
+
 // Une couleur par pays (le nom est toujours écrit dans la légende : la couleur n'est jamais seule)
 const COULEURS_PAYS = {
   BE: '#d9a21b',
@@ -34,6 +44,8 @@ let minuteurInactivite = null;
 let animationScore = null;
 let slideActif = 0;          // index de la catégorie affichée dans le slider
 let slider = null;           // références vers les éléments du slider
+let langue = LANGUE_DEFAUT;  // langue affichée
+const traductions = {};      // textes déjà chargés, par code de langue
 
 // ---------- Petits outils ----------
 const $ = (id) => document.getElementById(id);
@@ -48,31 +60,126 @@ function el(tag, options = {}, enfants = []) {
   return n;
 }
 
-const formaterPct = (v) =>
-  v.toLocaleString('fr-BE', { maximumFractionDigits: 1 }) + '\u00a0%';
+const formaterPct = (v) => {
+  const l = LANGUES.find((x) => x.code === langue);
+  return v.toLocaleString(l ? l.locale : 'fr-BE', { maximumFractionDigits: 1 }) + '\u00a0%';
+};
 
 const marqueParId = (id) => donnees.marques.find((m) => m.id === id);
-const nomPays = (code) => (donnees.pays[code] ? donnees.pays[code].nom : code);
 
-// ---------- Démarrage ----------
-function init() {
-  fetch(CHEMIN_JSON)
+// ---------- Traductions ----------
+function chercher(dico, cle) {
+  return String(cle).split('.').reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), dico);
+}
+
+// Texte de l'interface : langue choisie, sinon français, sinon la clé elle-même
+function t(cle, variables) {
+  let txt = chercher(traductions[langue], cle);
+  if (txt === undefined) txt = chercher(traductions[LANGUE_DEFAUT], cle);
+  if (txt === undefined) return cle;
+  for (const [nom, valeur] of Object.entries(variables || {})) {
+    txt = txt.split('{' + nom + '}').join(String(valeur));
+  }
+  return txt;
+}
+
+// Donnée traduite (pays, marque, catégorie) ; si absente, on garde le texte du JSON de données
+function tr(cle, repli) {
+  const txt = chercher(traductions[langue], cle);
+  return txt === undefined ? repli : txt;
+}
+
+const nomPays = (code) => tr('donnees.pays.' + code + '.nom', donnees.pays[code] ? donnees.pays[code].nom : code);
+const loiPays = (code) => tr('donnees.pays.' + code + '.loi', donnees.pays[code].loi_cle);
+const explicationPays = (code) => tr('donnees.pays.' + code + '.explication', donnees.pays[code].explication_visiteur);
+const nomCategorie = (cat) => tr('donnees.categories.' + cat.id, cat.nom);
+const typeMarque = (m) => tr('donnees.marques.' + m.id + '.type', m.type);
+const proprietaireMarque = (m) => tr('donnees.marques.' + m.id + '.proprietaire', m.proprietaire.entreprise);
+const hebergeurMarque = (m) => tr('donnees.marques.' + m.id + '.hebergeur', m.hebergeur.nom);
+const messageMarque = (m) => tr('donnees.marques.' + m.id + '.message', m.message_visiteur);
+const nomVille = (ville) => tr('donnees.villes.' + ville, ville);
+
+function chargerTraductions(code) {
+  if (traductions[code]) return Promise.resolve(traductions[code]);
+  return fetch(CHEMIN_I18N + code + '.json')
     .then((reponse) => {
       if (!reponse.ok) throw new Error('Erreur ' + reponse.status);
       return reponse.json();
     })
     .then((json) => {
-      donnees = json;
-      demarrer();
-    }, afficherErreur);
+      traductions[code] = json;
+      return json;
+    });
+}
+
+// Langue de départ : ?lang=xx dans l'adresse, puis dernier choix, sinon français (la borne est en Belgique)
+function langueInitiale() {
+  const valide = (c) => (LANGUES.some((l) => l.code === c) ? c : null);
+  let choix = null;
+  try { choix = valide(new URLSearchParams(window.location.search).get('lang')); } catch (e) { /* ignoré */ }
+  if (!choix) { try { choix = valide(localStorage.getItem('langue')); } catch (e) { /* ignoré */ } }
+  return choix || LANGUE_DEFAUT;
+}
+
+// Textes fixes de la page (data-i18n / data-i18n-aria), <title>, description et boutons de langue
+function appliquerTextes() {
+  document.documentElement.lang = langue;
+  document.querySelectorAll('[data-i18n]').forEach((n) => { n.textContent = t(n.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-aria]').forEach((n) => {
+    n.setAttribute('aria-label', t(n.dataset.i18nAria));
+  });
+  document.title = t('meta.passeport.titre');
+  const description = document.querySelector('meta[name="description"]');
+  if (description) description.setAttribute('content', t('meta.passeport.description'));
+  document.querySelectorAll('.cellule-langue').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.langue === langue));
+  });
+}
+
+function changerLangue(code) {
+  if (code === langue) return;
+  chargerTraductions(code).then(() => {
+    langue = code;
+    try { localStorage.setItem('langue', code); } catch (e) { /* ignoré */ }
+    appliquerTextes();
+    construireMarques();       // les libellés de la liste sont recréés dans la nouvelle langue
+    allerAuSlide(slideActif, true);
+    mettreAJour();
+  }, () => { /* fichier de langue introuvable : on reste dans la langue actuelle */ });
+}
+
+// ---------- Démarrage ----------
+function init() {
+  const code = langueInitiale();
+  Promise.all([
+    fetch(CHEMIN_JSON).then((reponse) => {
+      if (!reponse.ok) throw new Error('Erreur ' + reponse.status);
+      return reponse.json();
+    }),
+    chargerTraductions(LANGUE_DEFAUT),   // sert de repli si un texte manque dans une autre langue
+    chargerTraductions(code)
+  ]).then(([json]) => {
+    donnees = json;
+    langue = code;
+    demarrer();
+  }, afficherErreur);
 }
 
 function demarrer() {
   scoreAffiche = donnees.meta.score_depart;
+  appliquerTextes();
   construireMarques();
   construireDonut($('donut-physique'));
   construireDonut($('donut-juridique'));
-  $('avertissement').textContent = donnees.meta.avertissement_borne || '';
+
+  document.querySelectorAll('.cellule-langue').forEach((b) => {
+    b.addEventListener('click', () => changerLangue(b.dataset.langue));
+  });
+  // Clavier : flèches gauche/droite quand le focus est dans le slider (un seul écouteur, même après un changement de langue)
+  $('marques').addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') allerAuSlide(slideActif - 1);
+    if (e.key === 'ArrowRight') allerAuSlide(slideActif + 1);
+  });
 
   $('btn-tout').addEventListener('click', toutChoisir);
   $('btn-reset').addEventListener('click', reinitialiser);
@@ -104,8 +211,8 @@ function construireMarques() {
   const total = categories.length;
 
   // Navigation : flèche précédente | titre de la catégorie | flèche suivante
-  const precedent = creerFleche('precedent', 'Catégorie précédente');
-  const suivant = creerFleche('suivant', 'Catégorie suivante');
+  const precedent = creerFleche('precedent', t('passeport.slider.precedent'));
+  const suivant = creerFleche('suivant', t('passeport.slider.suivant'));
   const titre = el('p', { classe: 'slider-titre', attrs: { 'aria-live': 'polite' } });
   const nav = el('div', { classe: 'slider-nav' }, [precedent, titre, suivant]);
 
@@ -120,8 +227,8 @@ function construireMarques() {
       classe: 'slider-slide',
       attrs: {
         role: 'group',
-        'aria-roledescription': 'diapositive',
-        'aria-label': cat.nom + ', ' + (i + 1) + ' sur ' + total
+        'aria-roledescription': t('passeport.slider.diapositive'),
+        'aria-label': t('passeport.slider.slide_aria', { categorie: nomCategorie(cat), position: i + 1, total })
       }
     }, [grille]);
     piste.append(slide);
@@ -132,7 +239,7 @@ function construireMarques() {
   const points = categories.map((cat, i) => {
     const point = el('button', {
       classe: 'slider-point',
-      attrs: { type: 'button', 'aria-label': 'Aller à ' + cat.nom }
+      attrs: { type: 'button', 'aria-label': t('passeport.slider.aller_a', { categorie: nomCategorie(cat) }) }
     }, [el('span', { attrs: { 'aria-hidden': 'true' } })]);
     point.addEventListener('click', () => allerAuSlide(i));
     return point;
@@ -157,12 +264,6 @@ function construireMarques() {
       }
     });
   }, { passive: true });
-
-  // Clavier : flèches gauche/droite quand le focus est dans le slider
-  conteneur.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') allerAuSlide(slideActif - 1);
-    if (e.key === 'ArrowRight') allerAuSlide(slideActif + 1);
-  });
 
   majSlider();
 }
@@ -193,9 +294,9 @@ function creerBoutonMarque(m) {
       creerIcone(m),
       el('span', { classe: 'marque-texte' }, [
         el('span', { classe: 'marque-nom', texte: m.nom }),
-        el('span', { classe: 'marque-type', texte: m.type })
+        el('span', { classe: 'marque-type', texte: typeMarque(m) })
       ]),
-      el('span', { classe: 'tampon', texte: 'Ajouté', attrs: { 'aria-hidden': 'true' } })
+      el('span', { classe: 'tampon', texte: t('passeport.ajoute'), attrs: { 'aria-hidden': 'true' } })
     ]
   );
   bouton.addEventListener('click', () => basculer(m.id));
@@ -203,11 +304,11 @@ function creerBoutonMarque(m) {
 }
 
 // ---------- Slider de catégories ----------
-function allerAuSlide(index) {
+function allerAuSlide(index, instantane) {
   const i = Math.max(0, Math.min(donnees.categories.length - 1, index));
   const sansAnimation = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   slideActif = i;
-  slider.piste.scrollTo({ left: i * slider.piste.clientWidth, behavior: sansAnimation ? 'auto' : 'smooth' });
+  slider.piste.scrollTo({ left: i * slider.piste.clientWidth, behavior: sansAnimation || instantane ? 'auto' : 'smooth' });
   majSlider();
 }
 
@@ -220,10 +321,10 @@ function majSlider() {
   const choisis = dansCat.filter((m) => selection.includes(m.id)).length;
 
   slider.titre.replaceChildren(
-    el('strong', { texte: cat.nom }),
+    el('strong', { texte: nomCategorie(cat) }),
     el('span', {
       classe: 'slider-compte',
-      texte: (slideActif + 1) + '/' + total + ' · ' + choisis + ' sur ' + dansCat.length + ' choisis'
+      texte: t('passeport.slider.compte', { position: slideActif + 1, total, choisis, nombre: dansCat.length })
     })
   );
   slider.precedent.disabled = slideActif === 0;
@@ -305,8 +406,11 @@ function reinitialiser() {
 // Borne en libre accès : on remet tout à zéro si plus personne ne touche l'écran
 function relancerMinuteur() {
   clearTimeout(minuteurInactivite);
-  if (selection.length === 0) return;
-  minuteurInactivite = setTimeout(reinitialiser, DELAI_INACTIVITE_MS);
+  if (selection.length === 0 && langue === LANGUE_DEFAUT) return;
+  minuteurInactivite = setTimeout(() => {
+    reinitialiser();
+    changerLangue(LANGUE_DEFAUT); // la borne repart en français pour le visiteur suivant
+  }, DELAI_INACTIVITE_MS);
 }
 
 // ---------- Calculs ----------
@@ -382,7 +486,7 @@ function rendreCamembert(boite, liste, repartition, n) {
 
   // 2. Le nombre de sites au centre
   boite.querySelector('.nb').textContent = n;
-  boite.querySelector('.unite').textContent = n > 1 ? 'sites' : 'site';
+  boite.querySelector('.unite').textContent = t('passeport.unite_site._' + (n > 1 ? 'other' : 'one'));
 
   // 3. La légende (triée du plus grand au plus petit)
   const lignes = Object.entries(repartition)
@@ -391,7 +495,7 @@ function rendreCamembert(boite, liste, repartition, n) {
 
   liste.replaceChildren();
   if (lignes.length === 0) {
-    liste.append(el('li', { classe: 'vide', texte: 'Aucun site choisi.' }));
+    liste.append(el('li', { classe: 'vide', texte: t('passeport.aucun_site') }));
   }
   for (const [code, pct] of lignes) {
     const pastille = el('span', { classe: 'pastille', attrs: { 'aria-hidden': 'true' } });
@@ -407,15 +511,15 @@ function rendreCamembert(boite, liste, repartition, n) {
 
   // 4. Description pour les lecteurs d'écran
   const resume = lignes.map(([code, pct]) => nomPays(code) + ' ' + formaterPct(pct)).join(', ');
-  boite.querySelector('svg').setAttribute('aria-label', resume || 'Aucun site choisi');
+  boite.querySelector('svg').setAttribute('aria-label', resume || t('passeport.aucun_site'));
 }
 
 function phraseScore(score, n) {
-  if (n === 0) return 'Choisis des sites pour voir tes droits évoluer.';
-  if (score >= 90) return 'Tes données restent surtout sous droit européen.';
-  if (score >= 60) return "Des lois étrangères commencent à s'appliquer à toi.";
-  if (score >= 30) return 'Tu dépends beaucoup de lois étrangères.';
-  return 'La plupart de tes données relèvent de lois étrangères.';
+  if (n === 0) return t('passeport.score.phrase_aucun');
+  if (score >= 90) return t('passeport.score.phrase_90');
+  if (score >= 60) return t('passeport.score.phrase_60');
+  if (score >= 30) return t('passeport.score.phrase_30');
+  return t('passeport.score.phrase_0');
 }
 
 function rendreScore(c) {
@@ -432,7 +536,7 @@ function rendreScore(c) {
   const liste = $('pertes');
   liste.replaceChildren();
   if (c.n > 0 && c.pertes.length === 0) {
-    liste.append(el('li', { classe: 'aucune', texte: 'Aucun droit perdu avec ces sites.' }));
+    liste.append(el('li', { classe: 'aucune', texte: t('passeport.score.aucune_perte') }));
   }
   for (const m of c.pertes) {
     const puce = el('button', {
@@ -476,57 +580,56 @@ function rendreDossier() {
 
   const m = focusId ? marqueParId(focusId) : null;
   if (!m) {
-    zone.append(el('p', { classe: 'vide-texte', texte: 'Touche un site pour voir son dossier.' }));
+    zone.append(el('p', { classe: 'vide-texte', texte: t('passeport.dossier.vide') }));
     return;
   }
 
   zone.append(
     el('div', { classe: 'dossier-titre' }, [
       el('strong', { texte: m.nom }),
-      el('span', { texte: m.type })
+      el('span', { texte: typeMarque(m) })
     ])
   );
 
   // Serveurs
   const serveurs = m.serveurs.map((s) => {
-    const lieu = s.ville ? nomPays(s.pays) + ' (' + s.ville + ')' : nomPays(s.pays);
+    const lieu = s.ville ? nomPays(s.pays) + ' (' + nomVille(s.ville) + ')' : nomPays(s.pays);
     return m.serveurs.length > 1 ? lieu + ' ' + s.part + '\u00a0%' : lieu;
   });
 
   // Hébergeur
-  let hebergeur = m.hebergeur.nom + ', ' + nomPays(m.hebergeur.pays);
-  if (m.hebergeur.statut === 'hypothese') hebergeur += ' (à confirmer)';
+  let hebergeur = hebergeurMarque(m) + ', ' + nomPays(m.hebergeur.pays);
+  if (m.hebergeur.statut === 'hypothese') hebergeur += ' (' + t('passeport.dossier.a_confirmer') + ')';
 
   // Lois qui s'appliquent
   const lois = el('dd');
   for (const code of [...new Set(m.juridictions)]) {
-    const pays = donnees.pays[code];
-    lois.append(el('p', { texte: pays.nom + ' : ' + pays.loi_cle }));
-    if (pays.malus < 0) lois.append(el('p', { classe: 'explication', texte: pays.explication_visiteur }));
+    lois.append(el('p', { texte: nomPays(code) + (langue === 'fr' ? ' : ' : ': ') + loiPays(code) }));
+    if (donnees.pays[code].malus < 0) lois.append(el('p', { classe: 'explication', texte: explicationPays(code) }));
   }
 
   zone.append(
     el('dl', {}, [
-      el('dt', { texte: 'Serveurs' }),
+      el('dt', { texte: t('passeport.dossier.serveurs') }),
       el('dd', { texte: serveurs.join(', ') }),
-      el('dt', { texte: 'Propriétaire' }),
-      el('dd', { texte: m.proprietaire.entreprise + ', ' + nomPays(m.proprietaire.pays) }),
-      el('dt', { texte: 'Hébergeur' }),
+      el('dt', { texte: t('passeport.dossier.proprietaire') }),
+      el('dd', { texte: proprietaireMarque(m) + ', ' + nomPays(m.proprietaire.pays) }),
+      el('dt', { texte: t('passeport.dossier.hebergeur') }),
       el('dd', { texte: hebergeur }),
-      el('dt', { texte: 'Législation' }),
+      el('dt', { texte: t('passeport.dossier.legislation') }),
       lois
     ]),
-    el('p', { classe: 'dossier-message', texte: m.message_visiteur }),
+    el('p', { classe: 'dossier-message', texte: messageMarque(m) }),
     el('p', {
       classe: 'dossier-perte' + (m.score_malus < 0 ? ' perte' : ''),
       texte: m.score_malus < 0
-        ? 'Droits perdus : ' + MOINS + Math.abs(m.score_malus)
-        : 'Aucun droit perdu.'
+        ? t('passeport.dossier.droits_perdus', { n: Math.abs(m.score_malus) })
+        : t('passeport.dossier.aucun_droit_perdu')
     })
   );
 
   if (MONTRER_STATUT_VERIFICATION && m.statut_verification !== 'verifie') {
-    zone.append(el('p', { classe: 'dossier-verif', texte: 'Données en cours de vérification.' }));
+    zone.append(el('p', { classe: 'dossier-verif', texte: t('passeport.dossier.en_verification') }));
   }
 }
 
@@ -536,7 +639,8 @@ function rendreMRZ(c) {
   const nettoyer = (s) =>
     s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 
-  const ligne1 = remplir('P<BEL<<VISITEUR<NUMERIQUE');
+  const visiteur = t('passeport.mrz_visiteur').split(' ').map(nettoyer).join('<');
+  const ligne1 = remplir('P<BEL<<' + visiteur);
   const pays = Object.keys(c.juridique).sort((a, b) => c.juridique[b] - c.juridique[a]);
   const marques = c.choisies.map((m) => nettoyer(m.id).slice(0, 3));
   const ligne2 = remplir(

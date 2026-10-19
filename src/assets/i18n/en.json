@@ -1,0 +1,207 @@
+{
+  "langue": {
+    "code": "EN",
+    "aria": "Language: English"
+  },
+  "meta": {
+    "passeport": {
+      "titre": "Digital passport",
+      "description": "On the internet, you don't have just one nationality. Pick the sites you use and find out where your data lives and which laws apply to you.",
+      "image_alt": "Digital passport: two rings showing where the servers are and which laws apply."
+    },
+    "accueil": {
+      "titre": "Citizen Ex – Digital passport",
+      "description": "Discover James Bridle's Citizen Ex and create your digital passport: where does your data live and which laws apply to you?"
+    },
+    "citizen": {
+      "titre": "Citizen Ex – On the web, your citizenship no longer exists",
+      "description": "On the web, your citizenship no longer exists. Discover Citizen Ex, James Bridle's artwork on the nationality of our data."
+    }
+  },
+  "accueil": {
+    "lien_citizen": "Learn more about Citizen Ex",
+    "lien_passeport": "Create your digital passport"
+  },
+  "citizen": {
+    "nav": {
+      "citizen": "Citizen Ex",
+      "artiste": "Artist",
+      "courant": "Art movement",
+      "oeuvres": "Other works"
+    },
+    "titre": "On the web, your citizenship no longer exists.",
+    "paragraphe": "Belonging to a nation is what gives us our rights and ensures our protection. When we browse the web, we have no defined nationality. It is common for the sites we use in one country to actually be hosted on the other side of the world."
+  },
+  "passeport": {
+    "accueil_aria": "Home",
+    "titre": "Digital passport",
+    "intro": "On the internet, you don't have just one nationality. Pick the sites you use: we'll show you where your data lives and which laws apply to you.",
+    "sites_titre": "Your sites",
+    "sites_aria": "Sites to add to your passport",
+    "chargement": "Loading sites…",
+    "ajoute": "Added",
+    "slider": {
+      "precedent": "Previous category",
+      "suivant": "Next category",
+      "aller_a": "Go to {categorie}",
+      "diapositive": "slide",
+      "slide_aria": "{categorie}, {position} of {total}",
+      "compte": "{position}/{total} · {choisis} of {nombre} selected"
+    },
+    "tout_choisir": "Select all",
+    "recommencer": "Start over",
+    "resultats": "Results",
+    "physique": {
+      "titre": "Where the servers are",
+      "description": "The countries where your data is stored."
+    },
+    "juridique": {
+      "titre": "Which laws apply",
+      "description": "The countries whose law can reach your data."
+    },
+    "unite_site": {
+      "_one": "site",
+      "_other": "sites"
+    },
+    "aucun_site": "No site selected.",
+    "score": {
+      "titre": "Rights remaining",
+      "phrase_aucun": "Pick some sites to see your rights change.",
+      "phrase_90": "Your data mostly stays under European law.",
+      "phrase_60": "Foreign laws are starting to apply to you.",
+      "phrase_30": "You depend heavily on foreign laws.",
+      "phrase_0": "Most of your data falls under foreign laws.",
+      "aucune_perte": "No rights lost with these sites."
+    },
+    "dossier": {
+      "titre": "Site file",
+      "vide": "Tap a site to see its file.",
+      "serveurs": "Servers",
+      "proprietaire": "Owner",
+      "hebergeur": "Host",
+      "legislation": "Legislation",
+      "a_confirmer": "to be confirmed",
+      "droits_perdus": "Rights lost: −{n}",
+      "aucun_droit_perdu": "No rights lost.",
+      "en_verification": "Data currently being verified."
+    },
+    "avertissement": "Educational simulation: the penalties are simplified estimates and do not constitute legal analysis.",
+    "mrz_visiteur": "DIGITAL VISITOR"
+  },
+  "donnees": {
+    "categories": {
+      "web": "Web & entertainment",
+      "medias": "Media",
+      "shopping": "Shopping"
+    },
+    "villes": {
+      "Bruxelles": "Brussels",
+      "Saint-Ghislain": "Saint-Ghislain"
+    },
+    "pays": {
+      "BE": {
+        "nom": "Belgium",
+        "loi": "GDPR (European law)",
+        "explication": "Your data is protected by the GDPR and Belgian law."
+      },
+      "FR": {
+        "nom": "France",
+        "loi": "GDPR (European law)",
+        "explication": "Your data is protected by the GDPR and French law."
+      },
+      "DE": {
+        "nom": "Germany",
+        "loi": "GDPR (European law)",
+        "explication": "Your data is protected by the GDPR and German law."
+      },
+      "IE": {
+        "nom": "Ireland",
+        "loi": "GDPR (European law)",
+        "explication": "Your data is protected by the GDPR, as applied in Ireland."
+      },
+      "SG": {
+        "nom": "Singapore",
+        "loi": "PDPA (Singapore's personal data protection law)",
+        "explication": "Physical hosting country only: none of the listed brands is legally tied to it."
+      },
+      "US": {
+        "nom": "United States",
+        "loi": "US CLOUD Act (and FISA 702)",
+        "explication": "A US company can be forced to hand data over to US authorities, even if it is stored in Europe."
+      },
+      "CN": {
+        "nom": "China",
+        "loi": "National Intelligence Law (2017)",
+        "explication": "Chinese companies can be required to cooperate with their country's intelligence services."
+      }
+    },
+    "marques": {
+      "google": {
+        "type": "Search engine",
+        "hebergeur": "Google's own infrastructure",
+        "proprietaire": "Alphabet (Google)",
+        "message": "Your query is processed close to home, in Belgium, but the company remains subject to US law."
+      },
+      "youtube": {
+        "type": "Video platform",
+        "hebergeur": "Google's own infrastructure",
+        "proprietaire": "Alphabet (Google)",
+        "message": "Videos are delivered from servers close to your internet provider, but the platform is subject to US law."
+      },
+      "instagram": {
+        "type": "Social network",
+        "hebergeur": "Meta's own infrastructure",
+        "proprietaire": "Meta Platforms",
+        "message": "Your data is managed from Ireland, but the parent company is American and subject to US law."
+      },
+      "rtbf": {
+        "type": "Public broadcaster",
+        "hebergeur": "To be verified (local hosting assumed)",
+        "proprietaire": "RTBF (Belgian public service)",
+        "message": "Belgian public service: strong privacy protection under European law."
+      },
+      "aliexpress": {
+        "type": "Marketplace",
+        "hebergeur": "Alibaba Cloud",
+        "proprietaire": "Alibaba Group",
+        "message": "Your data travels through Singapore and Frankfurt, but the company is subject to Chinese law."
+      },
+      "temu": {
+        "type": "Marketplace",
+        "hebergeur": "US clouds (AWS, Google Cloud, Cloudflare)",
+        "proprietaire": "PDD Holdings (declared headquarters in Dublin)",
+        "message": "Double exposure: the company is subject to Chinese law and its servers are with American hosting providers."
+      },
+      "zalando": {
+        "type": "Fashion e-commerce",
+        "hebergeur": "AWS (Frankfurt)",
+        "proprietaire": "Zalando SE (Berlin)",
+        "message": "German company with servers in Germany, but the host is American: US law may apply."
+      },
+      "netflix": {
+        "type": "Video streaming",
+        "hebergeur": "Open Connect (Netflix) + AWS",
+        "proprietaire": "Netflix, Inc.",
+        "message": "Films are streamed from servers installed at Belgian internet providers, but the platform is subject to US law."
+      },
+      "lesoir": {
+        "type": "News media",
+        "hebergeur": "To be verified (local hosting assumed)",
+        "proprietaire": "Rossel Group",
+        "message": "Belgian media hosted locally: privacy protected under European law."
+      },
+      "lemonde": {
+        "type": "News media",
+        "hebergeur": "To be verified (hosting in France assumed)",
+        "proprietaire": "Le Monde Group",
+        "message": "French media hosted in France: privacy protected under European law."
+      },
+      "decathlon": {
+        "type": "Sports e-commerce",
+        "hebergeur": "To be verified (centralised platform in France assumed)",
+        "proprietaire": "Decathlon",
+        "message": "French company with an e-commerce platform centralised in France: protected under European law."
+      }
+    }
+  }
+}

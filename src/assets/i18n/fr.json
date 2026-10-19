@@ -1,0 +1,207 @@
+{
+  "langue": {
+    "code": "FR",
+    "aria": "Langue : français"
+  },
+  "meta": {
+    "passeport": {
+      "titre": "Passeport numérique",
+      "description": "Sur internet, tu n'as pas qu'une seule nationalité. Choisis les sites que tu utilises et découvre où vivent tes données et quelles lois s'appliquent à toi.",
+      "image_alt": "Passeport numérique : deux anneaux montrant où sont les serveurs et quelles lois s'appliquent."
+    },
+    "accueil": {
+      "titre": "Citizen Ex – Passeport numérique",
+      "description": "Découvrez Citizen Ex de James Bridle et créez votre passeport numérique : où vivent vos données et quelles lois s'appliquent à vous ?"
+    },
+    "citizen": {
+      "titre": "Citizen Ex – Sur le web, votre citoyenneté n'existe plus",
+      "description": "Sur le web, votre citoyenneté n'existe plus. Découvrez Citizen Ex, l'œuvre de James Bridle sur la nationalité de nos données."
+    }
+  },
+  "accueil": {
+    "lien_citizen": "En apprendre plus sur Citizen Ex",
+    "lien_passeport": "Créez votre passeport numérique"
+  },
+  "citizen": {
+    "nav": {
+      "citizen": "Citizen Ex",
+      "artiste": "Artiste",
+      "courant": "Courant artistique",
+      "oeuvres": "Autres œuvres"
+    },
+    "titre": "Sur le web, votre citoyenneté n’existe plus.",
+    "paragraphe": "L’appartenance à une nation est ce qui nous confère nos droits et assure notre protection. Lorsque nous naviguons sur le web, nous n’avons pas de nationalité définie. Il est courant que les sites que nous utilisons dans un pays soient en réalité hébergés à l’autre bout du monde."
+  },
+  "passeport": {
+    "accueil_aria": "Accueil",
+    "titre": "Passeport numérique",
+    "intro": "Sur internet, tu n'as pas qu'une seule nationalité. Choisis les sites que tu utilises : on te montre où vivent tes données et quelles lois s'appliquent à toi.",
+    "sites_titre": "Tes sites",
+    "sites_aria": "Sites à ajouter à ton passeport",
+    "chargement": "Chargement des sites…",
+    "ajoute": "Ajouté",
+    "slider": {
+      "precedent": "Catégorie précédente",
+      "suivant": "Catégorie suivante",
+      "aller_a": "Aller à {categorie}",
+      "diapositive": "diapositive",
+      "slide_aria": "{categorie}, {position} sur {total}",
+      "compte": "{position}/{total} · {choisis} sur {nombre} choisis"
+    },
+    "tout_choisir": "Tout choisir",
+    "recommencer": "Recommencer",
+    "resultats": "Résultats",
+    "physique": {
+      "titre": "Où sont les serveurs",
+      "description": "Les pays où tes données sont stockées."
+    },
+    "juridique": {
+      "titre": "Quelles lois s'appliquent",
+      "description": "Les pays dont la loi peut atteindre tes données."
+    },
+    "unite_site": {
+      "_one": "site",
+      "_other": "sites"
+    },
+    "aucun_site": "Aucun site choisi.",
+    "score": {
+      "titre": "Droits restants",
+      "phrase_aucun": "Choisis des sites pour voir tes droits évoluer.",
+      "phrase_90": "Tes données restent surtout sous droit européen.",
+      "phrase_60": "Des lois étrangères commencent à s'appliquer à toi.",
+      "phrase_30": "Tu dépends beaucoup de lois étrangères.",
+      "phrase_0": "La plupart de tes données relèvent de lois étrangères.",
+      "aucune_perte": "Aucun droit perdu avec ces sites."
+    },
+    "dossier": {
+      "titre": "Dossier du site",
+      "vide": "Touche un site pour voir son dossier.",
+      "serveurs": "Serveurs",
+      "proprietaire": "Propriétaire",
+      "hebergeur": "Hébergeur",
+      "legislation": "Législation",
+      "a_confirmer": "à confirmer",
+      "droits_perdus": "Droits perdus : −{n}",
+      "aucun_droit_perdu": "Aucun droit perdu.",
+      "en_verification": "Données en cours de vérification."
+    },
+    "avertissement": "Simulation pédagogique : les malus sont des estimations simplifiées et ne constituent pas une analyse juridique.",
+    "mrz_visiteur": "VISITEUR NUMERIQUE"
+  },
+  "donnees": {
+    "categories": {
+      "web": "Web & divertissement",
+      "medias": "Médias",
+      "shopping": "Shopping"
+    },
+    "villes": {
+      "Bruxelles": "Bruxelles",
+      "Saint-Ghislain": "Saint-Ghislain"
+    },
+    "pays": {
+      "BE": {
+        "nom": "Belgique",
+        "loi": "RGPD (droit européen)",
+        "explication": "Tes données sont protégées par le RGPD et le droit belge."
+      },
+      "FR": {
+        "nom": "France",
+        "loi": "RGPD (droit européen)",
+        "explication": "Tes données sont protégées par le RGPD et le droit français."
+      },
+      "DE": {
+        "nom": "Allemagne",
+        "loi": "RGPD (droit européen)",
+        "explication": "Tes données sont protégées par le RGPD et le droit allemand."
+      },
+      "IE": {
+        "nom": "Irlande",
+        "loi": "RGPD (droit européen)",
+        "explication": "Tes données sont protégées par le RGPD, appliqué en Irlande."
+      },
+      "SG": {
+        "nom": "Singapour",
+        "loi": "PDPA (loi singapourienne sur les données personnelles)",
+        "explication": "Pays d'hébergement physique uniquement : aucune marque de la liste n'y est juridiquement rattachée."
+      },
+      "US": {
+        "nom": "États-Unis",
+        "loi": "US CLOUD Act (et FISA 702)",
+        "explication": "Une entreprise américaine peut être obligée de remettre des données aux autorités américaines, même si elles sont stockées en Europe."
+      },
+      "CN": {
+        "nom": "Chine",
+        "loi": "Loi sur le renseignement national (2017)",
+        "explication": "Les entreprises chinoises peuvent être tenues de coopérer avec les services de renseignement de leur pays."
+      }
+    },
+    "marques": {
+      "google": {
+        "type": "Moteur de recherche",
+        "hebergeur": "Infrastructure propre de Google",
+        "proprietaire": "Alphabet (Google)",
+        "message": "Ta requête est traitée près de chez toi, en Belgique, mais l'entreprise reste soumise à la loi américaine."
+      },
+      "youtube": {
+        "type": "Plateforme vidéo",
+        "hebergeur": "Infrastructure propre de Google",
+        "proprietaire": "Alphabet (Google)",
+        "message": "Les vidéos arrivent depuis des serveurs proches de ton fournisseur d'accès, mais la plateforme dépend du droit américain."
+      },
+      "instagram": {
+        "type": "Réseau social",
+        "hebergeur": "Infrastructure propre de Meta",
+        "proprietaire": "Meta Platforms",
+        "message": "Tes données sont gérées depuis l'Irlande, mais l'entreprise mère est américaine et soumise à la loi américaine."
+      },
+      "rtbf": {
+        "type": "Média public",
+        "hebergeur": "À vérifier (hébergement local supposé)",
+        "proprietaire": "RTBF (service public belge)",
+        "message": "Service public belge : protection stricte de la vie privée sous le droit européen."
+      },
+      "aliexpress": {
+        "type": "Marketplace",
+        "hebergeur": "Alibaba Cloud",
+        "proprietaire": "Alibaba Group",
+        "message": "Tes données transitent par Singapour et Francfort, mais l'entreprise relève du droit chinois."
+      },
+      "temu": {
+        "type": "Marketplace",
+        "hebergeur": "Clouds américains (AWS, Google Cloud, Cloudflare)",
+        "proprietaire": "PDD Holdings (siège déclaré à Dublin)",
+        "message": "Double exposition : l'entreprise relève du droit chinois et ses serveurs sont chez des hébergeurs américains."
+      },
+      "zalando": {
+        "type": "E-commerce mode",
+        "hebergeur": "AWS (Francfort)",
+        "proprietaire": "Zalando SE (Berlin)",
+        "message": "Entreprise allemande et serveurs en Allemagne, mais l'hébergeur est américain : le droit américain peut s'appliquer."
+      },
+      "netflix": {
+        "type": "Streaming vidéo",
+        "hebergeur": "Open Connect (Netflix) + AWS",
+        "proprietaire": "Netflix, Inc.",
+        "message": "Les films sont servis depuis des serveurs installés chez les fournisseurs d'accès belges, mais la plateforme dépend du droit américain."
+      },
+      "lesoir": {
+        "type": "Média d'information",
+        "hebergeur": "À vérifier (hébergement local supposé)",
+        "proprietaire": "Groupe Rossel",
+        "message": "Média belge hébergé localement : protection de la vie privée sous le droit européen."
+      },
+      "lemonde": {
+        "type": "Média d'information",
+        "hebergeur": "À vérifier (hébergement en France supposé)",
+        "proprietaire": "Groupe Le Monde",
+        "message": "Média français hébergé en France : protection de la vie privée sous le droit européen."
+      },
+      "decathlon": {
+        "type": "E-commerce sport",
+        "hebergeur": "À vérifier (plateforme centralisée en France supposée)",
+        "proprietaire": "Decathlon",
+        "message": "Entreprise française avec une plateforme e-commerce centralisée en France : protection sous le droit européen."
+      }
+    }
+  }
+}

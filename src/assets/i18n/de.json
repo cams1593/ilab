@@ -1,0 +1,207 @@
+{
+  "langue": {
+    "code": "DE",
+    "aria": "Sprache: Deutsch"
+  },
+  "meta": {
+    "passeport": {
+      "titre": "Digitaler Reisepass",
+      "description": "Im Internet hast du nicht nur eine Staatsangehörigkeit. Wähle die Seiten, die du nutzt, und finde heraus, wo deine Daten liegen und welche Gesetze für dich gelten.",
+      "image_alt": "Digitaler Reisepass: zwei Ringe zeigen, wo die Server stehen und welche Gesetze gelten."
+    },
+    "accueil": {
+      "titre": "Citizen Ex – Digitaler Reisepass",
+      "description": "Entdecken Sie Citizen Ex von James Bridle und erstellen Sie Ihren digitalen Reisepass: Wo liegen Ihre Daten und welche Gesetze gelten für Sie?"
+    },
+    "citizen": {
+      "titre": "Citizen Ex – Im Web existiert Ihre Staatsbürgerschaft nicht mehr",
+      "description": "Im Web existiert Ihre Staatsbürgerschaft nicht mehr. Entdecken Sie Citizen Ex, das Kunstwerk von James Bridle über die Nationalität unserer Daten."
+    }
+  },
+  "accueil": {
+    "lien_citizen": "Mehr über Citizen Ex erfahren",
+    "lien_passeport": "Erstellen Sie Ihren digitalen Reisepass"
+  },
+  "citizen": {
+    "nav": {
+      "citizen": "Citizen Ex",
+      "artiste": "Künstler",
+      "courant": "Kunstrichtung",
+      "oeuvres": "Weitere Werke"
+    },
+    "titre": "Im Web existiert Ihre Staatsbürgerschaft nicht mehr.",
+    "paragraphe": "Die Zugehörigkeit zu einer Nation verleiht uns unsere Rechte und sichert unseren Schutz. Wenn wir im Web surfen, haben wir keine festgelegte Staatsangehörigkeit. Oft werden die Websites, die wir in einem Land nutzen, in Wirklichkeit am anderen Ende der Welt gehostet."
+  },
+  "passeport": {
+    "accueil_aria": "Startseite",
+    "titre": "Digitaler Reisepass",
+    "intro": "Im Internet hast du nicht nur eine Staatsangehörigkeit. Wähle die Seiten, die du nutzt: Wir zeigen dir, wo deine Daten liegen und welche Gesetze für dich gelten.",
+    "sites_titre": "Deine Seiten",
+    "sites_aria": "Seiten, die du deinem Reisepass hinzufügen kannst",
+    "chargement": "Seiten werden geladen …",
+    "ajoute": "Hinzugefügt",
+    "slider": {
+      "precedent": "Vorherige Kategorie",
+      "suivant": "Nächste Kategorie",
+      "aller_a": "Zu {categorie} wechseln",
+      "diapositive": "Folie",
+      "slide_aria": "{categorie}, {position} von {total}",
+      "compte": "{position}/{total} · {choisis} von {nombre} gewählt"
+    },
+    "tout_choisir": "Alle wählen",
+    "recommencer": "Neu starten",
+    "resultats": "Ergebnisse",
+    "physique": {
+      "titre": "Wo die Server stehen",
+      "description": "Die Länder, in denen deine Daten gespeichert sind."
+    },
+    "juridique": {
+      "titre": "Welche Gesetze gelten",
+      "description": "Die Länder, deren Recht auf deine Daten zugreifen kann."
+    },
+    "unite_site": {
+      "_one": "Seite",
+      "_other": "Seiten"
+    },
+    "aucun_site": "Keine Seite gewählt.",
+    "score": {
+      "titre": "Verbleibende Rechte",
+      "phrase_aucun": "Wähle Seiten, um zu sehen, wie sich deine Rechte verändern.",
+      "phrase_90": "Deine Daten bleiben überwiegend unter europäischem Recht.",
+      "phrase_60": "Ausländische Gesetze beginnen, für dich zu gelten.",
+      "phrase_30": "Du hängst stark von ausländischen Gesetzen ab.",
+      "phrase_0": "Die meisten deiner Daten unterliegen ausländischen Gesetzen.",
+      "aucune_perte": "Mit diesen Seiten gehen keine Rechte verloren."
+    },
+    "dossier": {
+      "titre": "Akte der Seite",
+      "vide": "Tippe auf eine Seite, um ihre Akte zu sehen.",
+      "serveurs": "Server",
+      "proprietaire": "Eigentümer",
+      "hebergeur": "Hosting-Anbieter",
+      "legislation": "Gesetzgebung",
+      "a_confirmer": "zu bestätigen",
+      "droits_perdus": "Verlorene Rechte: −{n}",
+      "aucun_droit_perdu": "Keine Rechte verloren.",
+      "en_verification": "Daten werden derzeit überprüft."
+    },
+    "avertissement": "Pädagogische Simulation: Die Abzüge sind vereinfachte Schätzungen und stellen keine Rechtsanalyse dar.",
+    "mrz_visiteur": "DIGITALER BESUCHER"
+  },
+  "donnees": {
+    "categories": {
+      "web": "Web & Unterhaltung",
+      "medias": "Medien",
+      "shopping": "Shopping"
+    },
+    "villes": {
+      "Bruxelles": "Brüssel",
+      "Saint-Ghislain": "Saint-Ghislain"
+    },
+    "pays": {
+      "BE": {
+        "nom": "Belgien",
+        "loi": "DSGVO (europäisches Recht)",
+        "explication": "Deine Daten sind durch die DSGVO und das belgische Recht geschützt."
+      },
+      "FR": {
+        "nom": "Frankreich",
+        "loi": "DSGVO (europäisches Recht)",
+        "explication": "Deine Daten sind durch die DSGVO und das französische Recht geschützt."
+      },
+      "DE": {
+        "nom": "Deutschland",
+        "loi": "DSGVO (europäisches Recht)",
+        "explication": "Deine Daten sind durch die DSGVO und das deutsche Recht geschützt."
+      },
+      "IE": {
+        "nom": "Irland",
+        "loi": "DSGVO (europäisches Recht)",
+        "explication": "Deine Daten sind durch die DSGVO geschützt, wie sie in Irland angewendet wird."
+      },
+      "SG": {
+        "nom": "Singapur",
+        "loi": "PDPA (singapurisches Datenschutzgesetz)",
+        "explication": "Nur Land des physischen Hostings: Keine der aufgeführten Marken ist rechtlich dort angesiedelt."
+      },
+      "US": {
+        "nom": "Vereinigte Staaten",
+        "loi": "US CLOUD Act (und FISA 702)",
+        "explication": "Ein US-Unternehmen kann verpflichtet werden, Daten an US-Behörden herauszugeben, selbst wenn sie in Europa gespeichert sind."
+      },
+      "CN": {
+        "nom": "China",
+        "loi": "Nationales Nachrichtendienstgesetz (2017)",
+        "explication": "Chinesische Unternehmen können verpflichtet werden, mit den Nachrichtendiensten ihres Landes zusammenzuarbeiten."
+      }
+    },
+    "marques": {
+      "google": {
+        "type": "Suchmaschine",
+        "hebergeur": "Googles eigene Infrastruktur",
+        "proprietaire": "Alphabet (Google)",
+        "message": "Deine Suchanfrage wird in deiner Nähe in Belgien verarbeitet, doch das Unternehmen unterliegt weiterhin dem US-Recht."
+      },
+      "youtube": {
+        "type": "Videoplattform",
+        "hebergeur": "Googles eigene Infrastruktur",
+        "proprietaire": "Alphabet (Google)",
+        "message": "Die Videos kommen von Servern in der Nähe deines Internetanbieters, doch die Plattform unterliegt dem US-Recht."
+      },
+      "instagram": {
+        "type": "Soziales Netzwerk",
+        "hebergeur": "Metas eigene Infrastruktur",
+        "proprietaire": "Meta Platforms",
+        "message": "Deine Daten werden von Irland aus verwaltet, doch das Mutterunternehmen ist amerikanisch und unterliegt dem US-Recht."
+      },
+      "rtbf": {
+        "type": "Öffentlich-rechtlicher Sender",
+        "hebergeur": "Zu prüfen (lokales Hosting angenommen)",
+        "proprietaire": "RTBF (belgischer öffentlich-rechtlicher Rundfunk)",
+        "message": "Belgischer öffentlich-rechtlicher Rundfunk: strenger Schutz der Privatsphäre nach europäischem Recht."
+      },
+      "aliexpress": {
+        "type": "Online-Marktplatz",
+        "hebergeur": "Alibaba Cloud",
+        "proprietaire": "Alibaba Group",
+        "message": "Deine Daten laufen über Singapur und Frankfurt, doch das Unternehmen unterliegt chinesischem Recht."
+      },
+      "temu": {
+        "type": "Online-Marktplatz",
+        "hebergeur": "US-Clouds (AWS, Google Cloud, Cloudflare)",
+        "proprietaire": "PDD Holdings (angegebener Hauptsitz in Dublin)",
+        "message": "Doppelte Betroffenheit: Das Unternehmen unterliegt chinesischem Recht und seine Server liegen bei amerikanischen Hosting-Anbietern."
+      },
+      "zalando": {
+        "type": "Online-Modehandel",
+        "hebergeur": "AWS (Frankfurt)",
+        "proprietaire": "Zalando SE (Berlin)",
+        "message": "Deutsches Unternehmen mit Servern in Deutschland, doch der Hosting-Anbieter ist amerikanisch: US-Recht kann zur Anwendung kommen."
+      },
+      "netflix": {
+        "type": "Video-Streaming",
+        "hebergeur": "Open Connect (Netflix) + AWS",
+        "proprietaire": "Netflix, Inc.",
+        "message": "Die Filme werden von Servern bei belgischen Internetanbietern geliefert, doch die Plattform unterliegt dem US-Recht."
+      },
+      "lesoir": {
+        "type": "Nachrichtenmedium",
+        "hebergeur": "Zu prüfen (lokales Hosting angenommen)",
+        "proprietaire": "Rossel-Gruppe",
+        "message": "Belgisches Medium mit lokalem Hosting: Schutz der Privatsphäre nach europäischem Recht."
+      },
+      "lemonde": {
+        "type": "Nachrichtenmedium",
+        "hebergeur": "Zu prüfen (Hosting in Frankreich angenommen)",
+        "proprietaire": "Le-Monde-Gruppe",
+        "message": "Französisches Medium mit Hosting in Frankreich: Schutz der Privatsphäre nach europäischem Recht."
+      },
+      "decathlon": {
+        "type": "Online-Sporthandel",
+        "hebergeur": "Zu prüfen (zentrale Plattform in Frankreich angenommen)",
+        "proprietaire": "Decathlon",
+        "message": "Französisches Unternehmen mit einer zentral in Frankreich betriebenen E-Commerce-Plattform: Schutz nach europäischem Recht."
+      }
+    }
+  }
+}
