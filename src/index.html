@@ -27,10 +27,24 @@
         <button class="lang_button" type="button" data-lang="de" data-i18n="de"></button>
       </li>
     </ul>
-    <div class="home-qr-placeholder" aria-hidden="true">
-      <span class="home-qr-placeholder__pattern"></span>
-    </div>
+    <button class="home-qr-placeholder" type="button" data-qr-open aria-haspopup="dialog" aria-controls="qr-dialog">
+      <img class="home-qr-placeholder__image" src="./assets/images/qrcode.png" alt="">
+      <span class="home-qr-placeholder__text">
+        <strong data-i18n="qr.continue">Continuer sur téléphone</strong>
+        <small data-i18n="qr.expand">Appuyer pour agrandir</small>
+      </span>
+    </button>
   </header>
+
+  <dialog class="qr-dialog" id="qr-dialog" aria-labelledby="qr-dialog-title" aria-describedby="qr-dialog-description">
+    <div class="qr-dialog__content">
+      <button class="qr-dialog__close-icon" type="button" data-qr-close aria-label="Fermer la fenêtre">&times;</button>
+      <h2 id="qr-dialog-title" data-i18n="qr.continue">Continuer sur téléphone</h2>
+      <p id="qr-dialog-description" data-i18n="qr.scan">Scannez le QR code</p>
+      <img class="qr-dialog__image" src="./assets/images/qrcode.png" alt="QR code à scanner avec votre téléphone">
+    </div>
+    <button class="qr-dialog__close" type="button" data-qr-close data-i18n="qr.close">Fermer</button>
+  </dialog>
 
   <main class="nav--accueil">
     <ul class="nav_ul--accueil">
