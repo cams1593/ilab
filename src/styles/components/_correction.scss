@@ -7,7 +7,7 @@
   position: relative;
   z-index: 1;
   display: flex;
-  height: var(--header-height);
+  height: clamp(4.5rem, 12svh, 7.875rem);
   border-bottom: 3px solid $c-text;
   background: $c-bg;
 }
@@ -191,10 +191,8 @@
 
 .slide-navigation {
   display: grid;
-  height: clamp(4.5rem, 12vh, 7.875rem);
   height: clamp(4.5rem, 12svh, 7.875rem);
   flex: 0 0 clamp(4.5rem, 12vh, 7.875rem);
-  flex-basis: clamp(4.5rem, 12svh, 7.875rem);
   grid-template-columns: 3fr 1fr 1fr;
 }
 
