@@ -245,6 +245,10 @@
   color: $c-bg;
 }
 
+.slide-control--previous svg {
+  transform: scaleX(-1);
+}
+
 .slide-control:focus-visible {
   outline: 3px solid $c-alt;
   outline-offset: -4px;
