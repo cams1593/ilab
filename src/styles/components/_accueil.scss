@@ -206,12 +206,18 @@
     }
 
     .home-image-placeholder {
-        flex-basis: 40%;
-        width: 40%;
+        display: none;
+    }
+
+    .nav_a--accueil.home-feature-link {
+        justify-content: center;
     }
 
     .home-feature-title {
+        width: 100%;
+        max-width: none;
         padding: clamp(1rem, 4vw, 1.5rem);
+        text-align: center;
         /* font-size: clamp(1.25rem, 5vw, 2rem); */
     }
 
