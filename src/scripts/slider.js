@@ -3,6 +3,8 @@ document.querySelectorAll('.exhibition-panel').forEach((slider) => {
   const countNumbers = slider.querySelectorAll('.slide-count__number');
   const btnPrev = slider.querySelector('.slider__btn--prev');
   const btnNext = slider.querySelector('.slider__btn--next');
+  const artworkSlides = slider.closest('.exhibition')
+    .querySelectorAll('.artwork-placeholder > div');
 
   if (!slides.length || !btnPrev || !btnNext) {
     return;
@@ -15,6 +17,13 @@ document.querySelectorAll('.exhibition-panel').forEach((slider) => {
     countNumbers.forEach((number, index) => {
       number.classList.toggle('is-active', index === currentIndex);
     });
+
+    if (artworkSlides.length) {
+      const artworkIndex = Math.min(currentIndex, artworkSlides.length - 1);
+      artworkSlides.forEach((artwork, index) => {
+        artwork.classList.toggle('is-active', index === artworkIndex);
+      });
+    }
   };
 
   const nextSlide = () => {

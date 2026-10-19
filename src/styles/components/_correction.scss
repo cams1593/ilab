@@ -1,13 +1,14 @@
 :root {
-  --header-height: clamp(4.5rem, 9vh, 6.125rem);
-  --header-height: clamp(4.5rem, 9svh, 6.125rem);
+  --header-height: clamp(4.5rem, 12svh, 7.875rem);
 }
 
 .site-header {
   position: relative;
   z-index: 1;
   display: flex;
-  height: clamp(4.5rem, 12svh, 7.875rem);
+  box-sizing: border-box;
+  height: var(--header-height);
+  flex: 0 0 var(--header-height);
   border-bottom: 3px solid $c-text;
   background: $c-bg;
 }
@@ -171,28 +172,59 @@
 }
 
 .artwork-placeholder {
+  display: grid;
   min-height: 0;
-  --tile-size: clamp(3rem, 7vw, 5.25rem);
-  --tile-half: clamp(1.5rem, 3.5vw, 2.625rem);
-  background-color: #f7f7f7;
-  background-image:
-    linear-gradient(45deg, #e9e9e9 25%, transparent 25%),
-    linear-gradient(-45deg, #e9e9e9 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #e9e9e9 75%),
-    linear-gradient(-45deg, transparent 75%, #e9e9e9 75%);
-  background-position:
-    0 0,
-    0 var(--tile-half),
-    var(--tile-half) calc(0px - var(--tile-half)),
-    calc(0px - var(--tile-half)) 0;
-  background-size: var(--tile-size) var(--tile-size);
-  /* -------- ceci est pas util -------------- */ 
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  overflow: hidden;
+  background: $c-bg;
+
+  > img:only-child {
+    width: 100%;
+    height: 100%;
+    grid-area: 1 / 1 / -1 / -1;
+    object-fit: cover;
+  }
+
+  > div {
+    display: none;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    grid-area: 1 / 1 / -1 / -1;
+    overflow: hidden;
+  }
+
+  > div.is-active {
+    display: flex;
+  }
+
+  > div > img {
+    display: block;
+    min-height: 0;
+    flex: 1 1 auto;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  > div > .legend__oeuvres {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: clamp(0.625rem, 1.4vw, 1rem) clamp(1rem, 1.8vw, 1.5rem);
+    border-bottom: 2px solid $c-text;
+    background: $c-bg;
+    font-size: clamp(0.875rem, 1.7vw, 1.375rem);
+    font-style: italic;
+    line-height: 1.3;
+  }
 }
 
 .slide-navigation {
   display: grid;
-  height: clamp(4.5rem, 12svh, 7.875rem);
-  flex: 0 0 clamp(4.5rem, 12vh, 7.875rem);
+  height: var(--header-height);
+  flex: 0 0 var(--header-height);
   grid-template-columns: 3fr 1fr 1fr;
 }
 
@@ -256,8 +288,7 @@
 
 @media (max-width: 850px) {
   :root {
-    --header-height: clamp(4.25rem, 9vh, 4.625rem);
-    --header-height: clamp(4.25rem, 9svh, 4.625rem);
+    --header-height: clamp(4.5rem, 12svh, 6.5rem);
   }
 
   body {
@@ -288,6 +319,7 @@
     left: 0;
     height: var(--header-height);
     min-height: var(--header-height);
+    flex-basis: var(--header-height);
     background: $c-bg;
   }
 
@@ -497,8 +529,8 @@
 
   .slide-navigation {
     order: 6;
-    height: clamp(4.5rem, 12vh, 6.5rem);
-    flex-basis: clamp(4.5rem, 12vh, 6.5rem);
+    height: var(--header-height);
+    flex-basis: var(--header-height);
     grid-template-columns: 7fr 3fr;
     border-top: 3px solid $c-text;
   }

@@ -35,9 +35,10 @@
     "works.title": "The World of James Bridle.",
     "works.intro": "James Bridle focuses his research on the connections between technological progress, politics, and environmental crises. ",
     "works.intro.partie2": "He has created numerous works in the form of books, interactive digital interfaces, and objects of varying degrees of strangeness, with the aim of provoking thought and conveying a message about his worldview.",
-    "works.rorschmap.title": "Rorschmap - 2011–2019 → 2021: A kaleidoscopic view of online maps",
+    "works.rorschmap.title": "Rorschmap - 2011–2019 → 2021",
     "works.rorschmap.quote": "“Rorschmap is cartographic introspection, a new perspective on the map. It won’t help you find anything. We’re sick of your squares and margins. We want new shapes and new dimensions… ” James Bridle",
-    "works.rorschmap.text": "A Google Maps interface repurposed from its traditional function. Here, Bridle transforms smart technology into an experience of absurd beauty. Indeed, the map provides no indication of direction or location, forcing the user to detach from any structure and focus on the map’s mesmerizing movements. This map allows us to see the world differently.",
+    "works.rorschmap.text": "A Google Maps interface repurposed from its traditional function. Here, Bridle transforms smart technology into an experience of absurd beauty.",
+    "works.rorschmap.explication":"Indeed, the map provides no indication of direction or location, forcing the user to detach from any structure and focus on the map’s mesmerizing movements. This map allows us to see the world differently.",
 
     "works.newdarkage.title": "New Dark Age - 2018",
     "works.newdarkage.quote": "“New Dark Age was intended to be a challenging and unsettling read. Without offering solutions, I sought to leave room for the imagination,” James Bridle",

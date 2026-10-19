@@ -147,9 +147,15 @@
     display: block;
     flex: 0 0 50%;
     width: 50%;
-    background:
-        repeating-linear-gradient(135deg, transparent 0 12px, rgba($c-alt, 0.12) 12px 24px),
-        $c-bg;
+    overflow: hidden;
+    background: $c-bg;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .home-feature-title {
@@ -220,8 +226,5 @@
     }
     .home-feature-arrow-left{
         right: 0;
-    }
-    .nav_img{
-        display: none;
     }
 }
