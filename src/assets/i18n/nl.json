@@ -1,0 +1,207 @@
+{
+  "langue": {
+    "code": "NL",
+    "aria": "Taal: Nederlands"
+  },
+  "meta": {
+    "passeport": {
+      "titre": "Digitaal paspoort",
+      "description": "Op internet heb je niet maar één nationaliteit. Kies de sites die je gebruikt en ontdek waar je gegevens zich bevinden en welke wetten voor jou gelden.",
+      "image_alt": "Digitaal paspoort: twee ringen die tonen waar de servers staan en welke wetten gelden."
+    },
+    "accueil": {
+      "titre": "Citizen Ex – Digitaal paspoort",
+      "description": "Ontdek Citizen Ex van James Bridle en maak uw digitale paspoort: waar bevinden uw gegevens zich en welke wetten gelden voor u?"
+    },
+    "citizen": {
+      "titre": "Citizen Ex – Op het web bestaat uw burgerschap niet meer",
+      "description": "Op het web bestaat uw burgerschap niet meer. Ontdek Citizen Ex, het kunstwerk van James Bridle over de nationaliteit van onze gegevens."
+    }
+  },
+  "accueil": {
+    "lien_citizen": "Meer weten over Citizen Ex",
+    "lien_passeport": "Maak uw digitale paspoort"
+  },
+  "citizen": {
+    "nav": {
+      "citizen": "Citizen Ex",
+      "artiste": "Kunstenaar",
+      "courant": "Kunststroming",
+      "oeuvres": "Andere werken"
+    },
+    "titre": "Op het web bestaat uw burgerschap niet meer.",
+    "paragraphe": "Het behoren tot een natie geeft ons onze rechten en waarborgt onze bescherming. Wanneer we surfen op het web, hebben we geen vastgelegde nationaliteit. Het komt vaak voor dat de sites die we in het ene land gebruiken, in werkelijkheid aan de andere kant van de wereld worden gehost."
+  },
+  "passeport": {
+    "accueil_aria": "Startpagina",
+    "titre": "Digitaal paspoort",
+    "intro": "Op internet heb je niet maar één nationaliteit. Kies de sites die je gebruikt: wij tonen je waar je gegevens zich bevinden en welke wetten voor jou gelden.",
+    "sites_titre": "Jouw sites",
+    "sites_aria": "Sites om aan je paspoort toe te voegen",
+    "chargement": "Sites laden…",
+    "ajoute": "Toegevoegd",
+    "slider": {
+      "precedent": "Vorige categorie",
+      "suivant": "Volgende categorie",
+      "aller_a": "Ga naar {categorie}",
+      "diapositive": "dia",
+      "slide_aria": "{categorie}, {position} van {total}",
+      "compte": "{position}/{total} · {choisis} van {nombre} gekozen"
+    },
+    "tout_choisir": "Alles kiezen",
+    "recommencer": "Opnieuw beginnen",
+    "resultats": "Resultaten",
+    "physique": {
+      "titre": "Waar de servers staan",
+      "description": "De landen waar je gegevens worden opgeslagen."
+    },
+    "juridique": {
+      "titre": "Welke wetten gelden",
+      "description": "De landen waarvan de wet bij je gegevens kan."
+    },
+    "unite_site": {
+      "_one": "site",
+      "_other": "sites"
+    },
+    "aucun_site": "Geen site gekozen.",
+    "score": {
+      "titre": "Resterende rechten",
+      "phrase_aucun": "Kies sites om te zien hoe je rechten veranderen.",
+      "phrase_90": "Je gegevens blijven vooral onder Europees recht vallen.",
+      "phrase_60": "Buitenlandse wetten beginnen voor jou te gelden.",
+      "phrase_30": "Je hangt sterk af van buitenlandse wetten.",
+      "phrase_0": "Het merendeel van je gegevens valt onder buitenlandse wetten.",
+      "aucune_perte": "Geen rechten verloren met deze sites."
+    },
+    "dossier": {
+      "titre": "Dossier van de site",
+      "vide": "Tik op een site om het dossier te zien.",
+      "serveurs": "Servers",
+      "proprietaire": "Eigenaar",
+      "hebergeur": "Hostingpartij",
+      "legislation": "Wetgeving",
+      "a_confirmer": "te bevestigen",
+      "droits_perdus": "Verloren rechten: −{n}",
+      "aucun_droit_perdu": "Geen rechten verloren.",
+      "en_verification": "Gegevens worden momenteel geverifieerd."
+    },
+    "avertissement": "Educatieve simulatie: de maluspunten zijn vereenvoudigde schattingen en vormen geen juridische analyse.",
+    "mrz_visiteur": "DIGITALE BEZOEKER"
+  },
+  "donnees": {
+    "categories": {
+      "web": "Web & entertainment",
+      "medias": "Media",
+      "shopping": "Shopping"
+    },
+    "villes": {
+      "Bruxelles": "Brussel",
+      "Saint-Ghislain": "Saint-Ghislain"
+    },
+    "pays": {
+      "BE": {
+        "nom": "België",
+        "loi": "AVG (Europees recht)",
+        "explication": "Je gegevens worden beschermd door de AVG en het Belgische recht."
+      },
+      "FR": {
+        "nom": "Frankrijk",
+        "loi": "AVG (Europees recht)",
+        "explication": "Je gegevens worden beschermd door de AVG en het Franse recht."
+      },
+      "DE": {
+        "nom": "Duitsland",
+        "loi": "AVG (Europees recht)",
+        "explication": "Je gegevens worden beschermd door de AVG en het Duitse recht."
+      },
+      "IE": {
+        "nom": "Ierland",
+        "loi": "AVG (Europees recht)",
+        "explication": "Je gegevens worden beschermd door de AVG, zoals die in Ierland wordt toegepast."
+      },
+      "SG": {
+        "nom": "Singapore",
+        "loi": "PDPA (Singaporese wet op de bescherming van persoonsgegevens)",
+        "explication": "Alleen land van fysieke hosting: geen enkel merk uit de lijst is er juridisch aan gekoppeld."
+      },
+      "US": {
+        "nom": "Verenigde Staten",
+        "loi": "US CLOUD Act (en FISA 702)",
+        "explication": "Een Amerikaans bedrijf kan verplicht worden gegevens aan de Amerikaanse autoriteiten te overhandigen, ook als ze in Europa zijn opgeslagen."
+      },
+      "CN": {
+        "nom": "China",
+        "loi": "Nationale inlichtingenwet (2017)",
+        "explication": "Chinese bedrijven kunnen verplicht worden mee te werken met de inlichtingendiensten van hun land."
+      }
+    },
+    "marques": {
+      "google": {
+        "type": "Zoekmachine",
+        "hebergeur": "Eigen infrastructuur van Google",
+        "proprietaire": "Alphabet (Google)",
+        "message": "Je zoekopdracht wordt dicht bij huis verwerkt, in België, maar het bedrijf blijft onderworpen aan de Amerikaanse wet."
+      },
+      "youtube": {
+        "type": "Videoplatform",
+        "hebergeur": "Eigen infrastructuur van Google",
+        "proprietaire": "Alphabet (Google)",
+        "message": "De video's komen van servers dicht bij je internetprovider, maar het platform valt onder het Amerikaanse recht."
+      },
+      "instagram": {
+        "type": "Sociaal netwerk",
+        "hebergeur": "Eigen infrastructuur van Meta",
+        "proprietaire": "Meta Platforms",
+        "message": "Je gegevens worden beheerd vanuit Ierland, maar het moederbedrijf is Amerikaans en valt onder de Amerikaanse wet."
+      },
+      "rtbf": {
+        "type": "Openbare omroep",
+        "hebergeur": "Te verifiëren (lokale hosting verondersteld)",
+        "proprietaire": "RTBF (Belgische openbare omroep)",
+        "message": "Belgische openbare omroep: strenge bescherming van de privacy onder Europees recht."
+      },
+      "aliexpress": {
+        "type": "Online marktplaats",
+        "hebergeur": "Alibaba Cloud",
+        "proprietaire": "Alibaba Group",
+        "message": "Je gegevens gaan via Singapore en Frankfurt, maar het bedrijf valt onder het Chinese recht."
+      },
+      "temu": {
+        "type": "Online marktplaats",
+        "hebergeur": "Amerikaanse clouds (AWS, Google Cloud, Cloudflare)",
+        "proprietaire": "PDD Holdings (opgegeven hoofdkantoor in Dublin)",
+        "message": "Dubbele blootstelling: het bedrijf valt onder het Chinese recht en de servers staan bij Amerikaanse hostingpartijen."
+      },
+      "zalando": {
+        "type": "Mode-webshop",
+        "hebergeur": "AWS (Frankfurt)",
+        "proprietaire": "Zalando SE (Berlijn)",
+        "message": "Duits bedrijf met servers in Duitsland, maar de hostingpartij is Amerikaans: het Amerikaanse recht kan van toepassing zijn."
+      },
+      "netflix": {
+        "type": "Videostreaming",
+        "hebergeur": "Open Connect (Netflix) + AWS",
+        "proprietaire": "Netflix, Inc.",
+        "message": "De films komen van servers die bij Belgische internetproviders staan, maar het platform valt onder het Amerikaanse recht."
+      },
+      "lesoir": {
+        "type": "Nieuwsmedium",
+        "hebergeur": "Te verifiëren (lokale hosting verondersteld)",
+        "proprietaire": "Rossel Groep",
+        "message": "Belgisch medium dat lokaal wordt gehost: bescherming van de privacy onder Europees recht."
+      },
+      "lemonde": {
+        "type": "Nieuwsmedium",
+        "hebergeur": "Te verifiëren (hosting in Frankrijk verondersteld)",
+        "proprietaire": "Le Monde Groep",
+        "message": "Frans medium dat in Frankrijk wordt gehost: bescherming van de privacy onder Europees recht."
+      },
+      "decathlon": {
+        "type": "Sportwebshop",
+        "hebergeur": "Te verifiëren (gecentraliseerd platform in Frankrijk verondersteld)",
+        "proprietaire": "Decathlon",
+        "message": "Frans bedrijf met een webshopplatform dat in Frankrijk is gecentraliseerd: bescherming onder Europees recht."
+      }
+    }
+  }
+}
