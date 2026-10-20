@@ -69,6 +69,13 @@
     min-height: 100svh;
 }
 
+@media (min-width: 701px) {
+    .home-page {
+        height: 100vh;
+        height: 100svh;
+    }
+}
+
 .lang--accueil {
     display: flex;
     min-height: clamp(5.5rem, 12vh, 6rem);
