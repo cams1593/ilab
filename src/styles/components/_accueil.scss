@@ -1,3 +1,5 @@
+// Présente l'accueil, ses liens vers les rubriques, le choix de langue et la fenêtre QR.
+/* Bandeau de navigation et liens principaux de la page d'accueil. */
 .nav{
     border-bottom: 3px solid $c-text;
 }
@@ -39,7 +41,7 @@
 .a--J{
     flex-direction: row-reverse;
 }
-/* ------------LANGUE-------------  */
+/* Choix de langue, présentés sous forme de boutons dans le bandeau d'accueil. */
 .lang_ul{
     display: flex;
     justify-content: flex-end;
@@ -61,6 +63,7 @@
     color: $c-text;
 }
 
+/* Bandeau d'accueil : langues à gauche et raccourci vers le QR code à droite. */
 .home-page {
     min-height: 100vh;
     min-height: 100svh;
@@ -146,6 +149,7 @@
     }
 }
 
+/* Fenêtre modale et commandes de fermeture du QR code. */
 .qr-dialog {
     position: fixed;
     inset: 0;
@@ -222,6 +226,7 @@
     cursor: pointer;
 }
 
+/* Liens de mise en avant : image, titre et flèche de navigation. */
 .nav--accueil {
     min-height: 0;
 }
@@ -295,6 +300,7 @@
     right: 50%;
 }
 
+/* Sur mobile, réduit le bandeau et masque les images pour privilégier les titres. */
 @media (max-width: 700px) {
     .lang--accueil {
         min-height: 4.5rem;

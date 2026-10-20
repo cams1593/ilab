@@ -1,3 +1,5 @@
+// Organise la zone de contenu, ses images et les commandes de navigation entre pages.
+/* Mise en page générale du contenu, du texte et des visuels. */
 .containeur{
     display: flex;
     height: 100%;
@@ -14,6 +16,7 @@
 .texte{
     margin: 32px 64px;
 }
+/* Bandeau inférieur avec titre de page et commandes de navigation. */
 .page{
     position: absolute;
     bottom: 0;

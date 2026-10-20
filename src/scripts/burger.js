@@ -1,3 +1,4 @@
+// Cherche le bouton du menu ; les pages sans ce composant n'installent aucun gestionnaire.
 const menuToggle = document.querySelector('.menu-toggle');
 
 if (menuToggle) {
@@ -5,6 +6,7 @@ if (menuToggle) {
   const navigation = document.getElementById(menuToggle.getAttribute('aria-controls'));
 
   if (header && navigation) {
+    // Centralise les classes et attributs ARIA qui reflètent l'état ouvert ou fermé.
     const setMenuOpen = (isOpen) => {
       header.classList.toggle('menu-open', isOpen);
       document.documentElement.classList.toggle('menu-open', isOpen);
@@ -16,6 +18,7 @@ if (menuToggle) {
       setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
     });
 
+    // Ferme le menu après navigation, clic extérieur, Échap ou passage à la mise en page large.
     navigation.addEventListener('click', (event) => {
       if (event.target.closest('a')) {
         setMenuOpen(false);

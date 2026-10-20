@@ -6,6 +6,7 @@ import './i18n';
 /* ==========================================================
    Passeport numérique – logique de la borne
    - charge passeport-numerique.json
+   - construit l'interface multilingue et actualise les résultats selon les sites sélectionnés
    - calcule les deux camemberts (serveurs / lois) pour les sites choisis
    - calcule le score de droits et affiche le dossier du site touché
    ========================================================== */
@@ -39,6 +40,7 @@ const COULEURS_PAYS = {
 };
 
 // ---------- État ----------
+// Conserve les données chargées et les sélections nécessaires pour recalculer l'affichage.
 let donnees = null;
 let selection = [];          // identifiants des sites choisis, dans l'ordre
 let focusId = null;          // site dont on affiche le dossier
@@ -51,6 +53,7 @@ let langue = LANGUE_DEFAUT;  // langue affichée
 const traductions = {};      // textes déjà chargés, par code de langue
 
 // ---------- Petits outils ----------
+// Regroupe les utilitaires DOM, formatage et recherche de marque partagés par les vues.
 const $ = (id) => document.getElementById(id);
 const NS_SVG = 'http://www.w3.org/2000/svg';
 
@@ -71,6 +74,7 @@ const formaterPct = (v) => {
 const marqueParId = (id) => donnees.marques.find((m) => m.id === id);
 
 // ---------- Traductions ----------
+// Résout les clés de traduction et fournit les libellés selon la langue courante.
 function chercher(dico, cle) {
   return String(cle).split('.').reduce((o, k) => (o && o[k] !== undefined ? o[k] : undefined), dico);
 }
@@ -152,6 +156,7 @@ function changerLangue(code) {
 }
 
 // ---------- Démarrage ----------
+// Charge les données et dictionnaires avant de construire l'interface de la borne.
 function init() {
   const code = langueInitiale();
   Promise.all([
@@ -169,6 +174,7 @@ function init() {
 }
 
 function demarrer() {
+  // Prépare les vues initiales, branche les commandes utilisateur et déclenche le premier rendu.
   scoreAffiche = donnees.meta.score_depart;
   appliquerTextes();
   construireMarques();
@@ -206,6 +212,7 @@ function afficherErreur() {
 }
 
 // ---------- Construction de l'interface ----------
+// Construit la liste des marques et les commandes du carrousel de catégories.
 function construireMarques() {
   const conteneur = $('marques');
   conteneur.replaceChildren();
@@ -307,6 +314,7 @@ function creerBoutonMarque(m) {
 }
 
 // ---------- Slider de catégories ----------
+// Synchronise le défilement horizontal, les repères de catégorie et les contrôles de navigation.
 function allerAuSlide(index, instantane) {
   const i = Math.max(0, Math.min(donnees.categories.length - 1, index));
   const sansAnimation = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -380,6 +388,7 @@ function construireDonut(boite) {
 }
 
 // ---------- Actions ----------
+// Met à jour la sélection, permet les actions globales et réinitialise la borne après inactivité.
 function basculer(id) {
   const position = selection.indexOf(id);
   if (position === -1) {
@@ -417,6 +426,7 @@ function relancerMinuteur() {
 }
 
 // ---------- Calculs ----------
+// Agrège les pays d'hébergement et les juridictions, puis déduit les répartitions et le score.
 function calculer() {
   const choisies = selection.map(marqueParId);
   const n = choisies.length;
@@ -457,6 +467,7 @@ function calculer() {
 }
 
 // ---------- Affichage ----------
+// Propage le résultat du calcul vers les contrôles et les différentes zones d'information.
 function mettreAJour() {
   const c = calculer();
 

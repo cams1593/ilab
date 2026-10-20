@@ -1,3 +1,4 @@
+// Initialise séparément chaque panneau d'exposition doté d'un diaporama.
 document.querySelectorAll('.exhibition-panel').forEach((slider) => {
   const slides = slider.querySelectorAll('.slider__el');
   const countNumbers = slider.querySelectorAll('.slide-count__number');
@@ -11,6 +12,7 @@ document.querySelectorAll('.exhibition-panel').forEach((slider) => {
     return;
   }
 
+  // Synchronise l'indicateur, les boutons, le lien de suite et les visuels avec la diapositive active.
   const updateCount = () => {
     const currentSlide = slider.querySelector('.slider__el--show');
     const currentIndex = Array.from(slides).indexOf(currentSlide);
@@ -32,6 +34,7 @@ document.querySelectorAll('.exhibition-panel').forEach((slider) => {
     }
   };
 
+  // Change de diapositive seulement si l'élément voisin appartient bien au diaporama.
   const nextSlide = () => {
     const elShow = slider.querySelector('.slider__el--show');
     const elNext = elShow.nextElementSibling;
@@ -58,6 +61,7 @@ document.querySelectorAll('.exhibition-panel').forEach((slider) => {
     updateCount();
   };
 
+  // Enregistre les commandes et initialise l'état affiché du panneau.
   btnPrev.addEventListener('click', prevSlide);
   btnNext.addEventListener('click', nextSlide);
 

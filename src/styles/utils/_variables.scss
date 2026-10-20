@@ -1,3 +1,5 @@
+// Centralise les couleurs, les tailles typographiques et la police partagées par les styles du site.
+/* Palette de base et couleurs de l'accueil. */
 $c-bg: #ffffff;
 $c-alt: #444444;
 $c-text: #000000;
@@ -5,6 +7,7 @@ $c-accueilB: #63B6EC;
 $c-accueilJ: #ECC444;
 $c-mobilepink: #8A245F;
 
+/* Échelle typographique utilisée par les titres, textes et contrôles. */
 $size-title: 40px;
 $size-number: 26px;
 $size-text: 24px;

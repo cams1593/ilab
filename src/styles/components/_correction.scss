@@ -1,6 +1,10 @@
+// Définit l'en-tête, le sélecteur de langue, la navigation principale et la mise en page des expositions.
+// Hauteur de référence partagée entre l'en-tête et les zones qui occupent l'écran.
 :root {
   --header-height: clamp(4.5rem, 12svh, 7.875rem);
 }
+
+/* ---------- En-tête, accès à l'accueil et choix de langue ---------- */
 
 .site-header {
   position: relative;
@@ -96,6 +100,7 @@
   }
 }
 
+/* À l'écran large, le nom et le libellé mobile sont remplacés par les éléments de navigation. */
 .brand-name,
 .language-label,
 .mobile-next-label {
@@ -116,6 +121,7 @@
   cursor: pointer;
 }
 
+/* Navigation principale et état visuel du lien actif. */
 .main-nav {
   display: flex;
   flex: 0 0 auto;
@@ -144,6 +150,7 @@
   }
 }
 
+/* Zone d'exposition : colonne éditoriale et colonne réservée aux visuels. */
 .exhibition {
   display: grid;
   min-height: calc(100vh - var(--header-height));
@@ -166,6 +173,7 @@
   flex-direction: column;
 }
 
+/* Présentation de l'artiste ou de l'exposition et informations complémentaires. */
 .intro {
   display: none;
   flex: 1 1 auto;
@@ -242,6 +250,7 @@
   white-space: nowrap;
 }
 
+/* Zone média : affiche l'image active et sa légende sans déformer l'oeuvre. */
 .artwork-placeholder {
   display: grid;
   min-height: 0;
@@ -295,6 +304,7 @@
   }
 }
 
+/* Commandes du diaporama et accès à la page suivante. */
 .slide-navigation {
   display: grid;
   height: var(--header-height);
@@ -381,6 +391,7 @@
 }
 
 @media (max-width: 850px) {
+  /* Sur petit écran, l'en-tête devient compact et le menu s'ouvre en panneau plein écran. */
   :root {
     --header-height: clamp(4.5rem, 12svh, 6.5rem);
   }
@@ -540,6 +551,7 @@
     }
   }
 
+  /* Réorganise les contenus en une seule colonne, dans l'ordre de lecture mobile. */
   .exhibition {
     display: grid;
     height: auto;
@@ -552,6 +564,7 @@
     display: contents;
   }
 
+  /* Réordonne les éléments éditoriaux pour placer l'image entre le titre et les détails. */
   .intro {
     min-height: 0;
     padding: 0;
@@ -632,6 +645,7 @@
     display: contents;
   }
 
+  /* Le visuel et les commandes prennent toute la largeur disponible sur mobile. */
   .artwork-placeholder {
     order: 3;
     width: calc(100% - clamp(2.5rem, 15.6vw, 4rem));

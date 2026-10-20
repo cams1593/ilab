@@ -1,3 +1,5 @@
+// Assemble les variables et les feuilles de style des différentes parties du site.
+// Charge d'abord les tokens communs, puis les styles de page et de composants.
 @import 'utils/variables';
 @import 'components/type';
 @import 'components/accueil';

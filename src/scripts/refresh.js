@@ -1,3 +1,4 @@
+// Définit les pages qui reviennent à l'accueil après une période sans activité.
 const PAGE_TIMEOUTS_SECONDS = {
   'citizen.html': 90,
   'james.html': 90,
@@ -9,6 +10,7 @@ const PAGE_TIMEOUTS_SECONDS = {
 const pageName = window.location.pathname.split('/').pop() || 'index.html';
 const timeoutSeconds = PAGE_TIMEOUTS_SECONDS[pageName];
 
+// L'accueil oublie la langue mémorisée ; les autres pages concernées réinitialisent le délai à chaque interaction.
 if (pageName === 'index.html') {
   localStorage.removeItem('site-locale');
 } else if (timeoutSeconds) {

@@ -1,6 +1,8 @@
+// Charge et applique les traductions ainsi que la langue du document.
 const DEFAULT_LANG = 'fr';
 const PATH = 'assets/data/langues';
 
+// Met à jour les textes, la préférence mémorisée et l'état accessible des boutons de langue.
 async function setLang(lang) {
   const res = await fetch(`${PATH}/${lang}.JSON`);
   const texts = await res.json();
@@ -40,6 +42,7 @@ async function setLang(lang) {
   });
 }
 
+// Relie les boutons de langue directe et le sélecteur déroulant à la fonction de traduction.
 document.querySelectorAll('[data-lang]').forEach((button) => {
   button.addEventListener('click', () => setLang(button.dataset.lang));
 });
@@ -64,6 +67,7 @@ document.querySelectorAll('[data-language-picker]').forEach((picker) => {
   });
 });
 
+// Ferme le sélecteur lorsqu'on clique hors de celui-ci ou qu'on appuie sur Échap.
 document.addEventListener('click', (event) => {
   document.querySelectorAll('[data-language-picker]').forEach((picker) => {
     if (!picker.contains(event.target)) {
@@ -89,4 +93,5 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+// Applique au chargement la dernière langue mémorisée, ou le français par défaut.
 setLang(localStorage.getItem('site-locale') || DEFAULT_LANG);

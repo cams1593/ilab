@@ -1,11 +1,13 @@
 // ==========================================================
 // Passeport numérique – borne (maquette Figma « Passeport numérique »)
+// Définit la mise en page, les composants de sélection, les graphiques et les adaptations mobiles.
 // Tout est isolé sous .passeport (classe sur <body>) pour ne pas
 // entrer en conflit avec les styles globaux des autres pages.
 // ==========================================================
 
 .passeport-html { font-size: clamp(16px, 1.05vw, 22px); }
 
+/* Variables et styles de base propres à la borne, isolés des autres pages. */
 .passeport {
   --blanc: #fff;
   --noir: #000;
@@ -192,6 +194,7 @@ h1 {
   user-select: text;
 }
 
+/* Boutons de marque, état de sélection, icônes et actions globales. */
 /* Bouton-site : rectangle noir, icône + nom (comme « Amazone » dans la maquette) */
 .marque {
   position: relative;
@@ -349,11 +352,13 @@ h1 {
 /* ---------- Écrans étroits ---------- */
 
 @media (max-width: 1000px) {
+  /* Sur tablette, empile les deux panneaux et les cartes de résultats. */
   .corps { grid-template-columns: 1fr; }
   .volet-droite { border-left: 0; border-top: var(--trait) solid var(--noir); }
   .bas { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
+  /* Sur téléphone, simplifie les colonnes et empile les légendes et informations. */
   .volet { padding: 1.6rem 1.1rem; }
   .barre-haut > #btn-home.cellule { min-width: 3rem; padding: 0 0.5rem; }
   .cellule-langue { min-width: 2.75rem; padding: 0 0.5rem; }
@@ -363,6 +368,7 @@ h1 {
 }
 
 @media (min-width: 1001px) and (max-width: 1366px) {
+  /* Réduit les espacements pour les écrans intermédiaires et les bornes compactes. */
   .passeport-html {
     height: auto;
     overflow: visible;
@@ -436,10 +442,12 @@ h1 {
 }
 
 @media (min-width: 700px) and (max-width: 1000px) {
+  /* Conserve une seule colonne de cartes sur tablette en paysage. */
   .bas { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (min-width: 700px) and (max-width: 1000px) and (orientation: portrait) {
+  /* Ajustements supplémentaires quand la tablette est tenue en portrait. */
   .donut-boite { width: min(100%, 5rem); }
   .volet { padding: 0.65rem 0.75rem; }
   .marques { margin-top: 0.7rem; }
@@ -450,6 +458,7 @@ h1 {
 }
 
 @media (min-width: 1367px) {
+  /* Sur grand écran, optimise les proportions des panneaux et la densité des contenus. */
   .passeport-html {
     width: 100%;
     height: auto;
@@ -528,6 +537,7 @@ h1 {
 }
 
 @media (min-width: 1367px) and (max-height: 760px) {
+  /* Compense une faible hauteur d'écran sans changer l'organisation générale. */
   .passeport-html { font-size: 13px; }
   .volet { padding-top: 0.65rem; padding-bottom: 0.65rem; }
   .cellule { height: 2.8rem; }
@@ -547,6 +557,7 @@ h1 {
 .cellule[aria-pressed="true"] { background: var(--noir); color: var(--blanc); }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Respecte la préférence système en désactivant transitions et animations. */
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 }

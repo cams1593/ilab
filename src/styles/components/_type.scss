@@ -1,3 +1,5 @@
+// Définit les styles globaux de texte, de liens, de focus clavier et de navigation accessible.
+/* Typographie et éléments de base partagés par toutes les pages. */
 body {
   margin: 0;
   font-size: $size-text;
@@ -27,6 +29,7 @@ a{
     color: $c-text;
 }
 
+/* Masque visuellement les aides et liens de saut tout en les gardant accessibles. */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -56,6 +59,7 @@ a{
     transform: translateY(0);
 }
 
+/* États d'interaction distincts pour la souris, l'activation et le clavier. */
 a:hover {
     text-decoration: underline;
     text-decoration-thickness: 0.12em;
@@ -83,6 +87,7 @@ button:focus-visible,
 }
 
 @media (forced-colors: active) {
+    /* Laisse le système choisir une couleur de contour visible en contraste forcé. */
     a:focus-visible,
     button:focus-visible,
     [tabindex="-1"]:focus-visible {

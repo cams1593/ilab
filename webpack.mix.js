@@ -1,3 +1,4 @@
+// Configure la copie des pages et des ressources, la compilation et le serveur de développement.
 const mix = require('laravel-mix');
 
 /*
