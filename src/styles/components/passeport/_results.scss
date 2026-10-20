@@ -1,0 +1,88 @@
+.passeport {// ---------- Anneaux (maquette : deux anneaux gris, épais) ----------
+
+.camemberts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+
+.graphique { margin: 0; display: grid; justify-items: center; gap: 1rem; align-content: start; }
+.graphique figcaption { order: 1; text-align: center; }
+.graphique h3 { font-size: 1.2rem; font-weight: 800; line-height: 1.2; }
+.graphique figcaption p { margin-top: 0.2rem; font-size: 0.85rem; color: var(--gris-texte); }
+
+.donut-boite { position: relative; width: min(100%, 12rem); aspect-ratio: 1; }
+.donut { width: 100%; height: 100%; display: block; }
+.donut circle { fill: none; stroke-width: 6; }
+.donut .donut-fond { stroke: var(--gris); }
+.donut .tranche { transition: stroke-dasharray 0.6s ease, stroke-dashoffset 0.6s ease; }
+
+.donut-centre {
+  position: absolute; inset: 0;
+  display: grid; place-content: center;
+  text-align: center; line-height: 1.1;
+}
+.donut-centre .nb { font-size: 2.2rem; font-weight: 800; }
+.donut-centre .unite { font-size: 0.85rem; color: var(--gris-texte); }
+
+.legende { order: 2; width: 100%; margin: 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; }
+.legende li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+.legende .vide { display: block; text-align: center; color: var(--gris-texte); }
+.pastille { width: 0.9rem; height: 0.9rem; border-radius: 50%; }
+.legende-pct { font-weight: 800; font-variant-numeric: tabular-nums; }
+
+// ---------- Score + dossier ----------
+
+.bas { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 1.2rem; }
+
+.carte { padding: 1.2rem; border: 2px solid var(--noir); border-radius: 0; overflow: auto; }
+.carte h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem; }
+
+.score-valeur { display: flex; align-items: baseline; gap: 0.3rem; }
+#score-nombre { font-size: 3.6rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.score-max { font-size: 1.2rem; color: var(--gris-texte); }
+
+.barre { height: 0.8rem; margin: 0.7rem 0; background: var(--gris); }
+.barre-remplie { width: 100%; height: 100%; background: var(--noir); transition: width 0.5s ease, background-color 0.5s ease; }
+.barre-remplie[data-niveau="moyen"] { background: var(--attention); }
+.barre-remplie[data-niveau="bas"] { background: var(--alerte); }
+
+.score-phrase { font-size: 0.95rem; }
+
+.pertes { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.8rem 0 0; padding: 0; list-style: none; }
+.chip {
+  min-height: $passeport-control-target;
+  padding: 0 0.8rem;
+  border: 2px solid var(--alerte);
+  border-radius: 0;
+  background: var(--blanc);
+  color: var(--alerte);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.pertes .aucune { font-size: 0.9rem; color: var(--gris-texte); }
+
+.dossier-titre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.7rem; margin-bottom: 0.7rem; }
+.dossier-titre strong { font-size: 1.5rem; font-weight: 800; }
+.dossier-titre span { color: var(--gris-texte); font-size: 0.9rem; }
+
+.dossier dl { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.4rem 0.8rem; margin: 0 0 0.8rem; font-size: 0.95rem; }
+.dossier dt { color: var(--gris-texte); }
+.dossier dd { margin: 0; }
+.dossier dd p + p { margin-top: 0.3rem; }
+.dossier .explication { font-size: 0.85rem; color: var(--gris-texte); }
+.dossier-message { font-weight: 800; }
+.dossier-perte { margin-top: 0.6rem; font-weight: 800; }
+.dossier-perte.perte { color: var(--alerte); }
+.dossier-verif { margin-top: 0.6rem; font-size: 0.8rem; color: var(--gris-texte); }
+.vide-texte { color: var(--gris-texte); }
+
+// La bande MRZ n'existe pas dans la maquette : masquée (le script la remplit toujours)
+.mrz { display: none; }
+
+.avertissement { font-size: 0.8rem; color: var(--gris-texte); }
+}

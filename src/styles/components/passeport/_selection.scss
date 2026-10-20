@@ -1,0 +1,167 @@
+.passeport {// ---------- Colonne gauche ----------
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.intro { margin-top: 1.1rem; max-width: 32ch; font-size: 1.3rem; }
+
+.marques { margin-top: 2.2rem; }
+
+// ---------- Slider de catégories ----------
+
+.slider-nav {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+.slider-titre { display: grid; text-align: center; line-height: 1.2; }
+.slider-titre strong { font-size: 1.3rem; font-weight: 800; }
+.slider-compte { font-size: 0.85rem; color: var(--gris-texte); font-variant-numeric: tabular-nums; }
+
+.slider-fleche {
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  min-width: $passeport-control-target;
+  min-height: $passeport-control-target;
+  padding: 0;
+  border: 3px solid var(--noir);
+  border-radius: 0;
+  background: var(--noir);
+  color: var(--blanc);
+  cursor: pointer;
+}
+.slider-fleche svg { width: 1.5rem; height: 1.5rem; }
+.slider-fleche:disabled { background: var(--blanc); color: var(--noir); opacity: 0.25; cursor: default; }
+
+// La piste défile horizontalement et « accroche » chaque catégorie (balayage au doigt)
+.slider-piste {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+}
+.slider-piste::-webkit-scrollbar { display: none; }
+
+// Le padding laisse la place au tampon « Ajouté » et au contour de focus
+.slider-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0.9rem 5px 5px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.marques-grille {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 0.9rem;
+  height: 100%;
+}
+
+.slider-points { display: flex; justify-content: center; gap: 0.2rem; margin-top: 0.4rem; }
+.slider-point {
+  display: grid;
+  place-items: center;
+  min-width: $passeport-control-target;
+  min-height: $passeport-control-target;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.slider-point span {
+  display: block;
+  width: 1.8rem;
+  height: 0.5rem;
+  border: 2px solid var(--noir);
+  background: var(--blanc);
+  transition: background-color 0.3s ease;
+}
+.slider-point[aria-current="true"] span { background: var(--noir); }
+.chargement, .erreur { grid-column: 1 / -1; }
+.erreur {
+  padding: 1rem;
+  border: 3px solid var(--alerte);
+  color: var(--alerte);
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+// Boutons de marque, état de sélection, icônes et actions globales.
+// Bouton-site : rectangle noir, icône + nom (comme « Amazone » dans la maquette)
+.marque {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 4.6rem;
+  padding: 0.6rem 1rem;
+  border: 3px solid var(--noir);
+  border-radius: 0;
+  background: var(--noir);
+  color: var(--blanc);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+// Sélectionné : on inverse (blanc, cadre noir)
+.marque[aria-pressed="true"] { background: var(--blanc); color: var(--noir); }
+
+.icone {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-weight: 800;
+  overflow: hidden;
+}
+.icone img { width: 100%; height: 100%; padding: 0.3rem; object-fit: contain; background: #fff; }
+
+.marque-texte { display: grid; min-width: 0; }
+.marque-nom { font-weight: 800; font-size: 1.05rem; }
+.marque-type { font-size: 0.8rem; opacity: 0.75; }
+
+.tampon {
+  position: absolute;
+  top: -0.7rem;
+  right: -3px;
+  padding: 0.05rem 0.5rem;
+  background: var(--noir);
+  color: var(--blanc);
+  font-size: 0.72rem;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+}
+.marque[aria-pressed="true"] .tampon { opacity: 1; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.6rem; }
+
+.btn {
+  min-height: $passeport-control-target;
+  padding: 0 1.6rem;
+  border: 3px solid var(--noir);
+  border-radius: 0;
+  background: var(--noir);
+  color: var(--blanc);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+.btn-discret { background: var(--blanc); color: var(--noir); }
+.btn:disabled { opacity: 0.35; cursor: default; }
+}
