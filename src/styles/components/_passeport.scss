@@ -266,7 +266,7 @@ h1 {
 .camemberts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
 
 .graphique { margin: 0; display: grid; justify-items: center; gap: 1rem; align-content: start; }
-.graphique figcaption { text-align: center; }
+.graphique figcaption { order: 1; text-align: center; }
 .graphique h3 { font-size: 1.2rem; font-weight: 800; line-height: 1.2; }
 .graphique figcaption p { margin-top: 0.2rem; font-size: 0.85rem; color: var(--gris-texte); }
 
@@ -284,7 +284,7 @@ h1 {
 .donut-centre .nb { font-size: 2.2rem; font-weight: 800; }
 .donut-centre .unite { font-size: 0.85rem; color: var(--gris-texte); }
 
-.legende { width: 100%; margin: 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; }
+.legende { order: 2; width: 100%; margin: 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; }
 .legende li {
   display: grid;
   grid-template-columns: auto 1fr auto;
